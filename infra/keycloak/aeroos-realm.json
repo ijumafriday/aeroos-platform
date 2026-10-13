@@ -89,6 +89,30 @@
       {
         "name": "records_manager",
         "description": "Technical Records manager"
+      },
+      {
+        "name": "accountable_manager",
+        "description": "Accountable manager"
+      },
+      {
+        "name": "amo_manager",
+        "description": "Approved maintenance organisation manager"
+      },
+      {
+        "name": "amo_engineer",
+        "description": "Approved maintenance organisation engineer"
+      },
+      {
+        "name": "crew_planner",
+        "description": "Crew planning"
+      },
+      {
+        "name": "training_manager",
+        "description": "Crew training manager"
+      },
+      {
+        "name": "finance_manager",
+        "description": "Finance manager"
       }
     ]
   },

@@ -72,8 +72,8 @@ const sha=(v:unknown)=>createHash('sha256').update(typeof v==='string'?v:JSON.st
  @Post('models/:id/:step') modelStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'retire'){return this.svc.modelStep(p,id,step)}
  @Get('reports') reportData(@CurrentPrincipal() p:Principal){return this.svc.reportData(p)}
  @Post('reports') addReport(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(reportSchema)) b:z.infer<typeof reportSchema>){return this.svc.addReport(p,b)}
- @Post('reports/:id/:step') reportStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'retire'){return this.svc.reportStep(p,id,step)}
  @Post('reports/:id/run') runReport(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(runSchema)) b:z.infer<typeof runSchema>){return this.svc.runReport(p,id,b)}
+ @Post('reports/:id/:step') reportStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'retire'){return this.svc.reportStep(p,id,step)}
  @Get('runs') runData(@CurrentPrincipal() p:Principal){return this.svc.runData(p)}
  @Post('schedules') addSchedule(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(scheduleSchema)) b:z.infer<typeof scheduleSchema>){return this.svc.addSchedule(p,b)}
  @Post('schedules/:id/approve') approveSchedule(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveSchedule(p,id)}

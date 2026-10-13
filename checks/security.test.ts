@@ -6,10 +6,14 @@ import { files, parse, visit, where } from './lib';
 /**
  * Security posture checks for the penetration test scope (docs/certification/pentest-scope.md):
  *  - every route needs a signed-in user (global OIDC guard) unless marked @Public(), and a public route must have its
- *    own guard (service token, API key) — only the health probe is open;
+ *    own guard (service token, API key) — only explicit Kubernetes/compatibility health probes are open;
  *  - every request body goes through a validation pipe (no unvalidated JSON reaches a service).
  */
-const OPEN = new Set(['apps/api/src/platform/platform.controllers.ts:HealthController.health']);
+const OPEN = new Set([
+  'apps/api/src/platform/platform.controllers.ts:HealthController.live',
+  'apps/api/src/platform/platform.controllers.ts:HealthController.ready',
+  'apps/api/src/platform/platform.controllers.ts:HealthController.health'
+]);
 
 const decos = (n: ts.Node) => ((ts.canHaveDecorators(n) ? ts.getDecorators(n) : undefined) ?? []).map(d => (ts.isCallExpression(d.expression) && ts.isIdentifier(d.expression.expression) ? d.expression : null)).filter((x): x is ts.CallExpression => !!x);
 const named = (n: ts.Node, name: string) => decos(n).filter(d => (d.expression as ts.Identifier).text === name);

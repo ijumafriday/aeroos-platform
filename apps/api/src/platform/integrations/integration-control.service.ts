@@ -82,8 +82,8 @@ const migrationPlanSchema=z.object({workflowId:s.min(3),fromVersion:z.number().i
  @Post('instances/:id/health') recordHealth(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(healthSchema)) b:z.infer<typeof healthSchema>){return this.svc.recordHealth(p,id,b)}
  @Get('lifecycle') lifecycle(@CurrentPrincipal() p:Principal){return this.svc.lifecycleData(p)}
  @Post('apis') addApi(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(apiSchema)) b:z.infer<typeof apiSchema>){return this.svc.addApi(p,b)}
- @Post('apis/:id/:step') apiStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'){return this.svc.apiStep(p,id,step)}
  @Post('apis/:id/deprecate') deprecate(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(deprecateSchema)) b:z.infer<typeof deprecateSchema>){return this.svc.deprecateApi(p,id,b)}
+ @Post('apis/:id/:step') apiStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'){return this.svc.apiStep(p,id,step)}
  @Post('subjects') addSubject(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(subjectSchema)) b:z.infer<typeof subjectSchema>){return this.svc.addSubject(p,b)}
  @Post('schemas') addSchema(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(schemaVersionSchema)) b:z.infer<typeof schemaVersionSchema>){return this.svc.addSchemaVersion(p,b)}
  @Post('schemas/:id/approve') approveSchema(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveSchema(p,id)}

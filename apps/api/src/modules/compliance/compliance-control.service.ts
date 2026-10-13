@@ -62,8 +62,8 @@ export class ComplianceControlController { constructor(private readonly svc:Comp
  @Post('authorities/:id/:step') authorityStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'suspend'){return this.svc.profileStep(p,id,step)}
  @Get('requirements') requirementData(@CurrentPrincipal() p:Principal){return this.svc.requirementData(p)}
  @Post('requirements') addRequirement(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(reqSchema)) b:z.infer<typeof reqSchema>){return this.svc.addRequirement(p,b)}
- @Post('requirements/:id/:step') requirementStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'retire'){return this.svc.requirementStep(p,id,step)}
  @Post('requirements/:id/applicability') addApplicability(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(appSchema)) b:z.infer<typeof appSchema>){return this.svc.addApplicability(p,id,b)}
+ @Post('requirements/:id/:step') requirementStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'retire'){return this.svc.requirementStep(p,id,step)}
  @Post('applicability/:id/approve') approveApplicability(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveApplicability(p,id)}
  @Post('evidence') addEvidence(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(evSchema)) b:z.infer<typeof evSchema>){return this.svc.addEvidence(p,b)}
  @Post('evidence/:id/verify') verifyEvidence(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.verifyEvidence(p,id)}

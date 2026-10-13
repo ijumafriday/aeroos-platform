@@ -31,13 +31,17 @@ export function visit(node: ts.Node, fn: (n: ts.Node) => void) {
   node.forEachChild(c => visit(c, fn));
 }
 
-export const where = (sf: ts.SourceFile, n: ts.Node) => `${relative(ROOT, sf.fileName)}:${sf.getLineAndCharacterOfPosition(n.getStart()).line + 1}`;
+export const where = (sf: ts.SourceFile, n: ts.Node) => `${relative(ROOT, sf.fileName).replace(/\\/g, '/')}:${sf.getLineAndCharacterOfPosition(n.getStart()).line + 1}`;
 
 /** String literal → text; template → text with every ${…} replaced by `*`; anything else → null. */
+const unwrapExpression = (n: ts.Expression): ts.Expression =>
+  ts.isParenthesizedExpression(n) || ts.isAsExpression(n) || ts.isSatisfiesExpression(n) ? unwrapExpression(n.expression) : n;
+
 export function literal(n: ts.Expression | undefined): string | null {
   if (!n) return null;
-  if (ts.isStringLiteral(n) || ts.isNoSubstitutionTemplateLiteral(n)) return n.text;
-  if (ts.isTemplateExpression(n)) return n.head.text + n.templateSpans.map(s => '*' + s.literal.text).join('');
+  const e = unwrapExpression(n);
+  if (ts.isStringLiteral(e) || ts.isNoSubstitutionTemplateLiteral(e)) return e.text;
+  if (ts.isTemplateExpression(e)) return e.head.text + e.templateSpans.map(s => '*' + s.literal.text).join('');
   return null;
 }
 
@@ -120,30 +124,58 @@ export function webCalls(): Call[] {
   const calls: Call[] = [];
   for (const f of files('apps/web/src')) {
     const sf = parse(f);
-    const helpers = f.endsWith('lib/api.ts'); // where api/post/download themselves are defined
+    const helpers = f.replace(/\\/g, '/').endsWith('/lib/api.ts'); // where api/post/download themselves are defined
     visit(sf, n => {
       if (!ts.isCallExpression(n) || !ts.isIdentifier(n.expression)) return;
       const name = n.expression.text;
       if (!['api', 'post', 'download'].includes(name) && name !== 'fetch') return;
-      const p = literal(n.arguments[0]);
-      if (p === null && name !== 'fetch' && !helpers) { skippedWebCalls.push(`${name}(${n.arguments[0]?.getText(sf) ?? ''}) ${where(sf, n)}`); return; }
-      if (!p || !p.startsWith('/')) return;
-      if (name === 'api') {
-        const opts = n.arguments[1];
-        let method = 'GET';
-        if (opts && ts.isObjectLiteralExpression(opts)) {
-          for (const prop of opts.properties) {
-            if (ts.isPropertyAssignment(prop) && prop.name.getText(sf) === 'method') {
-              const m = literal(prop.initializer as ts.Expression);
-              if (m === null) skippedWebCalls.push(`non-literal method ${where(sf, n)}`);
-              method = m ?? 'GET';
+
+      const raw = n.arguments[0] as ts.Expression | undefined;
+      const unwrapped = raw ? unwrapExpression(raw) : undefined;
+      const pathExprs: ts.Expression[] = unwrapped && ts.isConditionalExpression(unwrapped)
+        ? [unwrapped.whenTrue, unwrapped.whenFalse]
+        : raw ? [raw] : [];
+
+      const paths = pathExprs.map(e => literal(e)).filter((x): x is string => x !== null);
+      if (!paths.length && name !== 'fetch' && !helpers) {
+        skippedWebCalls.push(`${name}(${n.arguments[0]?.getText(sf) ?? ''}) ${where(sf, n)}`);
+        return;
+      }
+
+      for (const p of paths) {
+        if (!p || !p.startsWith('/')) continue;
+        if (name === 'api') {
+          const opts = n.arguments[1];
+          let method = 'GET';
+          if (opts && ts.isObjectLiteralExpression(opts)) {
+            for (const prop of opts.properties) {
+              if (ts.isPropertyAssignment(prop) && prop.name.getText(sf) === 'method') {
+                const m = literal(prop.initializer as ts.Expression);
+                if (m === null) skippedWebCalls.push(`non-literal method ${where(sf, n)}`);
+                method = m ?? 'GET';
+              }
             }
           }
+          calls.push({ method, path: '/api' + p, where: where(sf, n) });
+        } else if (name === 'post') {
+          calls.push({ method: 'POST', path: '/api' + p, where: where(sf, n) });
+        } else if (name === 'download') {
+          calls.push({ method: 'GET', path: '/api' + p, where: where(sf, n) });
+        } else if (name === 'fetch' && p.startsWith('/api/')) {
+          let method = 'GET';
+          const opts = n.arguments[1];
+          if (opts && ts.isObjectLiteralExpression(opts)) {
+            for (const prop of opts.properties) {
+              if (ts.isPropertyAssignment(prop) && prop.name.getText(sf) === 'method') {
+                const m = literal(prop.initializer as ts.Expression);
+                if (m === null) skippedWebCalls.push(`non-literal fetch method ${where(sf, n)}`);
+                method = m ?? 'GET';
+              }
+            }
+          }
+          calls.push({ method, path: p, where: where(sf, n) });
         }
-        calls.push({ method, path: '/api' + p, where: where(sf, n) });
-      } else if (name === 'post') calls.push({ method: 'POST', path: '/api' + p, where: where(sf, n) });
-      else if (name === 'download') calls.push({ method: 'GET', path: '/api' + p, where: where(sf, n) });
-      else if (name === 'fetch' && p.startsWith('/api/')) calls.push({ method: 'GET', path: p, where: where(sf, n) });
+      }
     });
   }
   return calls;
@@ -185,28 +217,37 @@ export function pythonCalls(): Call[] {
 export interface AuthzUse { kind: string | null; action: string; where: string }
 
 /** The `kind` a resource-building function returns: a literal, or the literal passed for a `kind` parameter. */
-function kindFromBuilder(fn: ts.FunctionLikeDeclaration, call: ts.CallExpression): string | null {
+function kindsFromBuilder(fn: ts.FunctionLikeDeclaration, call: ts.CallExpression): string[] {
   let obj: ts.ObjectLiteralExpression | undefined;
   const body = fn.body;
-  const unwrap = (e: ts.Expression): ts.Expression => (ts.isParenthesizedExpression(e) || ts.isAsExpression(e) ? unwrap(e.expression) : e);
   if (body && !ts.isBlock(body)) {
-    const e = unwrap(body);
+    const e = unwrapExpression(body);
     if (ts.isObjectLiteralExpression(e)) obj = e;
   } else if (body) {
     visit(body, n => {
-      if (!obj && ts.isReturnStatement(n) && n.expression && ts.isObjectLiteralExpression(unwrap(n.expression))) obj = unwrap(n.expression) as ts.ObjectLiteralExpression;
+      if (!obj && ts.isReturnStatement(n) && n.expression) {
+        const e = unwrapExpression(n.expression);
+        if (ts.isObjectLiteralExpression(e)) obj = e;
+      }
     });
   }
   const kindProp = obj?.properties.find(p => (ts.isPropertyAssignment(p) || ts.isShorthandPropertyAssignment(p)) && p.name.getText() === 'kind');
-  if (!kindProp) return null;
-  const v = ts.isShorthandPropertyAssignment(kindProp) ? kindProp.name : unwrap(kindProp.initializer);
-  const lit = literal(v);
-  if (lit) return lit;
-  if (ts.isIdentifier(v)) {
-    const idx = fn.parameters.findIndex(p => p.name.getText() === v.text);
-    return idx >= 0 ? literal(call.arguments[idx]) : null;
-  }
-  return null;
+  if (!kindProp) return [];
+
+  const values = (expr: ts.Expression): string[] => {
+    const e = unwrapExpression(expr);
+    const lit = literal(e);
+    if (lit) return [lit];
+    if (ts.isConditionalExpression(e)) return [...new Set([...values(e.whenTrue), ...values(e.whenFalse)])];
+    if (ts.isIdentifier(e)) {
+      const idx = fn.parameters.findIndex(p => p.name.getText() === e.text);
+      return idx >= 0 && call.arguments[idx] ? values(call.arguments[idx]) : [];
+    }
+    return [];
+  };
+
+  const v = ts.isShorthandPropertyAssignment(kindProp) ? kindProp.name : kindProp.initializer;
+  return values(v);
 }
 
 export function authzUses(): AuthzUse[] {
@@ -224,17 +265,22 @@ export function authzUses(): AuthzUse[] {
       const m = n.expression.name.text;
       if ((m !== 'check' && m !== 'decide') || !/authz$/.test(n.expression.expression.getText(sf))) return;
       const [, res, act] = n.arguments;
-      let kind: string | null = null;
-      if (res && ts.isObjectLiteralExpression(res)) {
-        const k = res.properties.find(p => ts.isPropertyAssignment(p) && p.name.getText(sf) === 'kind') as ts.PropertyAssignment | undefined;
-        kind = k ? literal(k.initializer) : null;
-      } else if (res && ts.isCallExpression(res)) {
-        const callee = ts.isPropertyAccessExpression(res.expression) ? res.expression.name.text : res.expression.getText(sf);
+      const rr = res ? unwrapExpression(res) : undefined;
+      let kinds: string[] = [];
+      if (rr && ts.isObjectLiteralExpression(rr)) {
+        const k = rr.properties.find(p => ts.isPropertyAssignment(p) && p.name.getText(sf) === 'kind') as ts.PropertyAssignment | undefined;
+        const kind = k ? literal(k.initializer) : null;
+        if (kind) kinds = [kind];
+      } else if (rr && ts.isCallExpression(rr)) {
+        const callee = ts.isPropertyAccessExpression(rr.expression) ? rr.expression.name.text : rr.expression.getText(sf);
         const fn = builders.get(callee);
-        if (fn) kind = kindFromBuilder(fn, res);
+        if (fn) kinds = kindsFromBuilder(fn, rr);
       }
       const actions = act && ts.isArrayLiteralExpression(act) ? act.elements.map(e => literal(e)) : [literal(act)];
-      for (const a of actions) if (a) out.push({ kind, action: a, where: where(sf, n) });
+      for (const a of actions) if (a) {
+        if (kinds.length) for (const kind of kinds) out.push({ kind, action: a, where: where(sf, n) });
+        else out.push({ kind: null, action: a, where: where(sf, n) });
+      }
     });
   }
   return out;
@@ -286,7 +332,10 @@ export function eventUse(types: string[]) {
   const produced = new Map<string, string[]>();
   const consumed = new Map<string, string[]>(); // type → module dirs
   const subscribed = new Map<string, Set<string>>(); // module dir → topic prefixes
-  const moduleOf = (f: string) => /apps\/api\/src\/modules\/(\w+)/.exec(f)?.[1] ?? /apps\/(\w+)\//.exec(f)?.[1] ?? relative(ROOT, f);
+    const moduleOf = (f: string) => {
+      const n = relative(ROOT, f).replace(/\\/g, '/');
+      return /apps\/api\/src\/modules\/(\w+)/.exec(n)?.[1] ?? /apps\/(\w+)\//.exec(n)?.[1] ?? n;
+    };
   const sources = [...files('apps/api/src'), ...files('packages').filter(f => !f.includes('/contracts/')), ...files('apps/worker/src')];
   for (const f of sources) {
     const sf = parse(f);
@@ -346,8 +395,14 @@ export function sqlSchema(root = ROOT): Map<string, Set<string>> {
     for (const stmt of sql.split(';').map(x => x.trim()).filter(Boolean)) {
       let m: RegExpExecArray | null;
       if ((m = /^CREATE TABLE\s+(?:IF NOT EXISTS\s+)?([\w."]+)\s*\(([\s\S]*)\)[^)]*$/i.exec(stmt))) {
-        const cols = new Set<string>();
-        for (const p of splitTop(m[2])) { const w = p.split(/\s+/)[0]; if (w && !CONSTRAINT.test(w)) cols.add(id(w)); }
+        const parts = splitTop(m[2]);
+        const like = parts.map(p => /^LIKE\s+([\w."]+)/i.exec(p)).find(Boolean);
+        const cols = new Set<string>(like ? [...(tables.get(id(like[1])) ?? [])] : []);
+        for (const p of parts) {
+          if (/^LIKE\s+/i.test(p)) continue;
+          const w = p.split(/\s+/)[0];
+          if (w && !CONSTRAINT.test(w)) cols.add(id(w));
+        }
         tables.set(id(m[1]), cols);
       } else if ((m = /^ALTER TABLE\s+(?:IF EXISTS\s+)?(?:ONLY\s+)?([\w."]+)\s+([\s\S]+)$/i.exec(stmt))) {
         let t = id(m[1]);

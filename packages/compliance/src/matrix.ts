@@ -112,7 +112,7 @@ export const COMPLIANCE_MATRIX: MatrixRow[] = [
     exposition: { document: 'CAME', section: '1.5 Work packages and maintenance contracts' }, status: 'IMPLEMENTED',
     implementation: 'Work packages from due items, hangar slot and parts check before release; one task card per item; the package completes only with a CRS for every item.',
     evidence: {
-      tests: [T('packages/mro-domain/src/maintenance.test.ts', 'release requires a slot'), T('packages/mro-domain/src/maintenance.test.ts', 'the package completes when every item has a CRS')],
+      tests: [T('packages/mro-domain/src/maintenance.test.ts', 'release requires slot'), T('packages/mro-domain/src/maintenance.test.ts', 'the package completes when every item has a CRS')],
       policies: ['work_package'], routes: ['/camo/work-packages'], auditActions: ['wp.created', 'wp.planned', 'wp.released']
     }
   },

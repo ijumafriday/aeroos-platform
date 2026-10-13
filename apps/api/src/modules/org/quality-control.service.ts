@@ -143,8 +143,8 @@ export class QualityControlController {
   @Get('summary') summary(@CurrentPrincipal() p:Principal){return this.svc.summary(p)}
   @Get('programmes') programmes(@CurrentPrincipal() p:Principal){return this.svc.programmeData(p)}
   @Post('programmes') addProgramme(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(programmeSchema)) b:z.infer<typeof programmeSchema>){return this.svc.addProgramme(p,b)}
-  @Post('programmes/:id/:step') programmeStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'close'){return this.svc.programmeStep(p,id,step)}
   @Post('programmes/:id/items') addItem(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(itemSchema)) b:z.infer<typeof itemSchema>){return this.svc.addProgrammeItem(p,id,b)}
+  @Post('programmes/:id/:step') programmeStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'|'close'){return this.svc.programmeStep(p,id,step)}
   @Post('items/:id/schedule') schedule(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.scheduleItem(p,id)}
   @Get('competence') competence(@CurrentPrincipal() p:Principal){return this.svc.competenceData(p)}
   @Post('competence') addQualification(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(qualificationSchema)) b:z.infer<typeof qualificationSchema>){return this.svc.addQualification(p,b)}
@@ -156,10 +156,10 @@ export class QualityControlController {
   @Post('visits/:id/start') startVisit(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.startVisit(p,id)}
   @Post('visits/:id/checklist') checklist(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(checklistSchema)) b:z.infer<typeof checklistSchema>){return this.svc.addChecklist(p,id,b)}
   @Post('visits/:id/complete') completeVisit(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(completeVisitSchema)) b:z.infer<typeof completeVisitSchema>){return this.svc.completeVisit(p,id,b)}
-  @Post('visits/:id/review') reviewVisit(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body() b:{note:string}){return this.svc.reviewVisit(p,id,b.note??'')}
+  @Post('visits/:id/review') reviewVisit(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(z.object({note:z.string().max(2000).optional()}))) b:{note?:string}){return this.svc.reviewVisit(p,id,b.note??'')}
   @Get('assurance') assurance(@CurrentPrincipal() p:Principal){return this.svc.assuranceData(p)}
   @Post('extensions') extension(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(extensionSchema)) b:z.infer<typeof extensionSchema>){return this.svc.requestExtension(p,b)}
-  @Post('extensions/:id/decision') extensionDecision(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body() b:{approve:boolean;note:string}){return this.svc.decideExtension(p,id,!!b.approve,b.note??'')}
+  @Post('extensions/:id/decision') extensionDecision(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(z.object({approve:z.boolean(),note:z.string().max(2000).optional()}))) b:{approve:boolean;note?:string}){return this.svc.decideExtension(p,id,b.approve,b.note??'')}
   @Post('trends') trend(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(trendSchema)) b:z.infer<typeof trendSchema>){return this.svc.addTrend(p,b)}
   @Post('trends/:id/approve') approveTrend(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveTrend(p,id)}
   @Post('reviews') review(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(reviewSchema)) b:z.infer<typeof reviewSchema>){return this.svc.addReview(p,b)}

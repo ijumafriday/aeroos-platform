@@ -69,15 +69,15 @@ export class ReliabilityControlController{
  @Get('summary') summary(@CurrentPrincipal() p:Principal){return this.svc.summary(p)}
  @Get('programmes') programmes(@CurrentPrincipal() p:Principal){return this.svc.programmeData(p)}
  @Post('programmes') addProgramme(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(programmeSchema)) b:z.infer<typeof programmeSchema>){return this.svc.addProgramme(p,b)}
- @Post('programmes/:id/:step') programmeStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'){return this.svc.programmeStep(p,id,step)}
  @Post('programmes/:id/metrics') metric(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(metricSchema)) b:z.infer<typeof metricSchema>){return this.svc.addMetric(p,id,b)}
+ @Post('programmes/:id/:step') programmeStep(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Param('step') step:'submit'|'approve'|'activate'){return this.svc.programmeStep(p,id,step)}
  @Post('metrics/:id/approve') approveMetric(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveMetric(p,id)}
  @Get('metrics') metrics(@CurrentPrincipal() p:Principal){return this.svc.metricsData(p)}
  @Post('metrics/:id/measurements') measure(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(measureSchema)) b:z.infer<typeof measureSchema>){return this.svc.measure(p,id,b)}
  @Post('measurements/:id/approve') approveMeasurement(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveMeasurement(p,id)}
  @Post('alerts/:id/investigations') investigate(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(investigationSchema)) b:z.infer<typeof investigationSchema>){return this.svc.investigate(p,id,b)}
  @Post('investigations/:id/analyse') analyse(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(analysisSchema)) b:z.infer<typeof analysisSchema>){return this.svc.analyse(p,id,b)}
- @Post('alerts/:id/close') closeAlert(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body() b:{evidenceRef?:string}){return this.svc.closeAlert(p,id,b.evidenceRef??'')}
+ @Post('alerts/:id/close') closeAlert(@CurrentPrincipal() p:Principal,@Param('id') id:string,@Body(new ZodPipe(z.object({evidenceRef:z.string().trim().min(1).max(500).optional()}))) b:{evidenceRef?:string}){return this.svc.closeAlert(p,id,b.evidenceRef??'')}
  @Get('condition') condition(@CurrentPrincipal() p:Principal){return this.svc.conditionData(p)}
  @Post('condition/sources') source(@CurrentPrincipal() p:Principal,@Body(new ZodPipe(sourceSchema)) b:z.infer<typeof sourceSchema>){return this.svc.addSource(p,b)}
  @Post('condition/sources/:id/approve') approveSource(@CurrentPrincipal() p:Principal,@Param('id') id:string){return this.svc.approveSource(p,id)}
