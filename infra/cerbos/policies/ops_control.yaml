@@ -1,0 +1,23 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: ops_control
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller", "flight_crew", "quality_manager", "auditor", "camo_manager", "amo_engineer", "records_officer", "records_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["approve"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

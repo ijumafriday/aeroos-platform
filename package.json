@@ -1,0 +1,37 @@
+{
+  "name": "aeroos-platform",
+  "version": "0.50.0",
+  "private": true,
+  "description": "AeroOS \u2014 aviation enterprise platform (Flight Ops / CAMO / Part-145 / Organization Core)",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "test": "nx run-many -t test",
+    "lint": "eslint .",
+    "dev": "nx run-many -t dev --parallel=3 --projects=@aeroos/api,@aeroos/worker,@aeroos/web",
+    "infra:up": "docker compose up -d postgres kafka temporal temporal-ui keycloak cerbos minio openbao openbao-init",
+    "infra:down": "docker compose down",
+    "up": "docker compose up --build",
+    "down": "docker compose down",
+    "policies:test": "docker run --rm -v ./infra/cerbos/policies:/policies ghcr.io/cerbos/cerbos:0.39.0 compile /policies",
+    "e2e": "pnpm --filter @aeroos/e2e e2e",
+    "observability:up": "docker compose --profile observability up --build",
+    "check": "tsx --test checks/*.test.ts",
+    "assurance:dataset": "python3 scripts/assurance/qualify-dataset.py",
+    "assurance:idempotency": "scripts/assurance/concurrency-idempotency.sh",
+    "assurance:load": "scripts/assurance/run-load.sh major-airline"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.15.0",
+    "@types/node": "22.10.1",
+    "eslint": "9.15.0",
+    "nx": "20.1.4",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.16.0"
+  }
+}

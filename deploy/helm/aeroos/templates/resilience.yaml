@@ -1,0 +1,89 @@
+# Availability controls shared by production workloads.
+{{- range $name := list "worker" "web" "optimiser" }}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: aeroos-{{ $name }}
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+{{- end }}
+{{- if .Values.autoscaling.enabled }}
+{{- range $name := list "api" "worker" "web" "optimiser" }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ $.Release.Name }}-{{ $name }}
+  minReplicas: {{ index $.Values.autoscaling $name "minReplicas" }}
+  maxReplicas: {{ index $.Values.autoscaling $name "maxReplicas" }}
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies: [{ type: Percent, value: 25, periodSeconds: 60 }]
+    scaleUp:
+      stabilizationWindowSeconds: 30
+      policies: [{ type: Percent, value: 100, periodSeconds: 60 }, { type: Pods, value: 2, periodSeconds: 60 }]
+      selectPolicy: Max
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ index $.Values.autoscaling $name "targetCPUUtilizationPercentage" }}
+{{- end }}
+{{- end }}
+{{- if .Values.networkPolicy.enabled }}
+---
+# Default deny egress. Explicit application policies below allow DNS and only the service ports AeroOS uses.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}-default-deny-egress
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/part-of: aeroos
+  policyTypes: [Egress]
+  egress: []
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}-application-egress
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/part-of: aeroos
+  policyTypes: [Egress]
+  egress:
+    # AeroOS and self-hosted dependencies in this namespace.
+    - to:
+        - podSelector: {}
+    # DNS may run in kube-system or another namespace.
+    - to:
+        - namespaceSelector: {}
+      ports:
+        - { protocol: UDP, port: 53 }
+        - { protocol: TCP, port: 53 }
+    {{- range .Values.networkPolicy.externalCidrs }}
+    - to: [{ ipBlock: { cidr: {{ . | quote }} } }]
+      ports:
+        - { protocol: TCP, port: 443 }
+        - { protocol: TCP, port: 5432 }
+        - { protocol: TCP, port: 9092 }
+        - { protocol: TCP, port: 7233 }
+        - { protocol: TCP, port: 8200 }
+        - { protocol: TCP, port: 9000 }
+    {{- end }}
+{{- end }}

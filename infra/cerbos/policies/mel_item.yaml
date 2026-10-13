@@ -1,0 +1,40 @@
+# Who may act on MEL deferrals. Regulatory calculations (deadlines, extension eligibility) are
+# NOT here — they live in the compliance engine. Cerbos answers only "may this person do this".
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: mel_item
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "occ_controller", "flight_crew", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["raise"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "occ_controller", "flight_crew", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["generate_eo"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.status == "OPEN"
+
+    - actions: ["approve_extension"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.status == "OPEN"

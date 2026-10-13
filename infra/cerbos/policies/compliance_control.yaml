@@ -1,0 +1,23 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: compliance_control
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "quality_manager", "camo_manager", "accountable_manager", "platform_admin"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["approve"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "accountable_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

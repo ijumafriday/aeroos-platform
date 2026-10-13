@@ -1,0 +1,30 @@
+{
+  "name": "@aeroos/worker",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Temporal worker: durable timers and long-running regulated processes (MEL escalation)",
+  "main": "dist/worker.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "dev": "tsc -p tsconfig.build.json && node dist/worker.js",
+    "start": "node dist/worker.js"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.53.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.55.0",
+    "@opentelemetry/resources": "^1.28.0",
+    "@opentelemetry/sdk-node": "^0.55.0",
+    "@opentelemetry/sdk-trace-base": "^1.28.0",
+    "@opentelemetry/semantic-conventions": "^1.28.0",
+    "@temporalio/activity": "^1.11.5",
+    "@temporalio/interceptors-opentelemetry": "^1.11.5",
+    "@temporalio/worker": "^1.11.5",
+    "@temporalio/workflow": "^1.11.5"
+  }
+}

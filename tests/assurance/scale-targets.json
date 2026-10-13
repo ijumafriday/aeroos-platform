@@ -1,0 +1,23 @@
+{
+  "profile": "major-airline",
+  "minimums": {
+    "operators": 1,
+    "aircraft": 250,
+    "personnel": 5000,
+    "flights": 500000,
+    "audit_entries": 5000000,
+    "documents": 1000000,
+    "components": 1000000,
+    "work_packages": 25000
+  },
+  "load": {
+    "concurrent_users": 200,
+    "mixed_read_p95_ms": 1200,
+    "mixed_read_p99_ms": 3000,
+    "max_error_rate": 0.005
+  },
+  "recovery": {
+    "readiness_recovery_seconds": 120,
+    "restore_drill_rto_seconds": 1800
+  }
+}

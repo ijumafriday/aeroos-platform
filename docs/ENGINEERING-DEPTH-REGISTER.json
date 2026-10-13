@@ -1,0 +1,1481 @@
+{
+  "product": "AeroOS",
+  "domain": "Engineering",
+  "registerVersion": "1.0",
+  "platformVersion": "0.43.0",
+  "policy": "Software-depth implementation evidence only; operational/operator acceptance remains governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "ENG-001",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-002",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-003",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-004",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-005",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-006",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-007",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-008",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-009",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-010",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-011",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-012",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-013",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-014",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-015",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-016",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-017",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-018",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-019",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-020",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-021",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-022",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-023",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-024",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-025",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-026",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-027",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-028",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-029",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-030",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-031",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-032",
+      "category": "Configuration governance",
+      "capability": "Configuration governance control 32",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-033",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-034",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-035",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-036",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-037",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-038",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-039",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-040",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-041",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-042",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-043",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-044",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-045",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-046",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-047",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-048",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-049",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-050",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-051",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-052",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-053",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-054",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-055",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-056",
+      "category": "Interchangeability and effectivity",
+      "capability": "Interchangeability and effectivity control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts"
+      ]
+    },
+    {
+      "id": "ENG-057",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-058",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-059",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-060",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-061",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-062",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-063",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-064",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-065",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-066",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-067",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-068",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-069",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-070",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-071",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-072",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-073",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-074",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-075",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-076",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-077",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-078",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-079",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-080",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-081",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-082",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-083",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-084",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-085",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-086",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-087",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-088",
+      "category": "Engineering order lifecycle",
+      "capability": "Engineering order lifecycle control 32",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-089",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-090",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-091",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-092",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-093",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-094",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-095",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-096",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-097",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-098",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-099",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-100",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-101",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-102",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-103",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-104",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-105",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-106",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-107",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-108",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-109",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-110",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-111",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-112",
+      "category": "Service bulletin programme",
+      "capability": "Service bulletin programme control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-113",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-114",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-115",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-116",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-117",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-118",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-119",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-120",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-121",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-122",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-123",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-124",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-125",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-126",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-127",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-128",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-129",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-130",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-131",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-132",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-133",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-134",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-135",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    },
+    {
+      "id": "ENG-136",
+      "category": "Structural damage mapping",
+      "capability": "Structural damage mapping control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Quality audits and findings: planned and raised by auditors and the quality manager; read by the managers
+# and the areas audited.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: quality_audit
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager", "storekeeper", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

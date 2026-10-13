@@ -1,0 +1,60 @@
+{
+  "name": "@aeroos/api",
+  "version": "0.50.0",
+  "private": true,
+  "description": "AeroOS core platform \u2014 NestJS modular monolith (Fastify)",
+  "main": "dist/main.js",
+  "files": [
+    "dist",
+    "db",
+    "contracts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "nest start --watch",
+    "start": "node --enable-source-maps dist/main.js",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/audit": "workspace:*",
+    "@aeroos/compliance": "workspace:*",
+    "@aeroos/contracts": "workspace:*",
+    "@aeroos/kernel": "workspace:*",
+    "@aeroos/mro-domain": "workspace:*",
+    "@aeroos/ops-domain": "workspace:*",
+    "@aeroos/org-domain": "workspace:*",
+    "@aeroos/signing": "workspace:*",
+    "@aws-sdk/client-s3": "3.693.0",
+    "@aws-sdk/s3-request-presigner": "3.693.0",
+    "@nestjs/common": "^10.4.15",
+    "@nestjs/core": "^10.4.15",
+    "@nestjs/platform-fastify": "^10.4.15",
+    "@nestjs/platform-ws": "^10.4.15",
+    "@nestjs/websockets": "^10.4.15",
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "0.53.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "0.55.0",
+    "@opentelemetry/exporter-trace-otlp-http": "0.55.0",
+    "@opentelemetry/resources": "1.28.0",
+    "@opentelemetry/sdk-metrics": "1.28.0",
+    "@opentelemetry/sdk-node": "0.55.0",
+    "@opentelemetry/semantic-conventions": "1.28.0",
+    "@temporalio/client": "^1.11.5",
+    "@temporalio/interceptors-opentelemetry": "^1.24.0",
+    "drizzle-orm": "^0.36.4",
+    "jose": "^5.9.6",
+    "kafkajs": "^2.2.4",
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.8",
+    "@types/pg": "^8.11.10",
+    "@types/ws": "^8.5.13"
+  }
+}

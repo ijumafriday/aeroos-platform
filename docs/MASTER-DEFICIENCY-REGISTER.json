@@ -1,0 +1,1316 @@
+{
+  "product": "AeroOS Platform",
+  "registerVersion": "0.49.0",
+  "platformVersion": "0.49.0",
+  "statuses": [
+    "MISSING",
+    "PARTIAL",
+    "COMPLETE",
+    "EXTERNAL"
+  ],
+  "policy": {
+    "complete": "May be COMPLETE only when acceptance criteria are met and repository/runtime evidence exists.",
+    "partial": "Implemented in part but acceptance criteria are not fully met.",
+    "missing": "No production-complete capability exists.",
+    "external": "Closure requires operator, authority, assessor, vendor, or external system evidence; AeroOS must still define the interface/acceptance boundary."
+  },
+  "items": [
+    {
+      "id": "D001",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Deterministic dependency resolution and frozen builds",
+      "status": "MISSING",
+      "acceptance": "Authentic pnpm-lock.yaml committed; clean pnpm@9.15.0 frozen install/build/test succeeds from clean checkout; release gate passes.",
+      "evidence": [
+        "scripts/dependency-gate.sh",
+        "scripts/release-check.sh"
+      ],
+      "notes": "Controls exist, but the authentic lockfile is absent."
+    },
+    {
+      "id": "D002",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "SBOM, signed images and release provenance",
+      "status": "PARTIAL",
+      "acceptance": "Every production image and source release has SBOM, provenance attestation, immutable digest, verifiable signature, and reproducibility evidence retained.",
+      "evidence": [
+        ".github/workflows/release.yml",
+        "docs/RELEASE-EVIDENCE.md",
+        "scripts/package-release.py",
+        "scripts/release/build-evidence-index.py",
+        "scripts/release/verify-release-evidence.py",
+        "scripts/reproducible-build.sh"
+      ],
+      "notes": "Release CI now retains a consolidated evidence bundle binding the deterministic source archive to its SHA-256/Sigstore bundle and all four immutable image digests with successful signature-verification output. Still PARTIAL until a real production release produces and retains that evidence."
+    },
+    {
+      "id": "D003",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Database-enforced tenant isolation / RLS",
+      "status": "PARTIAL",
+      "acceptance": "All tenant-owned business/configuration tables use RLS and runtime tenant context; integration tests prove cross-tenant denial.",
+      "evidence": [
+        "apps/api/db/migrations/0030_platform_tenant_rls.sql",
+        "apps/api/db/migrations/0043_ops_reference_tenant_scope.sql",
+        "apps/api/src/modules/ops/dispatch.service.ts",
+        "checks/tenant-boundary.test.ts",
+        "tests/integration/tenant-rls.sql",
+        "docs/adr/0045-p0-operations-reference-tenant-scope.md"
+      ],
+      "notes": "0.36 removes the code/schema defect found in 0.35: aircraft performance/mass references, runway limits, routes and permit rules are operator-owned composite-key tables with FORCE RLS; dispatch and regulated-data hashing are tenant-scoped; a deliberate cross-tenant runtime SQL test is included. D003 remains PARTIAL until that integration test is executed successfully against PostgreSQL/PostGIS and retained as evidence."
+    },
+    {
+      "id": "D004",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Security hardening baseline",
+      "status": "PARTIAL",
+      "acceptance": "Enforcing CSP, distributed rate limits, workload identities, signed images, mandatory SAST/IaC/container/license gates, secret rotation and independent validation are all operational.",
+      "evidence": [
+        ".github/security/exceptions.json",
+        ".github/security/license-policy.json",
+        ".github/workflows/assurance-evidence.yml",
+        ".github/workflows/security.yml",
+        "deploy/helm/aeroos",
+        "docs/SECURITY-EXCEPTIONS.md",
+        "infra/cerbos/policies",
+        "scripts/release-check.sh",
+        "scripts/security/secret-rotation-drill.sh",
+        "scripts/security/verify-exceptions.py"
+      ],
+      "notes": "Baseline controls remain operational in code; security exceptions are now exact, narrow, expiring and scanner-bound, while CodeQL and secret findings are non-waivable. Independent validation and retained operational rotation evidence remain outstanding."
+    },
+    {
+      "id": "D005",
+      "priority": "P0",
+      "domain": "Airworthiness / Engineering / Operations",
+      "title": "Regulated master-data approval and effectivity",
+      "status": "PARTIAL",
+      "acceptance": "All regulated datasets used by production actions are versioned, independently validated/approved, effective-dated, provenance-hashed, and production contains no illustrative/dummy operational values.",
+      "evidence": [
+        "apps/api/db/migrations/0038_regulated_master_data.sql",
+        "apps/api/src/modules/compliance/master-data.service.ts",
+        "apps/api/db/migrations/0041_regulated_data_integrity.sql",
+        "apps/api/src/modules/compliance/regulated-data.catalog.ts",
+        "scripts/verify-p0-regulatory.py",
+        "apps/api/db/migrations/0042_regulated_data_hygiene.sql",
+        "docs/adr/0044-p0-regulated-data-hygiene-and-tenant-scope.md"
+      ],
+      "notes": "0.36 completes tenant scoping of the regulated Operations references identified in D003. Production still rejects demo/unprovenanced datasets and live hashes bind effective approvals to the exact tenant data. D005 remains PARTIAL until a real production tenant loads, independently approves and activates its source datasets with retained acceptance evidence."
+    },
+    {
+      "id": "D006",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Scale benchmarks and failure testing",
+      "status": "PARTIAL",
+      "acceptance": "Representative airline dataset is loaded and signed benchmark evidence records p50/p95/p99, throughput, soak and failure/recovery results against declared targets.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "scripts/assurance",
+        "scripts/assurance/evidence.py",
+        "tests/assurance",
+        "tests/load"
+      ],
+      "notes": "Benchmark/failure tooling now emits signed retained evidence in CI. Representative successful runs are still required."
+    },
+    {
+      "id": "D007",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "HA, autoscaling, failover, SLOs and chaos",
+      "status": "PARTIAL",
+      "acceptance": "HA topology, HPA/PDB, dependency failover, SLO/error budgets, paging alerts and controlled chaos drills are executed and evidenced in representative environments.",
+      "evidence": [
+        "deploy/helm/aeroos",
+        "tests/assurance",
+        "scripts/assurance"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D008",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "OpenAPI/AsyncAPI/webhooks/SDK",
+      "status": "PARTIAL",
+      "acceptance": "Stable API/event contracts, publishable SDKs, signed webhooks, deprecation policy, sandbox, usage limits and developer documentation are production-ready.",
+      "evidence": [
+        "apps/api/contracts",
+        "packages/sdk",
+        "apps/api/src/modules/platform"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D009",
+      "priority": "P1",
+      "domain": "Engineering",
+      "title": "Aircraft configuration and effectivity",
+      "status": "PARTIAL",
+      "acceptance": "Allowable/actual configuration, effectivity, interchangeability, modification state, software/config items and fleet conformity operate end-to-end with approval evidence.",
+      "evidence": [
+        "apps/api/db/migrations/0032_engineering_configuration.sql",
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx",
+        "docs/ENGINEERING-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.43.0 adds governed software-depth implementation. Remains PARTIAL pending approved operator/OEM data, representative fleet effectivity, production embodiment history and operational acceptance evidence."
+    },
+    {
+      "id": "D010",
+      "priority": "P1",
+      "domain": "Maintenance",
+      "title": "Heavy/base maintenance planning and production control",
+      "status": "PARTIAL",
+      "acceptance": "Checks support critical path, zones/access, labour/shift loading, tooling, kitting, non-routines, shop/outsource work, handover, TAT forecasting and customer progress reporting.",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts",
+        "apps/api/db/migrations/0039_p1_closure.sql",
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/programme/WorkPackages.tsx",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Maintenance software scope is implemented through the MNT depth register; COMPLETE remains blocked on production-like runtime/acceptance evidence."
+    },
+    {
+      "id": "D011",
+      "priority": "P1",
+      "domain": "Maintenance + Supply / Platform",
+      "title": "Offline/mobile mechanic and stores",
+      "status": "PARTIAL",
+      "acceptance": "Offline-first field client supports encrypted local work, evidence/scanning, robust sync/conflict resolution, trusted-device controls and full mechanic/store ergonomics while regulated signatures remain authoritative.",
+      "evidence": [
+        "apps/web",
+        "apps/api/db/migrations/0035_offline_field.sql"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D012",
+      "priority": "P1",
+      "domain": "Technical Records",
+      "title": "Full technical-records subsystem",
+      "status": "PARTIAL",
+      "acceptance": "Records cover binders/completeness plus OCR/classification, duplicate/missing-page detection, historical bulk ingest, retention/legal hold and lease/redelivery verification.",
+      "evidence": [
+        "apps/api/src/modules/records",
+        "apps/api/db/migrations/0034_records_supply_depth.sql",
+        "docs/RECORDS-DEPTH-REGISTER.json",
+        "apps/api/src/modules/records/records.service.ts",
+        "apps/api/src/modules/records/records-control.service.ts",
+        "apps/web/src/features/records/TechnicalRecords.tsx"
+      ],
+      "notes": "Technical Records now has a 59-capability software baseline covering binders, intake/classification, custody, lease/redelivery, trace, retention/legal hold and package delivery. Production/operator acceptance remains outstanding."
+    },
+    {
+      "id": "D013",
+      "priority": "P1",
+      "domain": "Supply Chain",
+      "title": "Deep aviation supply-chain capability",
+      "status": "PARTIAL",
+      "acceptance": "Inventory, repair, exchange/loan, bins/lots/serials, shelf-life/quarantine plus cycle count, pick-pack-ship, replenishment, consignment, AOG logistics and forecasting operate end-to-end.",
+      "evidence": [
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Supply software depth now covers controlled inventory, fulfillment, replenishment, consignment, supplier sourcing, warranty recovery and AOG logistics; retained runtime/operator acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D014",
+      "priority": "P1",
+      "domain": "Operations",
+      "title": "Dispatch and flight-planning integration depth",
+      "status": "PARTIAL",
+      "acceptance": "Provider-backed weather/NOTAM/nav/performance/OFP/EDTO/redispatch/filing/flight-watch/EFB flows have provider failover, acknowledgement and governed data provenance.",
+      "evidence": [
+        "apps/api/contracts/openapi.json",
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operational-planning.service.ts",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 adds governed provider health/failover state, AIRAC lifecycle, EFB distribution/acknowledgement, DCS/load message acknowledgement and runway-state control. Remains PARTIAL until production weather/NOTAM/flight-planning/EFB/DCS providers are qualified end-to-end and operational acceptance evidence is retained."
+    },
+    {
+      "id": "D015",
+      "priority": "P1",
+      "domain": "Crew",
+      "title": "Crew pairing, reserve, fatigue and cabin crew",
+      "status": "PARTIAL",
+      "acceptance": "Flight and cabin pairing/rostering, reserve, bidding/preferences, validated FRMS, cabin positions/languages/service qualifications and day-of-ops recovery are complete.",
+      "evidence": [
+        "apps/api/src/modules/ops/rostering.service.ts",
+        "apps/api/src/modules/ops/operational-planning.service.ts",
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 adds governed positioning, formal bid/award, training-resource and payroll-control depth alongside the existing pairing/reserve/fatigue/cabin workflows. Remains PARTIAL until operator-specific contracts, validated FRMS evidence and production crew datasets prove the complete planning model."
+    },
+    {
+      "id": "D016",
+      "priority": "P1",
+      "domain": "Platform + domain adapters",
+      "title": "Data migration framework",
+      "status": "PARTIAL",
+      "acceptance": "Governed import framework includes production adapters/reconciliation packs for target incumbent systems and historical datasets, with resumability and signed pre/post reconciliation.",
+      "evidence": [
+        "apps/api/src/modules/platform",
+        "apps/api/src/modules/ops/ops.migration.ts",
+        "apps/api/src/modules/amo/amo.migration.ts"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D017",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Enterprise search",
+      "status": "PARTIAL",
+      "acceptance": "Search remains authorization-aware and scales to very large document/record estates with dedicated indexing, OCR content indexing, facets, analytics and freshness guarantees.",
+      "evidence": [
+        "apps/api/src/modules/search",
+        "apps/web"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D018",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Configurable rules/workflow engine",
+      "status": "PARTIAL",
+      "acceptance": "Versioned bounded rules support notifications/routing/reviews with auditability and cannot override regulated hard constraints; configurable approval/checklist workflows are safely supported.",
+      "evidence": [
+        "apps/api/db/migrations/0037_enterprise_controls.sql",
+        "apps/api/src/modules/platform"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D019",
+      "priority": "P2",
+      "domain": "Cross-domain UX",
+      "title": "Enterprise UX / role views / saved filters / bulk actions",
+      "status": "PARTIAL",
+      "acceptance": "Role-aware landing, saved views, advanced grids, virtualization, keyboard workflows, safe bulk actions, configurable dashboards and accessibility acceptance are production-grade.",
+      "evidence": [
+        "apps/web/src/features/business/Home.tsx",
+        "apps/web/src/components/WorkspaceViews.tsx"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D020",
+      "priority": "P2",
+      "domain": "Commercial / Finance",
+      "title": "Deeper finance integration",
+      "status": "PARTIAL",
+      "acceptance": "Operational sub-ledger supports cost accounting/accruals/inventory valuation/FX as required and production ERP connectors reconcile accepted/rejected postings without duplicating statutory ERP.",
+      "evidence": [
+        "apps/api/src/modules/org/finance.service.ts",
+        "apps/api/db/migrations/0040_p2_closure.sql"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D021",
+      "priority": "P0",
+      "domain": "Compliance",
+      "title": "FAA / multi-authority compliance",
+      "status": "PARTIAL",
+      "acceptance": "Production-qualified FAA rulepack and required authority packs have independent validation, approval, version/effectivity and regression evidence.",
+      "evidence": [
+        "packages/compliance/rulepack-source-manifest.json",
+        "packages/compliance/src/rulepack-manifest.ts",
+        "apps/api/src/modules/compliance/compliance.service.ts",
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml",
+        "docs/COMPLIANCE-DEPTH-REGISTER.json",
+        "scripts/verify-compliance-depth.py"
+      ],
+      "notes": "Multi-authority software governance now includes independently approved authority profiles, source revision/SHA-256 provenance, requirement and applicability lifecycle, verified evidence, regulatory-change impact/action control and periodic compliance review. Exact shipped rulepacks remain fingerprinted and production-gated. FAA remains a draft candidate pending independent authority validation/approval; certification/operator acceptance remains external under D022 and no KCAA or other authority pack is fabricated."
+    },
+    {
+      "id": "D022",
+      "priority": "P0",
+      "domain": "Compliance / Platform",
+      "title": "Certification and operator acceptance evidence",
+      "status": "EXTERNAL",
+      "acceptance": "Operator exposition mapping, UAT, parallel-run, authority/customer acceptance and signed go-live evidence are retained per deployment.",
+      "evidence": [],
+      "notes": "Requires operator/authority participation."
+    },
+    {
+      "id": "D023",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Independent penetration test and remediation",
+      "status": "EXTERNAL",
+      "acceptance": "Independent penetration test is completed, findings remediated/risk-accepted, and retest evidence retained before production approval.",
+      "evidence": [],
+      "notes": "Must be performed by an independent assessor."
+    },
+    {
+      "id": "D024",
+      "priority": "P1",
+      "domain": "Operations / Commercial",
+      "title": "ACMI / wet-lease operating model",
+      "status": "PARTIAL",
+      "acceptance": "Aircraft, crew, maintenance, operational-control and records responsibilities can be represented across AOCs/contracts without violating tenant/authority boundaries.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 implements tenant-scoped ACMI contracts with AOC identities, aircraft scope, effective dates and explicit operational-control, crew, maintenance, continuing-airworthiness, records and occurrence-reporting responsibilities. Remains PARTIAL pending operator/authority use of real approved contracts and cross-operator boundary acceptance."
+    },
+    {
+      "id": "D025",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Authorized cross-operator group views",
+      "status": "MISSING",
+      "acceptance": "Group users can see explicitly authorized cross-operator projections with purpose-bound authorization and no implicit tenant bypass.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D026",
+      "priority": "P1",
+      "domain": "Crew",
+      "title": "Surface transport / positioning",
+      "status": "PARTIAL",
+      "acceptance": "Surface positioning legs, connections, delays and duty/rest implications integrate with pairing/roster legality.",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 adds tenant-isolated surface positioning legs with providers/bookings, connections, delays, duty impact, unavailability checks and connection-legality recalculation. Remains PARTIAL until live surface-transport/provider feeds and operator legality acceptance are exercised."
+    },
+    {
+      "id": "D027",
+      "priority": "P1",
+      "domain": "Crew",
+      "title": "Biomathematical fatigue modelling",
+      "status": "PARTIAL",
+      "acceptance": "Validated fatigue model integration produces traceable scores/thresholds with model/version provenance and operational decision controls.",
+      "evidence": [
+        "apps/api/src/modules/ops/operational-planning.service.ts"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D028",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Dedicated enterprise search engine",
+      "status": "MISSING",
+      "acceptance": "Pluggable OpenSearch-equivalent indexing supports millions of records/documents, permissions-aware indexing, reindexing and freshness monitoring.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D029",
+      "priority": "P2",
+      "domain": "Cross-domain UX",
+      "title": "Advanced enterprise grids",
+      "status": "MISSING",
+      "acceptance": "High-volume tables support virtualization, user columns, grouping, pivoting, export and persisted views without compromising authorization.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D030",
+      "priority": "P2",
+      "domain": "Maintenance / Operations UX",
+      "title": "Advanced interactive Gantt scheduling",
+      "status": "MISSING",
+      "acceptance": "Interactive Gantt supports dependencies, resource conflicts, drag/drop rescheduling, critical path and authorization-aware updates.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D031",
+      "priority": "P1",
+      "domain": "Maintenance",
+      "title": "Component/engine shop maintenance",
+      "status": "PARTIAL",
+      "acceptance": "Shop routing, teardown, findings, piece-parts, repair schemes, test-cell/results, assembly and release are controlled end-to-end.",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "packages/mro-domain/src/maintenance-control.ts",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Engine/component shop software lifecycle is implemented; retained production-like execution and release evidence remains outstanding."
+    },
+    {
+      "id": "D032",
+      "priority": "P1",
+      "domain": "Supply Chain",
+      "title": "Tool crib and tooling logistics",
+      "status": "PARTIAL",
+      "acceptance": "Tool register/calibration extends to reservations, issue/return, kits, locations, lost/damaged controls and maintenance demand linkage.",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts",
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Tool crib, reservation, issue/return, calibration and lost/damaged controls are implemented; runtime acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D033",
+      "priority": "P1",
+      "domain": "Supply Chain",
+      "title": "Warehouse cycle count / pick-pack-ship / replenishment",
+      "status": "PARTIAL",
+      "acceptance": "Warehouse execution supports cycle/physical count, replenishment, pick/pack/ship, min/max, consignment and discrepancy reconciliation.",
+      "evidence": [
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Cycle/physical count, discrepancy reconciliation, pick-pack-ship, min/max replenishment and consignment software are implemented; runtime acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D034",
+      "priority": "P1",
+      "domain": "Operations + Maintenance + Supply",
+      "title": "AOG coordination",
+      "status": "PARTIAL",
+      "acceptance": "AOG case coordinates technical diagnosis, material/courier, operational impact, recovery ETA/cost and communications via linked domain objects.",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "docs/MNT-DEPTH-REGISTER.json",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Maintenance owns the technical AOG case while Supply owns courier/AWB custody, ETA and logistics cost; production acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D035",
+      "priority": "P1",
+      "domain": "Supply Chain",
+      "title": "Material demand forecasting",
+      "status": "PARTIAL",
+      "acceptance": "Demand forecast combines maintenance plan, fleet plan, reliability and historical consumption with explainable forecast outputs.",
+      "evidence": [
+        "packages/mro-domain/src/supply-control.ts",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Explainable demand forecasts now combine maintenance, historical, reliability, fleet and safety-stock signals with planner overrides; production forecasting validation remains outstanding."
+    },
+    {
+      "id": "D036",
+      "priority": "P1",
+      "domain": "Supply Chain / Quality",
+      "title": "Supplier performance and source selection",
+      "status": "PARTIAL",
+      "acceptance": "Supplier scorecards, lead-time/quality analytics, contract pricing and approved-source selection are operational.",
+      "evidence": [
+        "packages/mro-domain/src/supply-control.ts",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Supplier scorecards cover on-time, quality, lead-time and commercial variance; source selection is tied to approved vendors, quotes and latest source-approval result. Quality acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D037",
+      "priority": "P1",
+      "domain": "Supply Chain / Commercial",
+      "title": "Warranty entitlement and recovery",
+      "status": "PARTIAL",
+      "acceptance": "Warranty engine determines entitlement, claim/recovery lifecycle and commercial reconciliation against received credits.",
+      "evidence": [
+        "packages/mro-domain/src/supply-control.ts",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "docs/SUPPLY-DEPTH-REGISTER.json"
+      ],
+      "notes": "Receipt/serial-linked warranty entitlement, failure eligibility and commercial recovery reconciliation are implemented; operational/commercial acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D038",
+      "priority": "P1",
+      "domain": "Technical Records",
+      "title": "OCR and historical record classification",
+      "status": "PARTIAL",
+      "acceptance": "OCR/classification pipeline indexes scanned records, detects duplicates/missing pages and supports human verification at scale.",
+      "evidence": [
+        "docs/RECORDS-DEPTH-REGISTER.json",
+        "apps/api/src/modules/records/records-control.service.ts",
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ],
+      "notes": "Historical intake supports provider-provenanced OCR/classification results, SHA-256 duplicate detection, human review, record metadata and missing-page continuity. Production OCR connector/runtime evidence remains outstanding."
+    },
+    {
+      "id": "D039",
+      "priority": "P1",
+      "domain": "Technical Records",
+      "title": "Lease transition / redelivery control",
+      "status": "PARTIAL",
+      "acceptance": "Lease project control tracks lessor requirements, back-to-birth LLP evidence, open gaps, redelivery packs and acceptance/reconciliation.",
+      "evidence": [
+        "apps/api/src/modules/records",
+        "docs/RECORDS-DEPTH-REGISTER.json",
+        "apps/api/src/modules/records/records-control.service.ts",
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ],
+      "notes": "Lease transition now has project/requirement lifecycle, evidence acceptance, redelivery readiness and back-to-birth component trace verification. Operator/lessor acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D040",
+      "priority": "P1",
+      "domain": "Operations",
+      "title": "EFB distribution and acknowledgement",
+      "status": "PARTIAL",
+      "acceptance": "Released operational packages are distributed to supported EFBs with revision, acknowledgement, recall and offline synchronization evidence.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 implements revisioned EFB packages, content hashes, release, targeted distribution, acknowledgement, recall and offline-sync evidence. Remains PARTIAL until supported production EFB connector/device families are qualified and offline synchronization is accepted in service."
+    },
+    {
+      "id": "D041",
+      "priority": "P1",
+      "domain": "Operations",
+      "title": "Load control / DCS integration depth",
+      "status": "PARTIAL",
+      "acceptance": "Load control integrates DCS, ULD/baggage/cargo/special loads and trim/loadsheets with controlled acknowledgement.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 adds governed DCS/load-control message ingestion for baggage/cargo/ULD/special-load/trim/loadsheet payloads with SHA-256 provenance, validation findings and controlled acknowledgement. Remains PARTIAL pending production DCS integration and airline load-control acceptance."
+    },
+    {
+      "id": "D042",
+      "priority": "P1",
+      "domain": "Operations",
+      "title": "Weather/NOTAM provider adapters and failover",
+      "status": "PARTIAL",
+      "acceptance": "Concrete production provider adapters support refresh/expiry, provenance, monitoring and failover; no manual-only dependency for normal ops.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 adds capability-scoped provider registry, credential references, priorities, SLAs, health history and failover state for weather/NOTAM and other Ops providers. Remains PARTIAL because concrete production weather/NOTAM adapters and monitored failover exercises are still required."
+    },
+    {
+      "id": "D043",
+      "priority": "P1",
+      "domain": "Operations / Engineering",
+      "title": "Airport/runway operational dataset lifecycle",
+      "status": "PARTIAL",
+      "acceptance": "Declared distances, closures, contamination/state and airport/runway master data are governed and consumed by dispatch/performance.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 adds effective-dated runway operational states, closures/restrictions, contamination/braking data, declared-distance overrides and source provenance. Remains PARTIAL until real airport/runway feeds are qualified and dispatch/performance consumption is proven in production."
+    },
+    {
+      "id": "D044",
+      "priority": "P1",
+      "domain": "Operations",
+      "title": "Navigation database / AIRAC lifecycle",
+      "status": "PARTIAL",
+      "acceptance": "AIRAC cycles and nav-data provider versions are governed, effective-dated, validated and referenced by flight planning/release.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 implements AIRAC staging, provider/version/hash provenance, effectivity, validation, independent approval, activation and supersession, with EFB nav-package binding. Remains PARTIAL pending qualification of a real nav-data provider dataset and retained operational acceptance evidence."
+    },
+    {
+      "id": "D045",
+      "priority": "P1",
+      "domain": "Crew",
+      "title": "Formal crew bidding and award",
+      "status": "PARTIAL",
+      "acceptance": "Bid periods, seniority/contract rules, award optimization, transparency and audit integrate with pairing/roster publication.",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 adds formal bid periods, frozen contract and seniority snapshots, open-window submissions, traceable scoring, independent award approval and roster publication references. Remains PARTIAL until real CBA/contract rules and production-scale award optimization are validated."
+    },
+    {
+      "id": "D046",
+      "priority": "P1",
+      "domain": "Crew",
+      "title": "Cabin crew planning depth",
+      "status": "PARTIAL",
+      "acceptance": "Cabin positions, ranks, languages, service qualifications, route requirements and recovery are full constraints, not only complement counts.",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 strengthens Crew planning integration around formal awards and qualification/training demand. Cabin-specific language/service/route constraints remain PARTIAL pending operator datasets and demonstrated solver enforcement across all cabin positions."
+    },
+    {
+      "id": "D047",
+      "priority": "P1",
+      "domain": "Crew / Training",
+      "title": "Training resource planning",
+      "status": "PARTIAL",
+      "acceptance": "Course, instructor, room/simulator, recurrent-demand and qualification expiry planning are operational.",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 adds instructor/simulator/classroom/aircraft/device resources, course sessions, recurrent/expiry demand, capacity, resource collisions, roster conflicts, enrollment and result lifecycle. Remains PARTIAL until approved operator curricula and live resource inventories are loaded and accepted."
+    },
+    {
+      "id": "D048",
+      "priority": "P1",
+      "domain": "Crew / Commercial",
+      "title": "Crew payroll interfaces",
+      "status": "PARTIAL",
+      "acceptance": "Duty/pay credits, allowances and payroll export/reconciliation integrate with approved roster actuals.",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "docs/CREW-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.42 adds roster/flight/positioning/training/allowance pay events, independent approval, approved-event batching, SHA-256-bound export payloads and provider reconciliation. Remains PARTIAL until a real payroll provider mapping/export certification and financial reconciliation are proven."
+    },
+    {
+      "id": "D049",
+      "priority": "P1",
+      "domain": "Safety",
+      "title": "Bow-tie / SPI / SPT depth",
+      "status": "PARTIAL",
+      "acceptance": "Safety hazards support bow-tie controls, safety objectives, SPI/SPT thresholds, trend evidence and action linkage.",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx",
+        "docs/SAFETY-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.41 adds tenant-isolated hazard and bow-tie controls, independent control assurance, residual-risk acceptance gates, and governed SPI/SPT definitions with provenance-backed threshold measurements. Remains PARTIAL until representative operator indicators, trend history and operational acceptance evidence are exercised in production."
+    },
+    {
+      "id": "D050",
+      "priority": "P1",
+      "domain": "Quality",
+      "title": "Audit programme and surveillance depth",
+      "status": "PARTIAL",
+      "acceptance": "Annual audit plan, authority/customer/supplier surveillance, findings/CAPA effectiveness and trend reporting operate end-to-end.",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "docs/QUALITY-DEPTH-REGISTER.json",
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ],
+      "notes": "0.45 adds a tenant-isolated annual compliance-monitoring programme, risk-ranked surveillance across internal/regulatory/customer/supplier/station/product/process scopes, governed auditor qualification and independence assignments, sampled checklist execution, independently reviewed surveillance closure, controlled finding due-date extensions, source-hashed trend snapshots and management review. Remains PARTIAL until representative operator surveillance history, authority/customer/supplier interactions, real auditor competence evidence and retained production effectiveness trends are exercised and accepted. 0.50 makes finding/non-compliance control explicit with a server-calculated 5x5 quality-risk classification engine, risk-tightened response windows, containment gates for high/critical findings, audited reassessment and a cross-audit Finding & Non-Compliance Tracker."
+    },
+    {
+      "id": "D051",
+      "priority": "P1",
+      "domain": "Safety",
+      "title": "Management of Change",
+      "status": "PARTIAL",
+      "acceptance": "Formal MOC object covers scope, hazards, risk, approvals, implementation actions and post-change effectiveness verification.",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx",
+        "docs/SAFETY-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.41 adds a formal Management of Change lifecycle with structured risk assessment, affected domains, creator/approver separation, phased actions, independent verification, implementation and post-change monitoring/closure evidence. Remains PARTIAL until an operator completes and retains evidence from real operational changes."
+    },
+    {
+      "id": "D052",
+      "priority": "P1",
+      "domain": "Safety",
+      "title": "Emergency response management",
+      "status": "PARTIAL",
+      "acceptance": "ERP activation, call trees, event log, roles, crisis actions, communications and evidence are controlled and drillable.",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx",
+        "docs/SAFETY-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.41 adds approved ERP scenarios, activation criteria, commander/communications/contact controls, live chronological response events, stand-down, debrief and lessons-learned closure. Remains PARTIAL until operator call trees, authority contacts, exercises/drills and emergency-response acceptance evidence are populated and retained."
+    },
+    {
+      "id": "D053",
+      "priority": "P1",
+      "domain": "Continuing Airworthiness",
+      "title": "Reliability programme depth",
+      "status": "PARTIAL",
+      "acceptance": "ATA reliability, statistical alerts, repetitive defects, fleet comparison, investigation and corrective action are complete.",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml",
+        "docs/CONTINUING-AIRWORTHINESS-DEPTH-REGISTER.json"
+      ],
+      "notes": "Software control depth now covers approved reliability programmes, metric thresholds, exposure-normalised measurements, alert investigations, corrective-action traceability and independent review. Completion still requires operator-approved programme data and retained fleet effectiveness history."
+    },
+    {
+      "id": "D054",
+      "priority": "P2",
+      "domain": "Continuing Airworthiness / Engineering",
+      "title": "Predictive maintenance / condition monitoring",
+      "status": "PARTIAL",
+      "acceptance": "Sensor/health data ingestion, fleet health models, explainable anomaly detection and maintenance recommendation governance are operational.",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml",
+        "docs/CONTINUING-AIRWORTHINESS-DEPTH-REGISTER.json"
+      ],
+      "notes": "Software control depth now covers governed condition sources, parameter sets, threshold approvals, SHA-256 source provenance, alert disposition and maintenance/engineering escalation. Completion still requires certified live source feeds, validated predictive models/OEM limits and production effectiveness evidence."
+    },
+    {
+      "id": "D055",
+      "priority": "P1",
+      "domain": "Engineering",
+      "title": "Software/cabin configuration and interchangeability depth",
+      "status": "PARTIAL",
+      "acceptance": "Configuration model includes aircraft software, cabin layouts, alternates/interchangeability and embodied modification packages.",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx",
+        "docs/ENGINEERING-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.43.0 adds governed software-depth implementation. Remains PARTIAL pending approved operator/OEM data, representative fleet effectivity, production embodiment history and operational acceptance evidence."
+    },
+    {
+      "id": "D056",
+      "priority": "P1",
+      "domain": "Engineering",
+      "title": "Engineering order lifecycle",
+      "status": "PARTIAL",
+      "acceptance": "EOs support authoring/approval, effectivity, materials/drawings, embodiment planning, accomplishment and closure evidence.",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx",
+        "docs/ENGINEERING-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.43.0 adds governed software-depth implementation. Remains PARTIAL pending approved operator/OEM data, representative fleet effectivity, production embodiment history and operational acceptance evidence."
+    },
+    {
+      "id": "D057",
+      "priority": "P1",
+      "domain": "Engineering / Airworthiness",
+      "title": "Service bulletin programme depth",
+      "status": "PARTIAL",
+      "acceptance": "Optional/mandatory SB evaluation, business/technical decision, kits, fleet campaign and embodiment status are controlled.",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx",
+        "docs/ENGINEERING-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.43.0 adds governed software-depth implementation. Remains PARTIAL pending approved operator/OEM data, representative fleet effectivity, production embodiment history and operational acceptance evidence."
+    },
+    {
+      "id": "D058",
+      "priority": "P2",
+      "domain": "Engineering UX",
+      "title": "Graphical structural damage mapping",
+      "status": "PARTIAL",
+      "acceptance": "Damage can be plotted and managed spatially on aircraft structures with controlled reference to SRM/repairs/evidence.",
+      "evidence": [
+        "apps/api/db/migrations/0050_engineering_completion.sql",
+        "apps/api/src/modules/engineering/engineering-control.service.ts",
+        "apps/web/src/features/engineering/EngineeringControl.tsx",
+        "docs/ENGINEERING-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.43.0 adds governed software-depth implementation. Remains PARTIAL pending approved operator/OEM data, representative fleet effectivity, production embodiment history and operational acceptance evidence."
+    },
+    {
+      "id": "D059",
+      "priority": "P1",
+      "domain": "Operations / Maintenance",
+      "title": "Electronic technical / journey log",
+      "status": "PARTIAL",
+      "acceptance": "Digital tech log captures sectors, defects, fluids, maintenance actions, signatures and handover with offline/aircraft continuity.",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx",
+        "docs/OPS-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.40 implements an electronic technical/journey-log baseline with aircraft/day continuity, sector/defect/fluid/maintenance/signature/handover/sync events, offline revisions and signature-gated closure. Remains PARTIAL pending aircraft/offline field trials, maintenance integration acceptance and authority/operator approval."
+    },
+    {
+      "id": "D060",
+      "priority": "P1",
+      "domain": "Maintenance",
+      "title": "Line maintenance control and shift handover",
+      "status": "PARTIAL",
+      "acceptance": "Line stations have workboard, turnaround tasks, deferred defects, shift handover and real-time maintenance-control coordination.",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Line control and independent shift handover software are implemented; live station acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D061",
+      "priority": "P1",
+      "domain": "Maintenance / Quality",
+      "title": "Station capability management",
+      "status": "PARTIAL",
+      "acceptance": "Station approval scope, personnel, tooling, facilities and aircraft-type capability are governed and enforced.",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Station capability, staffing/tool requirements and effective scope enforcement are implemented; live approval data/acceptance evidence remains outstanding."
+    },
+    {
+      "id": "D062",
+      "priority": "P1",
+      "domain": "Maintenance / Commercial",
+      "title": "Contract maintenance / SLA control",
+      "status": "PARTIAL",
+      "acceptance": "Customer contracts, scope, rates, SLA/TAT commitments, approvals and billing linkage govern third-party maintenance.",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "docs/MNT-DEPTH-REGISTER.json"
+      ],
+      "notes": "Maintenance contract/SLA, customer approval and progress controls are implemented; full commercial/billing reconciliation and runtime evidence remain outstanding."
+    },
+    {
+      "id": "D063",
+      "priority": "P1",
+      "domain": "Commercial",
+      "title": "Aviation commercial contract management",
+      "status": "PARTIAL",
+      "acceptance": "Contract rates, escalation, PBH structures, warranties/penalties and commercial obligations are versioned and reconciled.",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "docs/COMMERCIAL-DEPTH-REGISTER.json"
+      ],
+      "notes": "Software now governs aviation contract lifecycle, independent approval, amendments, rate cards and evidence-backed obligations/SLA tracking. Remains PARTIAL pending live operator contracts, negotiated PBH/warranty/penalty structures, counterparty acceptance and production reconciliation evidence."
+    },
+    {
+      "id": "D064",
+      "priority": "P2",
+      "domain": "Commercial / Finance",
+      "title": "Cost accounting / accruals / inventory valuation / FX",
+      "status": "PARTIAL",
+      "acceptance": "Required management-accounting depth is implemented or explicitly delegated to ERP with reconciled interfaces and no ambiguous ownership.",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "docs/COMMERCIAL-DEPTH-REGISTER.json"
+      ],
+      "notes": "Software now provides source-bound cost allocation, independently approved accruals with controlled reversal, inventory valuation snapshots and approved FX rate/exposure revaluation. Remains PARTIAL because statutory accounting, tax, certified ERP integration and production close evidence are external/not yet complete."
+    },
+    {
+      "id": "D065",
+      "priority": "P2",
+      "domain": "Commercial / Finance",
+      "title": "Tax and statutory accounting",
+      "status": "EXTERNAL",
+      "acceptance": "Tax, treasury, statutory consolidation and legal books remain explicitly delegated to certified ERP/accounting systems with interface ownership defined.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D066",
+      "priority": "P1",
+      "domain": "Platform + domain adapters",
+      "title": "Incumbent migration adapter library",
+      "status": "PARTIAL",
+      "acceptance": "Supported adapters exist for agreed AMOS/TRAX/Ramco/SAP/Excel extracts with versioned mappings and validation packs.",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx",
+        "docs/INTEGRATION-MIGRATION-DEPTH-REGISTER.json"
+      ],
+      "notes": "0.49 adds governed, versioned migration-adapter profiles for AMOS/TRAX/Ramco/SAP/Excel/generic extracts with mappings, validation rules, sample SHA-256 and independent approval. Remains PARTIAL until vendor-specific export versions and retained validation packs are proven against real incumbent datasets."
+    },
+    {
+      "id": "D067",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Historical migration reconciliation certification",
+      "status": "PARTIAL",
+      "acceptance": "Each migration produces signed pre/post counts, exceptions, domain/financial reconciliation and acceptance pack.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D068",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Integration marketplace / production connectors",
+      "status": "PARTIAL",
+      "acceptance": "Supported connectors exist for ERP, DCS, EFB, weather/NOTAM, identity, messaging and partner MRO ecosystems with lifecycle ownership.",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ],
+      "notes": "0.49 adds a lifecycle-owned connector catalog and environment-specific instances for ERP, DCS, EFB, weather/NOTAM, identity, messaging and MRO categories, including secret references, health history and production activation gates. Remains PARTIAL until concrete vendor connectors are certified and exercised in production."
+    },
+    {
+      "id": "D069",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Developer portal and sandbox",
+      "status": "MISSING",
+      "acceptance": "Developers can provision credentials, use sandbox data, view docs/examples/changelog/usage and test webhooks without production access.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D070",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Webhook administration UX / replay / DLQ handling",
+      "status": "PARTIAL",
+      "acceptance": "Admins can test, pause, replay, inspect signature attempts, resolve dead letters and view delivery metrics safely.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D071",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "API lifecycle / deprecation governance",
+      "status": "PARTIAL",
+      "acceptance": "Compatibility guarantees, versioning/deprecation windows, sunset headers and contract change checks are enforced.",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ],
+      "notes": "0.49 adds independently approved API lifecycle policies, route-prefix governance, minimum deprecation windows and runtime Deprecation/Sunset/successor Link headers. Remains PARTIAL until contract-diff automation is enforced across every external API release and consumers acknowledge migration windows."
+    },
+    {
+      "id": "D072",
+      "priority": "P1",
+      "domain": "Technical Records / Platform",
+      "title": "Retention schedules and legal hold",
+      "status": "PARTIAL",
+      "acceptance": "Record-class retention, legal hold, disposition approval and immutable evidence are supported across regulated records.",
+      "evidence": [
+        "docs/RECORDS-DEPTH-REGISTER.json",
+        "apps/api/src/modules/records/records-control.service.ts",
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ],
+      "notes": "Retention schedules, legal holds, independent hold release and disposition approval are implemented; production retention/legal acceptance remains outstanding."
+    },
+    {
+      "id": "D073",
+      "priority": "P2",
+      "domain": "Platform / Organization",
+      "title": "Privacy and personal-data governance",
+      "status": "MISSING",
+      "acceptance": "Purpose/access logging, subject export/correction/deletion handling where lawful, retention and restricted fields are governed.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D074",
+      "priority": "P2",
+      "domain": "Cross-domain UX",
+      "title": "Localization / i18n",
+      "status": "MISSING",
+      "acceptance": "UI and documents support configured languages, locale/date/number formats, timezone semantics and translatable controlled text.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D075",
+      "priority": "P2",
+      "domain": "Cross-domain UX",
+      "title": "Accessibility assurance",
+      "status": "PARTIAL",
+      "acceptance": "Automated WCAG regression plus keyboard/screen-reader/manual acceptance evidence is part of release gating.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D076",
+      "priority": "P2",
+      "domain": "Analytics",
+      "title": "Reporting / BI semantic layer and report designer",
+      "status": "PARTIAL",
+      "acceptance": "Governed analytics supports user reports, scheduled delivery, drilldowns and a stable semantic model without direct unsafe DB access.",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "docs/ANALYTICS-DEPTH-REGISTER.json"
+      ],
+      "notes": "Governed snapshot-backed semantic models, report definitions, checksum-bound runs and approval-controlled delivery schedules are implemented. Production source adapters, large-scale OLAP execution, schedule worker delivery and certified management reporting remain deployment-dependent."
+    },
+    {
+      "id": "D077",
+      "priority": "P2",
+      "domain": "Platform",
+      "title": "Multi-channel notifications and escalation",
+      "status": "PARTIAL",
+      "acceptance": "Email/SMS/push/channel routing, preferences, acknowledgement and escalation policies extend in-app notifications.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D078",
+      "priority": "P2",
+      "domain": "Platform / Records",
+      "title": "Controlled document/template designer",
+      "status": "MISSING",
+      "acceptance": "Versioned templates for operational/regulatory forms, certificates and reports support approval/effectivity and deterministic rendering.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D079",
+      "priority": "P1",
+      "domain": "Maintenance + Supply / Platform",
+      "title": "Mobile device management and offline conflict UX",
+      "status": "MISSING",
+      "acceptance": "Trusted-device registration/revocation, local-data wipe policy, sync diagnostics and human conflict-resolution UI are operational.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D080",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Disaster-recovery proof",
+      "status": "PARTIAL",
+      "acceptance": "Scheduled restore/failover exercises produce signed RPO/RTO evidence against declared targets and tracked remediation.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "docs/ASSURANCE-EVIDENCE.md",
+        "scripts",
+        "scripts/assurance",
+        "scripts/assurance/evidence.py"
+      ],
+      "notes": "Scheduled/manual evidence automation now records, validates, signs and retains DR/failover results. COMPLETE still requires retained real exercise evidence meeting RPO/RTO targets."
+    },
+    {
+      "id": "D081",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Multi-region architecture and regional failover",
+      "status": "MISSING",
+      "acceptance": "Supported deployment pattern defines replication, failover, split-brain controls, latency and regulated data residency.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D082",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Capacity management and forecasting",
+      "status": "PARTIAL",
+      "acceptance": "DB/Kafka/Temporal/object-store capacity thresholds and growth forecasts are measured, alerted and reviewed.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D083",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Kafka schema registry / compatibility",
+      "status": "PARTIAL",
+      "acceptance": "Event schemas are registered, versioned and compatibility-gated independently of TypeScript source.",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ],
+      "notes": "0.49 adds an operator-scoped event-schema registry independent of TypeScript source, sequential schema versions, SHA-256 identity and BACKWARD/FORWARD/FULL compatibility checks with independent approval. Remains PARTIAL until wired to a production Kafka/registry backend and exercised against real consumers."
+    },
+    {
+      "id": "D084",
+      "priority": "P1",
+      "domain": "Platform",
+      "title": "Temporal workflow versioning / migration",
+      "status": "PARTIAL",
+      "acceptance": "Long-running workflows use explicit versioning, safe worker rollout and migration/retirement strategy.",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ],
+      "notes": "0.49 adds governed workflow definitions, build/version records, explicit patch IDs, breaking-change migration plans and activation gates; MEL workflow code now declares a replay-safe Temporal patch ID. Remains PARTIAL until production worker build-ID routing, long-history replay tests and migration/drain exercises are retained as evidence."
+    },
+    {
+      "id": "D085",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Upgrade assurance from every supported release",
+      "status": "PARTIAL",
+      "acceptance": "Automated upgrade matrix executes migrations and regression tests from every supported release and representative data snapshot.",
+      "evidence": [
+        "scripts/upgrade-assurance.sh",
+        "tests/upgrade/supported-releases.json",
+        "tests/upgrade/representative.sql"
+      ],
+      "notes": "Automated PostgreSQL/PostGIS upgrade matrix and representative data-preservation test are implemented, but full regression execution cannot be retained as passing evidence until the authentic dependency lock allows the current application test suite to run."
+    },
+    {
+      "id": "D086",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Application/database rollback and forward-fix strategy",
+      "status": "COMPLETE",
+      "acceptance": "Release policy defines and tests rollback/forward-fix behavior, schema compatibility and irreversible migration handling.",
+      "evidence": [
+        "docs/release/ROLLBACK-AND-FORWARD-FIX.md",
+        "docs/release/SCHEMA-COMPATIBILITY.json",
+        "scripts/verify-schema-compatibility.py"
+      ],
+      "notes": "Forward-only database policy and application rollback compatibility are machine-checked."
+    },
+    {
+      "id": "D087",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Mandatory SAST/IaC/container/license scanning",
+      "status": "PARTIAL",
+      "acceptance": "CI blocks on configured SAST, IaC, container vulnerability, secret and license-policy failures with exception governance.",
+      "evidence": [
+        ".github/security/exceptions.json",
+        ".github/security/license-policy.json",
+        ".github/workflows/security.yml",
+        "docs/SECURITY-EXCEPTIONS.md",
+        "scripts/security/verify-exceptions.py",
+        "scripts/verify-licenses.py"
+      ],
+      "notes": "Blocking security jobs now use a governed exception register: only exact Trivy/license findings can be waived for at most 90 days; SAST and secret findings are non-waivable. Passing retained scan evidence still depends on D001 being resolved."
+    },
+    {
+      "id": "D088",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Independent architecture/code assurance",
+      "status": "EXTERNAL",
+      "acceptance": "Independent architecture/code review is completed with remediation and retained acceptance evidence.",
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "D089",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Recorded airline-scale benchmark evidence",
+      "status": "MISSING",
+      "acceptance": "Target-scale benchmark run results are retained with environment spec, dataset qualification and signed result summary.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "scripts/assurance",
+        "scripts/assurance/evidence.py",
+        "tests/load"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D090",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Recorded 24\u201372h soak evidence",
+      "status": "MISSING",
+      "acceptance": "Representative 24\u201372 hour soak completes within SLO/resource-leak thresholds and results are retained.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "scripts/assurance/evidence.py",
+        "tests/load/soak.k6.js"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D091",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Recorded chaos/failure evidence",
+      "status": "MISSING",
+      "acceptance": "Controlled dependency-loss/failure scenarios are executed and evidence shows fail-closed/readiness/recovery behavior.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "scripts/assurance/evidence.py",
+        "scripts/assurance/failure-drill.sh"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D092",
+      "priority": "P0",
+      "domain": "Platform",
+      "title": "Measured RPO/RTO evidence",
+      "status": "MISSING",
+      "acceptance": "Restore/failover exercises produce measured RPO/RTO evidence meeting declared production targets.",
+      "evidence": [
+        ".github/workflows/assurance-evidence.yml",
+        "scripts/assurance",
+        "scripts/assurance/evidence.py"
+      ],
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@aeroos/contracts",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Event and API contracts shared by the API, worker and web app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}

@@ -1,0 +1,29 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: master_data_governance
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager", "engineering_manager", "occ_controller", "auditor", "accountable_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["draft"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager", "engineering_manager", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["validate"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager", "engineering_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["approve", "activate", "withdraw"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

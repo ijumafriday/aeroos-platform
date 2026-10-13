@@ -1,0 +1,103 @@
+name: EngineeringDocumentsPolicyTests
+description: AD/SB intake, component records and document control (round 9)
+
+principals:
+  camo:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"], username: "camo.engineer" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  quality:
+    id: quality.manager
+    roles: ["quality_manager"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  store:
+    id: storekeeper
+    roles: ["storekeeper"]
+    attr: { operators: ["NKX"], username: "storekeeper" }
+  otherCamo:
+    id: fjr.camo
+    roles: ["camo_engineer"]
+    attr: { operators: ["FJR"], username: "fjr.camo" }
+
+resources:
+  directive:
+    kind: directive
+    id: DIR-1001
+    attr: { operatorId: "NKX" }
+  programme:
+    kind: maintenance_programme
+    id: "*"
+    attr: { operatorId: "NKX" }
+  moe:
+    kind: controlled_document
+    id: NKX-MOE
+    attr: { operatorId: "NKX" }
+  revisionFile:
+    kind: document
+    id: DOC-1
+    attr: { operatorId: "NKX", ownerType: "manual_revision" }
+
+tests:
+  - name: CAMO handles ADs; the hangar and quality only read them; another operator cannot
+    input:
+      principals: ["camo", "mechanic", "quality", "otherCamo"]
+      resources: ["directive"]
+      actions: ["read", "receive", "evaluate", "incorporate"]
+    expected:
+      - principal: camo
+        resource: directive
+        actions: { read: EFFECT_ALLOW, receive: EFFECT_ALLOW, evaluate: EFFECT_ALLOW, incorporate: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: directive
+        actions: { read: EFFECT_ALLOW, receive: EFFECT_DENY, evaluate: EFFECT_DENY, incorporate: EFFECT_DENY }
+      - principal: quality
+        resource: directive
+        actions: { read: EFFECT_ALLOW, receive: EFFECT_DENY, evaluate: EFFECT_DENY, incorporate: EFFECT_DENY }
+      - principal: otherCamo
+        resource: directive
+        actions: { read: EFFECT_DENY, receive: EFFECT_DENY, evaluate: EFFECT_DENY, incorporate: EFFECT_DENY }
+
+  - name: Component removals/installations by CAMO and certifying staff, not stores
+    input:
+      principals: ["camo", "mechanic", "store"]
+      resources: ["programme"]
+      actions: ["record_component"]
+    expected:
+      - principal: camo
+        resource: programme
+        actions: { record_component: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: programme
+        actions: { record_component: EFFECT_ALLOW }
+      - principal: store
+        resource: programme
+        actions: { record_component: EFFECT_DENY }
+
+  - name: Everyone reads controlled documents; only the quality manager revises and approves here
+    input:
+      principals: ["quality", "mechanic", "store"]
+      resources: ["moe", "revisionFile"]
+      actions: ["read", "manage", "approve", "attach"]
+    expected:
+      - principal: quality
+        resource: moe
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW, approve: EFFECT_ALLOW, attach: EFFECT_DENY }
+      - principal: mechanic
+        resource: moe
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, approve: EFFECT_DENY, attach: EFFECT_DENY }
+      - principal: store
+        resource: moe
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, approve: EFFECT_DENY, attach: EFFECT_DENY }
+      - principal: quality
+        resource: revisionFile
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, approve: EFFECT_DENY, attach: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: revisionFile
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, approve: EFFECT_DENY, attach: EFFECT_DENY }
+      - principal: store
+        resource: revisionFile
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, approve: EFFECT_DENY, attach: EFFECT_DENY }

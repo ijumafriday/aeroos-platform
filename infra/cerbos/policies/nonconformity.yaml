@@ -1,0 +1,28 @@
+# Non-conforming parts (145.A.42): anyone handling parts may quarantine one; engineering (CAMO, certifying
+# staff) decides the disposition; scrapping is witnessed by stores, quality or certifying staff (a second
+# person — enforced in the domain).
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: nonconformity
+  rules:
+    - actions: ["read", "raise"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "storekeeper", "camo_engineer", "camo_manager", "quality_manager", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["disposition"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["witness"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper", "quality_manager", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

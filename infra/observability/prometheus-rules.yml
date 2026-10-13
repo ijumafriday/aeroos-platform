@@ -1,0 +1,71 @@
+groups:
+  - name: aeroos-api-slo
+    rules:
+      - record: aeroos:api_requests:rate5m
+        expr: sum(rate(aeroos_api_requests_total[5m]))
+      - record: aeroos:api_5xx_ratio:rate5m
+        expr: sum(rate(aeroos_api_requests_total{status=~"5.."}[5m])) / clamp_min(sum(rate(aeroos_api_requests_total[5m])), 0.001)
+      - alert: AeroOSApiFastErrorBudgetBurn
+        expr: aeroos:api_5xx_ratio:rate5m > 0.05
+        for: 5m
+        labels: { severity: page }
+        annotations:
+          summary: "AeroOS API is rapidly consuming its error budget"
+          description: "5xx responses are above 5% for five minutes."
+      - alert: AeroOSApiSustainedErrorBudgetBurn
+        expr: sum(rate(aeroos_api_requests_total{status=~"5.."}[1h])) / clamp_min(sum(rate(aeroos_api_requests_total[1h])), 0.001) > 0.01
+        for: 30m
+        labels: { severity: ticket }
+        annotations:
+          summary: "AeroOS API has a sustained elevated 5xx rate"
+          description: "5xx responses are above 1% over the one-hour window."
+      - alert: AeroOSApiP95LatencyHigh
+        expr: histogram_quantile(0.95, sum by (le) (rate(aeroos_api_latency_ms_bucket[10m]))) > 1500
+        for: 15m
+        labels: { severity: ticket }
+        annotations:
+          summary: "AeroOS API p95 latency exceeds 1.5 seconds"
+          description: "Investigate database saturation, downstream latency, or hot routes."
+      - alert: AeroOSRateLimitSustained
+        expr: sum(rate(aeroos_rate_limit_rejected_total[5m])) > 1
+        for: 15m
+        labels: { severity: ticket }
+        annotations:
+          summary: "AeroOS is sustaining rate-limit rejections"
+          description: "More than one request per second has been rejected for 15 minutes; investigate abusive clients or undersized limits."
+
+  - name: aeroos-integrations
+    rules:
+      - alert: AeroOSWebhookTerminalFailures
+        expr: increase(aeroos_webhook_deliveries_total{outcome="failed"}[15m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "AeroOS outbound webhook exhausted retries"
+          description: "At least one webhook delivery reached its terminal failed state in the last 15 minutes."
+
+
+  - name: aeroos-platform-capacity
+    rules:
+      - alert: AeroOSDatabasePoolWaiting
+        expr: max by (module) (aeroos_db_pool_waiting) > 0
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "AeroOS database pool has queued callers"
+          description: "Module {{ $labels.module }} has waited for a PostgreSQL connection for five minutes."
+      - alert: AeroOSOutboxStale
+        expr: aeroos_outbox_oldest_age_seconds > 60
+        for: 5m
+        labels: { severity: page }
+        annotations:
+          summary: "AeroOS event outbox is stale"
+          description: "The oldest unpublished domain event is more than 60 seconds old."
+      - alert: AeroOSDeadLettersPresent
+        expr: aeroos_dead_letters > 0
+        for: 1m
+        labels: { severity: warning }
+        annotations:
+          summary: "AeroOS has dead-lettered domain events"
+          description: "At least one domain event exhausted consumer retries and requires investigation."

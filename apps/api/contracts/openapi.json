@@ -1,0 +1,1287 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AeroOS Platform API",
+    "version": "0.50.0",
+    "description": "Stable versioned integration surface. Existing domain UI APIs remain internal until promoted into this contract."
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "oidc": {
+        "type": "openIdConnect",
+        "openIdConnectUrl": "/.well-known/openid-configuration"
+      },
+      "providerApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      },
+      "frmsApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    },
+    "schemas": {
+      "WebhookCreate": {
+        "type": "object",
+        "required": [
+          "name",
+          "endpoint",
+          "eventTypes"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100
+          },
+          "endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "eventTypes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "camo.mel.deferred",
+                "camo.mel.extended",
+                "camo.mel.closed",
+                "camo.mel.expired",
+                "camo.eo.released",
+                "amo.taskcard.created",
+                "amo.taskcard.step_signed",
+                "amo.crs.issued",
+                "amo.part.scrapped",
+                "amo.invoice.issued",
+                "amo.payment.received",
+                "amo.goods.received",
+                "org.authorisation.issued",
+                "org.authorisation.suspended",
+                "org.authorisation.reinstated",
+                "org.authorisation.revoked",
+                "org.authorisation.expired",
+                "org.training.recorded",
+                "org.expiry.warning",
+                "camo.wp.planned",
+                "camo.wp.released",
+                "camo.wp.completed",
+                "camo.requirement.complied",
+                "camo.airworthiness.changed",
+                "ops.flight.departed",
+                "ops.flight.arrived",
+                "ops.flight.diverted",
+                "ops.flight.delayed",
+                "ops.flight.cancelled",
+                "ops.flight.tail_changed",
+                "ops.dispatch.changed",
+                "ops.recovery.proposed",
+                "ops.recovery.applied",
+                "ops.crew.reassigned",
+                "platform.notification.raised"
+              ]
+            }
+          }
+        }
+      },
+      "Webhook": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "operatorId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "eventTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "MigrationCreate": {
+        "type": "object",
+        "required": [
+          "target",
+          "sourceName"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "sourceName": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 160
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "INSERT_ONLY",
+              "UPSERT"
+            ],
+            "default": "INSERT_ONLY"
+          }
+        }
+      },
+      "MigrationRows": {
+        "type": "object",
+        "required": [
+          "rows"
+        ],
+        "properties": {
+          "rows": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5000,
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "RuleCreate": {
+        "type": "object",
+        "required": [
+          "name",
+          "eventType",
+          "condition",
+          "action"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+          },
+          "eventType": {
+            "type": "string",
+            "enum": [
+              "camo.mel.deferred",
+              "camo.mel.extended",
+              "camo.mel.closed",
+              "camo.mel.expired",
+              "camo.eo.released",
+              "amo.taskcard.created",
+              "amo.taskcard.step_signed",
+              "amo.crs.issued",
+              "amo.part.scrapped",
+              "amo.invoice.issued",
+              "amo.payment.received",
+              "amo.goods.received",
+              "org.authorisation.issued",
+              "org.authorisation.suspended",
+              "org.authorisation.reinstated",
+              "org.authorisation.revoked",
+              "org.authorisation.expired",
+              "org.training.recorded",
+              "org.expiry.warning",
+              "camo.wp.planned",
+              "camo.wp.released",
+              "camo.wp.completed",
+              "camo.requirement.complied",
+              "camo.airworthiness.changed",
+              "ops.flight.departed",
+              "ops.flight.arrived",
+              "ops.flight.diverted",
+              "ops.flight.delayed",
+              "ops.flight.cancelled",
+              "ops.flight.tail_changed",
+              "ops.dispatch.changed",
+              "ops.recovery.proposed",
+              "ops.recovery.applied",
+              "ops.crew.reassigned"
+            ]
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100
+          },
+          "condition": {
+            "type": "object",
+            "description": "Bounded all/any predicates over event payload fields"
+          },
+          "action": {
+            "type": "object",
+            "description": "NOTIFY action only"
+          }
+        }
+      },
+      "ChangeReason": {
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 500
+          }
+        }
+      },
+      "OfpIngest": {
+        "type": "object",
+        "required": [
+          "flightId",
+          "provider",
+          "providerRef",
+          "revision",
+          "tail",
+          "etd",
+          "generatedAt",
+          "route",
+          "tripFuelKg",
+          "contingencyFuelKg",
+          "alternateFuelKg",
+          "finalReserveFuelKg",
+          "blockFuelKg",
+          "payloadKg",
+          "takeoffMassKg",
+          "landingMassKg",
+          "performanceRef",
+          "navDataCycle",
+          "weatherRef",
+          "notamRef"
+        ],
+        "properties": {
+          "flightId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "providerRef": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "tail": {
+            "type": "string"
+          },
+          "etd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "route": {
+            "type": "string"
+          },
+          "cruiseLevel": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "alternate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "etopsMinutes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "redispatchPoint": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tripFuelKg": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "contingencyFuelKg": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "alternateFuelKg": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "finalReserveFuelKg": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "blockFuelKg": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "payloadKg": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "takeoffMassKg": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "landingMassKg": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "performanceRef": {
+            "type": "string"
+          },
+          "navDataCycle": {
+            "type": "string"
+          },
+          "weatherRef": {
+            "type": "string"
+          },
+          "notamRef": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "FrmsIngest": {
+        "type": "object",
+        "required": [
+          "crewId",
+          "dutyId",
+          "provider",
+          "model",
+          "modelVersion",
+          "score",
+          "riskBand",
+          "generatedAt",
+          "sourceRef"
+        ],
+        "properties": {
+          "crewId": {
+            "type": "string"
+          },
+          "dutyId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "modelVersion": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "riskBand": {
+            "type": "string",
+            "enum": [
+              "LOW",
+              "MODERATE",
+              "HIGH",
+              "CRITICAL"
+            ]
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sourceRef": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/health/live": {
+      "get": {
+        "operationId": "healthLive",
+        "responses": {
+          "200": {
+            "description": "Process is alive"
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "healthReady",
+        "responses": {
+          "200": {
+            "description": "Dependencies ready"
+          },
+          "503": {
+            "description": "Dependency unavailable"
+          }
+        }
+      }
+    },
+    "/platform/signing-key": {
+      "get": {
+        "operationId": "signingKey",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Public signing key used to verify regulated records and webhooks"
+          }
+        }
+      }
+    },
+    "/v1/platform/integrations/webhooks": {
+      "get": {
+        "operationId": "listWebhooks",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tenant webhook subscriptions"
+          }
+        }
+      },
+      "post": {
+        "operationId": "createWebhook",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Webhook subscription created"
+          }
+        }
+      }
+    },
+    "/v1/platform/integrations/webhooks/{id}": {
+      "patch": {
+        "operationId": "setWebhookActive",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "active"
+                ],
+                "properties": {
+                  "active": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Subscription state updated"
+          }
+        }
+      }
+    },
+    "/v1/platform/integrations/webhooks/{id}/deliveries": {
+      "get": {
+        "operationId": "listWebhookDeliveries",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Latest 100 delivery attempts"
+          }
+        }
+      }
+    },
+    "/v1/platform/migrations/targets": {
+      "get": {
+        "summary": "List supported migration targets",
+        "description": "Returns only concrete domain adapters registered in this release.",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/v1/platform/migrations": {
+      "get": {
+        "summary": "List migration jobs",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create migration job",
+        "description": "Creates a DRAFT job; rows must be staged and validated before application.",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MigrationCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/platform/migrations/{id}": {
+      "get": {
+        "summary": "Get migration job and staged rows",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/platform/migrations/{id}/rows": {
+      "post": {
+        "summary": "Stage migration rows",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MigrationRows"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/platform/migrations/{id}/validate": {
+      "post": {
+        "summary": "Validate staged migration rows",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/platform/migrations/{id}/apply": {
+      "post": {
+        "summary": "Apply a validated or resumable failed migration",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/platform/rules": {
+      "get": {
+        "summary": "List bounded event rules",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create draft event rule",
+        "description": "Rules can raise platform notifications only and cannot mutate regulated domain state.",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RuleCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/platform/rules/{id}/executions": {
+      "get": {
+        "summary": "List rule execution history",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/platform/rules/{id}/activate": {
+      "post": {
+        "summary": "Activate a draft rule",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeReason"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/platform/rules/{id}/retire": {
+      "post": {
+        "summary": "Retire an active rule",
+        "description": "",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeReason"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/platform/rules/event-types": {
+      "get": {
+        "summary": "List rule-eligible event types",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Known event types"
+          }
+        }
+      }
+    },
+    "/v1/integrations/ops-planning/ofp": {
+      "post": {
+        "summary": "Ingest authoritative operational flight plan",
+        "description": "Provider-authenticated OFP/performance package. The operator is derived from the integration key; the provider must have an EFFECTIVE approved AeroOS master-data revision, and the flight tail/ETD must match the current AeroOS flight.",
+        "security": [
+          {
+            "providerApiKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfpIngest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OFP accepted with provenance hash"
+          },
+          "401": {
+            "description": "Invalid provider key"
+          },
+          "422": {
+            "description": "Flight/OFP mismatch"
+          },
+          "503": {
+            "description": "Provider master data is not approved/effective"
+          }
+        }
+      }
+    },
+    "/v1/integrations/frms/assessments": {
+      "post": {
+        "summary": "Ingest validated FRMS assessment",
+        "description": "Provider-authenticated result from an externally validated fatigue-risk model. The exact provider/model/version must have an EFFECTIVE CREW master-data approval. AeroOS stores model/version/provenance and blocks roster publication for the latest CRITICAL assessment of an affected duty.",
+        "security": [
+          {
+            "frmsApiKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FrmsIngest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Assessment accepted with provenance hash"
+          },
+          "401": {
+            "description": "Invalid provider key"
+          },
+          "404": {
+            "description": "Crew member not found"
+          },
+          "503": {
+            "description": "FRMS provider/model/version is not approved/effective"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/summary": {
+      "get": {
+        "operationId": "integrationControlSummary",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration/migration governance summary"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/adapters": {
+      "get": {
+        "operationId": "listMigrationAdapterProfiles",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Versioned incumbent migration adapter profiles"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/connectors": {
+      "get": {
+        "operationId": "listConnectorCatalog",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Connector catalog, instances and health history"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/lifecycle": {
+      "get": {
+        "operationId": "listApiAndSchemaLifecycle",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API lifecycle policies and event-schema registry"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/workflows": {
+      "get": {
+        "operationId": "listWorkflowVersions",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Temporal workflow versions and migration plans"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/adapters/{id}/{step}": {
+      "post": {
+        "operationId": "transitionMigrationAdapter",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "step",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Submit, independently approve or retire a migration adapter"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/connectors/{id}/approve": {
+      "post": {
+        "operationId": "approveConnectorCatalogEntry",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Independently approve connector catalog entry"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/instances/{id}/activate": {
+      "post": {
+        "operationId": "activateConnectorInstance",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Activate a governed connector instance"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/apis/{id}/deprecate": {
+      "post": {
+        "operationId": "deprecateApiPolicy",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deprecate API while enforcing approved sunset window"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/schemas/{id}/approve": {
+      "post": {
+        "operationId": "approveEventSchemaVersion",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Independently approve compatibility-passing event schema"
+          }
+        }
+      }
+    },
+    "/v1/platform/integration-control/workflow-versions/{id}/activate": {
+      "post": {
+        "operationId": "activateWorkflowVersion",
+        "security": [
+          {
+            "oidc": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Independently activate workflow version after migration gate"
+          }
+        }
+      }
+    }
+  }
+}

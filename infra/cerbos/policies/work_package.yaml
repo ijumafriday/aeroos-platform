@@ -1,0 +1,19 @@
+# Work packages are planned and released by CAMO; the hangar (AMO) and auditors can see them.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: work_package
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager", "storekeeper"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

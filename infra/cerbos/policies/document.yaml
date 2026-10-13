@@ -1,0 +1,130 @@
+# Documents in object storage (attachments, licence scans, training certificates, CRS PDFs).
+# Rules depend on what owns the document.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: document
+  rules:
+    - actions: ["attach"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "task_card"
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "camo_engineer", "camo_manager", "auditor", "quality_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType in ["task_card", "crs"]
+
+    - actions: ["attach", "read"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType in ["training_record", "licence", "personnel"]
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType in ["training_record", "licence", "personnel"]
+
+    # AD / SB documents (the published directive, OEM bulletin).
+    - actions: ["attach"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "directive"
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "directive"
+
+    # Controlled manuals: drafted by the document owners, read by everyone.
+    - actions: ["attach"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "manual_revision"
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager", "storekeeper", "occ_controller"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "manual_revision"
+
+    # Non-conformance photos and documents (quarantine labels, damage, mutilation evidence).
+    - actions: ["attach", "read"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "storekeeper", "camo_engineer", "camo_manager", "quality_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "ncr"
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "ncr"
+
+    # Technical Records evidence: Records custody manages it; Quality/auditors can read it.
+    - actions: ["attach", "read"]
+      effect: EFFECT_ALLOW
+      roles: ["records_officer", "records_manager", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "technical_record"
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["records_manager", "quality_manager", "auditor", "certifying_staff"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.ownerType == "technical_record"

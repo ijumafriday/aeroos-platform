@@ -1,0 +1,170 @@
+name: SafetyQualityPolicyTests
+description: Independent Safety and Quality authorization boundaries with domain-owned actions
+
+principals:
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  safety:
+    id: safety.manager
+    roles: ["safety_manager"]
+    attr: { operators: ["NKX"], username: "safety.manager" }
+  quality:
+    id: quality.manager
+    roles: ["quality_manager"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  auditor:
+    id: auditor
+    roles: ["auditor"]
+    attr: { operators: ["NKX"], username: "auditor" }
+  store:
+    id: storekeeper
+    roles: ["storekeeper"]
+    attr: { operators: ["NKX"], username: "storekeeper" }
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+
+resources:
+  ownReport:
+    kind: occurrence
+    id: OR-2026-0002
+    attr: { operatorId: "NKX", reporter: "k.mwangi", investigator: "" }
+  othersReport:
+    kind: occurrence
+    id: OR-2026-0003
+    attr: { operatorId: "NKX", reporter: "j.otieno", investigator: "" }
+  audit:
+    kind: quality_audit
+    id: QA-2026-07
+    attr: { operatorId: "NKX" }
+  safetyAction:
+    kind: safety_action
+    id: CA-0001
+    attr: { operatorId: "NKX", owner: "storekeeper" }
+  qualityAction:
+    kind: quality_action
+    id: CA-0002
+    attr: { operatorId: "NKX", owner: "storekeeper" }
+  investigated:
+    kind: occurrence
+    id: OR-2026-0004
+    attr: { operatorId: "NKX", reporter: "j.otieno", investigator: "occ.controller" }
+  ncr:
+    kind: nonconformity
+    id: NCR-0001
+    attr: { operatorId: "NKX" }
+
+tests:
+  - name: Safety office manages occurrences; Quality does not inherit Safety authority
+    input:
+      principals: ["mechanic", "occ", "safety", "quality", "auditor"]
+      resources: ["ownReport", "othersReport"]
+      actions: ["report", "read", "manage"]
+    expected:
+      - principal: mechanic
+        resource: ownReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_DENY }
+      - principal: mechanic
+        resource: othersReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: occ
+        resource: othersReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: safety
+        resource: ownReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: safety
+        resource: othersReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: quality
+        resource: ownReport
+        actions: { report: EFFECT_DENY, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: quality
+        resource: othersReport
+        actions: { report: EFFECT_DENY, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: auditor
+        resource: othersReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_DENY }
+
+  - name: Auditors and Quality manage audits; Safety does not inherit Quality authority
+    input:
+      principals: ["auditor", "quality", "safety", "mechanic"]
+      resources: ["audit"]
+      actions: ["read", "manage"]
+    expected:
+      - principal: auditor
+        resource: audit
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: quality
+        resource: audit
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: safety
+        resource: audit
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: mechanic
+        resource: audit
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY }
+
+  - name: Safety Manager verifies Safety actions but not Quality actions
+    input:
+      principals: ["store", "safety", "quality"]
+      resources: ["safetyAction"]
+      actions: ["read", "complete", "verify"]
+    expected:
+      - principal: store
+        resource: safetyAction
+        actions: { read: EFFECT_ALLOW, complete: EFFECT_ALLOW, verify: EFFECT_DENY }
+      - principal: safety
+        resource: safetyAction
+        actions: { read: EFFECT_ALLOW, complete: EFFECT_ALLOW, verify: EFFECT_ALLOW }
+      - principal: quality
+        resource: safetyAction
+        actions: { read: EFFECT_DENY, complete: EFFECT_DENY, verify: EFFECT_DENY }
+
+  - name: Quality Manager verifies Quality actions but not Safety actions
+    input:
+      principals: ["store", "quality", "safety"]
+      resources: ["qualityAction"]
+      actions: ["read", "complete", "verify"]
+    expected:
+      - principal: store
+        resource: qualityAction
+        actions: { read: EFFECT_ALLOW, complete: EFFECT_ALLOW, verify: EFFECT_DENY }
+      - principal: quality
+        resource: qualityAction
+        actions: { read: EFFECT_ALLOW, complete: EFFECT_ALLOW, verify: EFFECT_ALLOW }
+      - principal: safety
+        resource: qualityAction
+        actions: { read: EFFECT_DENY, complete: EFFECT_DENY, verify: EFFECT_DENY }
+
+  - name: The assigned investigator reads the report
+    input:
+      principals: ["occ", "mechanic"]
+      resources: ["investigated"]
+      actions: ["read", "manage"]
+    expected:
+      - principal: occ
+        resource: investigated
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY }
+      - principal: mechanic
+        resource: investigated
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY }
+
+  - name: Stores quarantines and witnesses; engineering decides the disposition
+    input:
+      principals: ["store", "mechanic", "occ"]
+      resources: ["ncr"]
+      actions: ["raise", "disposition", "witness"]
+    expected:
+      - principal: store
+        resource: ncr
+        actions: { raise: EFFECT_ALLOW, disposition: EFFECT_DENY, witness: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: ncr
+        actions: { raise: EFFECT_ALLOW, disposition: EFFECT_ALLOW, witness: EFFECT_ALLOW }
+      - principal: occ
+        resource: ncr
+        actions: { raise: EFFECT_DENY, disposition: EFFECT_DENY, witness: EFFECT_DENY }

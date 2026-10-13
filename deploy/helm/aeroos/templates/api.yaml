@@ -1,0 +1,157 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-api
+  labels: {{- include "aeroos.labels" . | nindent 4 }}
+    app.kubernetes.io/name: aeroos-api
+spec:
+  replicas: {{ .Values.api.replicas }}
+  selector:
+    matchLabels: { app.kubernetes.io/name: aeroos-api, app.kubernetes.io/instance: {{ .Release.Name }} }
+  template:
+    metadata:
+      labels: {{- include "aeroos.labels" . | nindent 8 }}
+        app.kubernetes.io/name: aeroos-api
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000, seccompProfile: { type: RuntimeDefault } }
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels: { app.kubernetes.io/name: aeroos-api }
+      containers:
+        - name: api
+          image: {{ include "aeroos.image" (dict "root" . "name" "api") }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports: [{ name: http, containerPort: 3000 }]
+          env:
+            {{- include "aeroos.commonEnv" . | nindent 12 }}
+            - name: INSTANCE_ID
+              valueFrom: { fieldRef: { fieldPath: metadata.name } }
+            - name: KAFKA_PARTITIONS
+              value: {{ .Values.kafka.partitions | quote }}
+            - name: KAFKA_REPLICATION
+              value: {{ .Values.kafka.replication | quote }}
+            - name: OIDC_ISSUER
+              value: {{ required "oidc.issuer is required" .Values.oidc.issuer | quote }}
+            - name: OIDC_JWKS_URL
+              value: {{ required "oidc.jwksUrl is required" .Values.oidc.jwksUrl | quote }}
+            - name: OIDC_AUDIENCE
+              value: {{ .Values.oidc.audience | quote }}
+            - name: CERBOS_URL
+              value: {{ include "aeroos.cerbosUrl" . | quote }}
+            - name: SIGNING_PROVIDER
+              value: {{ .Values.signing.provider | quote }}
+            - name: TRANSIT_ADDR
+              value: {{ .Values.signing.transit.address | quote }}
+            - name: TRANSIT_MOUNT
+              value: {{ .Values.signing.transit.mount | quote }}
+            - name: TRANSIT_KEY
+              value: {{ .Values.signing.transit.key | quote }}
+            - name: TRANSIT_TOKEN_FILE
+              value: /var/run/secrets/aeroos/transit/token
+            - name: ALLOW_LOCAL_SIGNING
+              value: {{ .Values.signing.allowLocal | quote }}
+            {{- if .Values.api.defaultOperator }}
+            - name: DEFAULT_OPERATOR
+              value: {{ .Values.api.defaultOperator | quote }}
+            {{- end }}
+            - name: MOVEMENT_SIMULATION
+              value: {{ .Values.api.movementSimulation | quote }}
+            {{- if .Values.api.movementKeySecret }}
+            - name: MOVEMENT_API_KEYS
+              valueFrom:
+                secretKeyRef: { name: {{ .Values.api.movementKeySecret }}, key: MOVEMENT_API_KEYS }
+            {{- end }}
+            {{- if .Values.api.opsProviderKeySecret }}
+            - name: OPS_PROVIDER_API_KEYS
+              valueFrom:
+                secretKeyRef: { name: {{ .Values.api.opsProviderKeySecret }}, key: OPS_PROVIDER_API_KEYS }
+            {{- end }}
+            {{- if .Values.api.frmsProviderKeySecret }}
+            - name: FRMS_PROVIDER_API_KEYS
+              valueFrom:
+                secretKeyRef: { name: {{ .Values.api.frmsProviderKeySecret }}, key: FRMS_PROVIDER_API_KEYS }
+            {{- end }}
+            - name: WEBAUTHN_RP_ID
+              value: {{ required "api.webauthn.rpId is required (the site's domain, e.g. aeroos.example.com)" .Values.api.webauthn.rpId | quote }}
+            - name: WEBAUTHN_ORIGINS
+              value: {{ required "api.webauthn.origins is required (e.g. https://aeroos.example.com)" .Values.api.webauthn.origins | quote }}
+            - name: STEP_UP_MAX_AGE_SECONDS
+              value: {{ .Values.api.stepUpMaxAgeSeconds | quote }}
+            - name: S3_ENDPOINT
+              value: {{ required "objectStorage.endpoint is required" .Values.objectStorage.endpoint | quote }}
+            - name: S3_PUBLIC_ENDPOINT
+              value: {{ required "objectStorage.publicEndpoint is required" .Values.objectStorage.publicEndpoint | quote }}
+            - name: S3_REGION
+              value: {{ .Values.objectStorage.region | quote }}
+            - name: S3_FORCE_PATH_STYLE
+              value: {{ .Values.objectStorage.forcePathStyle | quote }}
+            - name: S3_BUCKET_DOCUMENTS
+              value: {{ .Values.objectStorage.documentsBucket | quote }}
+            - name: S3_BUCKET_ANCHORS
+              value: {{ .Values.objectStorage.anchorsBucket | quote }}
+            - name: ANCHOR_RETENTION_DAYS
+              value: {{ .Values.objectStorage.anchorRetentionDays | quote }}
+            - name: OTEL_ENABLED
+              value: {{ .Values.observability.enabled | quote }}
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: {{ .Values.observability.otlpEndpoint | quote }}
+            - name: SEED_DEMO
+              value: {{ .Values.api.seedDemo | quote }}
+            - name: ALLOW_DRAFT_RULEPACKS
+              value: {{ .Values.api.allowDraftRulepacks | quote }}
+            - name: RATE_LIMIT_ENABLED
+              value: {{ .Values.api.rateLimit.enabled | quote }}
+            - name: RATE_LIMIT_WINDOW_SECONDS
+              value: {{ .Values.api.rateLimit.windowSeconds | quote }}
+            - name: RATE_LIMIT_AUTHENTICATED
+              value: {{ .Values.api.rateLimit.authenticatedRequests | quote }}
+            - name: RATE_LIMIT_ANONYMOUS
+              value: {{ .Values.api.rateLimit.anonymousRequests | quote }}
+          envFrom:
+            - secretRef: { name: {{ .Values.postgres.passwordsSecret }} }
+            # S3_ACCESS_KEY / S3_SECRET_KEY
+            - secretRef: { name: {{ .Values.objectStorage.credentialsSecret }} }
+          readinessProbe:
+            httpGet: { path: /api/health/ready, port: http }
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /api/health/live, port: http }
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          resources: {{- toYaml .Values.api.resources | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+            {{- if eq .Values.signing.provider "transit" }}
+            - { name: transit-token, mountPath: /var/run/secrets/aeroos/transit, readOnly: true }
+            {{- end }}
+      volumes:
+        - { name: tmp, emptyDir: {} }
+        {{- if eq .Values.signing.provider "transit" }}
+        # A token scoped to transit/sign and transit/keys read for one key. With Vault Agent or the
+        # OpenBao/Vault Kubernetes auth method this file is rotated automatically.
+        - name: transit-token
+          secret: { secretName: {{ .Values.signing.transit.tokenSecret }}, items: [{ key: token, path: token }] }
+        {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-api
+  labels: {{- include "aeroos.labels" . | nindent 4 }}
+spec:
+  selector: { app.kubernetes.io/name: aeroos-api, app.kubernetes.io/instance: {{ .Release.Name }} }
+  ports: [{ name: http, port: 3000, targetPort: http }]
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Release.Name }}-api
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: { app.kubernetes.io/name: aeroos-api, app.kubernetes.io/instance: {{ .Release.Name }} }

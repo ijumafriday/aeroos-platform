@@ -1,0 +1,107 @@
+{
+  "policyVersion": 1,
+  "databaseStrategy": "forward-only",
+  "applicationRollback": "Allowed only while all migrations introduced by the release are marked backwardCompatible=true. Otherwise deploy a forward fix.",
+  "migrations": {
+    "0038_regulated_master_data.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; new governance tables and nullable/additive gates"
+    },
+    "0039_p1_closure.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive P1 tables/columns"
+    },
+    "0040_p2_closure.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive UX/ERP tables"
+    },
+    "0041_regulated_data_integrity.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; adds regulated-data integrity function and widens governance domain constraint"
+    },
+    "0042_regulated_data_hygiene.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand/cleanse; classifies historical generic regulated rows, removes unreferenced defaults, and adds production hygiene verification"
+    },
+    "0043_ops_reference_tenant_scope.sql": {
+      "backwardCompatible": false,
+      "reversible": false,
+      "strategy": "contract/re-key; regulated Operations references become operator-owned composite keys; application rollback across this migration is prohibited"
+    },
+    "0044_mnt_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Maintenance domain completion tables and columns; no destructive rewrite"
+    },
+    "0045_supply_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Supply Chain domain completion tables and controls; no destructive rewrite"
+    },
+    "0046_records_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Technical Records completion tables/columns for intake, lease/redelivery, trace, retention/legal hold and delivery reconciliation"
+    },
+    "0047_operations_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Operations control tables for provider governance, AIRAC, EFB, DCS/load, runway state, ACMI and electronic tech/journey log"
+    },
+    "0048_safety_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "Additive Safety/SMS control tables and indexes only; existing occurrence and quality schemas are unchanged. Rollback is by application downgrade with new tables left inert until a controlled migration removes retained safety records."
+    },
+    "0049_crew_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Crew control tables for surface positioning, bid/award, training-resource planning and payroll interfaces"
+    },
+    "0050_engineering_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Engineering configuration, EO, SB campaign and structural-damage control tables; no destructive rewrite"
+    },
+    "0051_commercial_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Commercial/Finance contract, obligation, costing, accrual, valuation and FX control tables; no destructive rewrite"
+    },
+    "0052_quality_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Quality programme, surveillance, auditor competence, finding-extension, trend and management-review control tables; no destructive rewrite"
+    },
+    "0053_continuing_airworthiness_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Continuing Airworthiness reliability-programme, metric, alert, investigation, condition-monitoring and review tables; no destructive rewrite"
+    },
+    "0054_compliance_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Compliance authority, requirement, applicability, evidence, regulatory-change and review governance tables; no destructive rewrite"
+    },
+    "0055_analytics_completion.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand/security-fix; additive governed Analytics tables plus correction of Compliance RLS setting names to the existing AeroOS tenant context"
+    },
+    "0056_integration_migration_platform.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive integration/migration governance tables for adapter mappings, connector lifecycle, API deprecation, event-schema compatibility and workflow versions"
+    },
+    "0057_quality_risk_finding_engine.sql": {
+      "backwardCompatible": true,
+      "reversible": false,
+      "strategy": "expand; additive Quality finding risk-classification columns and tracker indexes; legacy finding rows remain valid and can be classified in place"
+    }
+  }
+}

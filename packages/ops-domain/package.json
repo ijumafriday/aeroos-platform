@@ -1,0 +1,21 @@
+{
+  "name": "@aeroos/ops-domain",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Pure domain model for Flight Ops / OCC: flights, rotations, delay propagation, crew duties, recovery contract (no I/O)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/kernel": "workspace:*",
+    "@aeroos/compliance": "workspace:*",
+    "@aeroos/contracts": "workspace:*"
+  }
+}

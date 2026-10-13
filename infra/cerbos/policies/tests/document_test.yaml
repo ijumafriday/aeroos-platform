@@ -1,0 +1,56 @@
+name: DocumentPolicyTests
+description: Attachment rules follow the owning record
+
+principals:
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  qm:
+    id: quality.manager
+    roles: ["quality_manager"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+
+resources:
+  cardDoc:
+    kind: document
+    id: DOC-1
+    attr: { operatorId: "NKX", ownerType: "task_card" }
+  crsDoc:
+    kind: document
+    id: DOC-2
+    attr: { operatorId: "NKX", ownerType: "crs" }
+  trainingDoc:
+    kind: document
+    id: DOC-3
+    attr: { operatorId: "NKX", ownerType: "training_record" }
+
+tests:
+  - name: Engineers attach to task cards and read CRS PDFs, but not training records
+    input:
+      principals: ["mechanic"]
+      resources: ["cardDoc", "crsDoc", "trainingDoc"]
+      actions: ["attach", "read"]
+    expected:
+      - principal: mechanic
+        resource: cardDoc
+        actions: { attach: EFFECT_ALLOW, read: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: crsDoc
+        actions: { attach: EFFECT_DENY, read: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: trainingDoc
+        actions: { attach: EFFECT_DENY, read: EFFECT_DENY }
+
+  - name: The quality manager files training certificates
+    input:
+      principals: ["qm"]
+      resources: ["trainingDoc", "crsDoc"]
+      actions: ["attach", "read"]
+    expected:
+      - principal: qm
+        resource: trainingDoc
+        actions: { attach: EFFECT_ALLOW, read: EFFECT_ALLOW }
+      - principal: qm
+        resource: crsDoc
+        actions: { attach: EFFECT_DENY, read: EFFECT_ALLOW }

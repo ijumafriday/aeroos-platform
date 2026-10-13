@@ -1,0 +1,102 @@
+name: OpsPolicyTests
+description: OCC controllers change the schedule and decide recovery; others read
+
+principals:
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  camo:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"], username: "camo.engineer" }
+  auditor:
+    id: auditor
+    roles: ["auditor"]
+    attr: { operators: ["NKX"], username: "auditor" }
+
+resources:
+  flight:
+    kind: flight
+    id: NK601-2026-10-08
+    attr: { operatorId: "NKX" }
+  foreignFlight:
+    kind: flight
+    id: XX1
+    attr: { operatorId: "XYZ" }
+  run:
+    kind: recovery
+    id: REC-100
+    attr: { operatorId: "NKX" }
+  roster:
+    kind: crew_roster
+    id: "*"
+    attr: { operatorId: "NKX" }
+
+tests:
+  - name: OCC manages flights and decides recovery
+    input:
+      principals: ["occ"]
+      resources: ["flight", "run", "roster"]
+      actions: ["read", "manage", "run", "decide"]
+    expected:
+      - principal: occ
+        resource: flight
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW, run: EFFECT_DENY, decide: EFFECT_DENY }
+      - principal: occ
+        resource: run
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, run: EFFECT_ALLOW, decide: EFFECT_ALLOW }
+      - principal: occ
+        resource: roster
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, run: EFFECT_DENY, decide: EFFECT_DENY }
+
+  - name: CAMO sees the schedule but cannot change it or see rosters
+    input:
+      principals: ["camo"]
+      resources: ["flight", "roster", "run"]
+      actions: ["read", "manage"]
+    expected:
+      - principal: camo
+        resource: flight
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY }
+      - principal: camo
+        resource: roster
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: camo
+        resource: run
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY }
+
+  - name: Auditors review recovery runs but cannot decide; no access to other operators
+    input:
+      principals: ["auditor", "occ"]
+      resources: ["run", "foreignFlight"]
+      actions: ["read", "decide"]
+    expected:
+      - principal: auditor
+        resource: run
+        actions: { read: EFFECT_ALLOW, decide: EFFECT_DENY }
+      - principal: auditor
+        resource: foreignFlight
+        actions: { read: EFFECT_DENY, decide: EFFECT_DENY }
+      - principal: occ
+        resource: run
+        actions: { read: EFFECT_ALLOW, decide: EFFECT_ALLOW }
+      - principal: occ
+        resource: foreignFlight
+        actions: { read: EFFECT_DENY, decide: EFFECT_DENY }
+
+  - name: Only the OCC re-crews duties (crew recovery)
+    input:
+      principals: ["occ", "auditor", "camo"]
+      resources: ["roster"]
+      actions: ["recover"]
+    expected:
+      - principal: occ
+        resource: roster
+        actions: { recover: EFFECT_ALLOW }
+      - principal: auditor
+        resource: roster
+        actions: { recover: EFFECT_DENY }
+      - principal: camo
+        resource: roster
+        actions: { recover: EFFECT_DENY }

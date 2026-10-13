@@ -1,0 +1,31 @@
+# Third-party maintenance billing: finance keeps customers and their terms, invoices and records payments; the
+# CAMO / maintenance manager quotes and records the customer's approval; certifying staff and stores book work.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: billing
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller", "camo_manager", "certifying_staff", "storekeeper", "auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage_customers", "invoice"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["quote"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_manager", "finance_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["book"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "storekeeper", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

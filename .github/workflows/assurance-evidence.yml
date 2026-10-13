@@ -1,0 +1,63 @@
+name: Assurance evidence
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Evidence profile
+        required: true
+        type: choice
+        options: [failure, dr, benchmark, soak]
+  schedule:
+    - cron: '17 2 * * 0'
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9.15.0 }
+      - uses: sigstore/cosign-installer@v3
+      - name: Dependency gate
+        run: scripts/dependency-gate.sh
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Start assurance stack
+        run: docker compose up -d --build
+      - name: Wait for readiness
+        run: |
+          for i in $(seq 1 120); do curl -fsS http://localhost:8080/api/health/ready && exit 0; sleep 5; done
+          docker compose ps; docker compose logs --tail 200; exit 1
+      - name: Select profile
+        id: profile
+        shell: bash
+        run: |
+          p='${{ inputs.profile }}'; [ -n "$p" ] || p=failure
+          case "$p" in
+            failure) echo 'control=D091' >> "$GITHUB_OUTPUT"; echo 'cmd=scripts/assurance/failure-drill.sh postgres' >> "$GITHUB_OUTPUT" ;;
+            dr) echo 'control=D092' >> "$GITHUB_OUTPUT"; echo 'cmd=scripts/dr/drill.sh' >> "$GITHUB_OUTPUT" ;;
+            benchmark) echo 'control=D089' >> "$GITHUB_OUTPUT"; echo 'cmd=scripts/assurance/qualify-dataset.py && scripts/assurance/run-load.sh major-airline' >> "$GITHUB_OUTPUT" ;;
+            soak) echo 'control=D090' >> "$GITHUB_OUTPUT"; echo 'cmd=scripts/assurance/qualify-dataset.py && scripts/assurance/run-load.sh soak' >> "$GITHUB_OUTPUT" ;;
+          esac
+      - name: Run and record evidence
+        env:
+          AEROOS_ASSURANCE_ENV: github-hosted-compose
+        run: python3 scripts/assurance/evidence.py --control '${{ steps.profile.outputs.control }}' --target docker-compose --command '${{ steps.profile.outputs.cmd }}' --output evidence/result.json --timeout 10800
+      - name: Validate evidence
+        if: always()
+        run: python3 scripts/assurance/verify-evidence.py evidence/result.json
+      - name: Sign evidence
+        if: always()
+        run: |
+          sha256sum evidence/result.json > evidence/SHA256SUMS
+          cosign sign-blob --yes --bundle evidence/result.sigstore.json evidence/result.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aeroos-assurance-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 90

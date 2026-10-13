@@ -1,0 +1,73 @@
+name: CamoAmoDepthPolicyTests
+description: CAMO plans work packages; the hangar reads them; only the storekeeper books stock in
+
+principals:
+  camo:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"], username: "camo.engineer" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  store:
+    id: storekeeper
+    roles: ["storekeeper"]
+    attr: { operators: ["NKX"], username: "storekeeper" }
+
+resources:
+  wp:
+    kind: work_package
+    id: WP-3100
+    attr: { operatorId: "NKX" }
+  stores:
+    kind: stores
+    id: "*"
+    attr: { operatorId: "NKX" }
+  programme:
+    kind: maintenance_programme
+    id: "*"
+    attr: { operatorId: "NKX" }
+
+tests:
+  - name: CAMO manages work packages; mechanics only read them
+    input:
+      principals: ["camo", "mechanic"]
+      resources: ["wp"]
+      actions: ["read", "manage"]
+    expected:
+      - principal: camo
+        resource: wp
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: wp
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY }
+
+  - name: Only the storekeeper receives stock
+    input:
+      principals: ["store", "mechanic"]
+      resources: ["stores"]
+      actions: ["read", "receive"]
+    expected:
+      - principal: store
+        resource: stores
+        actions: { read: EFFECT_ALLOW, receive: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: stores
+        actions: { read: EFFECT_ALLOW, receive: EFFECT_DENY }
+
+  - name: The due list is readable by CAMO and the hangar, not by the storekeeper
+    input:
+      principals: ["camo", "mechanic", "store"]
+      resources: ["programme"]
+      actions: ["read"]
+    expected:
+      - principal: camo
+        resource: programme
+        actions: { read: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: programme
+        actions: { read: EFFECT_ALLOW }
+      - principal: store
+        resource: programme
+        actions: { read: EFFECT_DENY }

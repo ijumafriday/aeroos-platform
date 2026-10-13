@@ -1,0 +1,19 @@
+{
+  "name": "@aeroos/compliance",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Jurisdiction-neutral compliance engine: versioned, effective-dated rulepacks (EASA, FAA draft) with operator overlays",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/kernel": "workspace:*"
+  }
+}

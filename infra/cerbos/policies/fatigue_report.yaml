@@ -1,0 +1,41 @@
+# Fatigue reports (ORO.FTL.120 fatigue risk management): flight crew report; the Safety Manager / SMS office
+# and auditors read all and the Safety Manager reviews; a reporter reads their own reports. The OCC does not
+# see them: reporting is confidential and non-punitive.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: fatigue_report
+  rules:
+    - actions: ["report"]
+      effect: EFFECT_ALLOW
+      roles: ["flight_crew"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["safety_manager", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["flight_crew"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.reporter == request.principal.attr.username
+
+    - actions: ["review"]
+      effect: EFFECT_ALLOW
+      roles: ["safety_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.reporter != request.principal.attr.username

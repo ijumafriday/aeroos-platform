@@ -1,0 +1,87 @@
+name: TaskCardPolicyTests
+description: Certification requires the role, a covered licence and (for the CRS) every step stamped
+
+principals:
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"] }
+  engineer:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"] }
+
+resources:
+  covered:
+    kind: task_card
+    id: TC-1
+    attr: { operatorId: "NKX", status: "IN_PROGRESS", licenceCovered: true, allStepsStamped: false }
+  ready:
+    kind: task_card
+    id: TC-2
+    attr: { operatorId: "NKX", status: "IN_PROGRESS", licenceCovered: true, allStepsStamped: true }
+  notCovered:
+    kind: task_card
+    id: TC-3
+    attr: { operatorId: "NKX", status: "OPEN", licenceCovered: false, allStepsStamped: true }
+  certified:
+    kind: task_card
+    id: TC-4
+    attr: { operatorId: "NKX", status: "CERTIFIED", licenceCovered: true, allStepsStamped: true }
+
+tests:
+  - name: A covered mechanic signs steps but cannot issue a CRS until every step is stamped
+    input:
+      principals: ["mechanic"]
+      resources: ["covered", "ready"]
+      actions: ["sign_step", "issue_crs"]
+    expected:
+      - principal: mechanic
+        resource: covered
+        actions: { sign_step: EFFECT_ALLOW, issue_crs: EFFECT_DENY }
+      - principal: mechanic
+        resource: ready
+        actions: { sign_step: EFFECT_ALLOW, issue_crs: EFFECT_ALLOW }
+
+  - name: A licence that does not cover the work blocks certification
+    input:
+      principals: ["mechanic"]
+      resources: ["notCovered"]
+      actions: ["sign_step", "issue_crs"]
+    expected:
+      - principal: mechanic
+        resource: notCovered
+        actions: { sign_step: EFFECT_DENY, issue_crs: EFFECT_DENY }
+
+  - name: Nothing can be signed on a certified card
+    input:
+      principals: ["mechanic"]
+      resources: ["certified"]
+      actions: ["sign_step", "issue_crs"]
+    expected:
+      - principal: mechanic
+        resource: certified
+        actions: { sign_step: EFFECT_DENY, issue_crs: EFFECT_DENY }
+
+  - name: Non-certifying roles can read but never certify
+    input:
+      principals: ["engineer"]
+      resources: ["ready"]
+      actions: ["read", "sign_step", "issue_crs"]
+    expected:
+      - principal: engineer
+        resource: ready
+        actions: { read: EFFECT_ALLOW, sign_step: EFFECT_DENY, issue_crs: EFFECT_DENY }
+
+  - name: A mechanic may add field notes only before certification
+    input:
+      principals: ["mechanic"]
+      resources: ["covered", "certified"]
+      actions: ["field_note"]
+    expected:
+      - principal: mechanic
+        resource: covered
+        actions: { field_note: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: certified
+        actions: { field_note: EFFECT_DENY }

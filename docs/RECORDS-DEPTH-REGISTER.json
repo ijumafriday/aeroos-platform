@@ -1,0 +1,538 @@
+{
+  "version": "0.39.0",
+  "domain": "Technical Records",
+  "definition": "Software-complete Technical Records capability baseline. Production/operator acceptance remains governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "REC-001",
+      "area": "Governance",
+      "capability": "Dedicated Records schema/service role",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ]
+    },
+    {
+      "id": "REC-002",
+      "area": "Governance",
+      "capability": "Tenant RLS on Records tables",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ]
+    },
+    {
+      "id": "REC-003",
+      "area": "Governance",
+      "capability": "Records officer/manager authorization",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/technical_record.yaml"
+      ]
+    },
+    {
+      "id": "REC-004",
+      "area": "Governance",
+      "capability": "Compact four-workspace Records UI",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/web/src/features/records/TechnicalRecords.tsx"
+      ]
+    },
+    {
+      "id": "REC-005",
+      "area": "Governance",
+      "capability": "Immutable platform document store reused",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-006",
+      "area": "Binders",
+      "capability": "Subject-keyed record binders",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-007",
+      "area": "Binders",
+      "capability": "Mandatory/optional requirements",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-008",
+      "area": "Binders",
+      "capability": "Evidence linking with source reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-009",
+      "area": "Binders",
+      "capability": "Completeness calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-010",
+      "area": "Binders",
+      "capability": "Completion blocked on missing mandatory evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-011",
+      "area": "Binders",
+      "capability": "Record class/custodian/review metadata",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-012",
+      "area": "Binders",
+      "capability": "Deterministic package manifest checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-013",
+      "area": "Historical intake",
+      "capability": "Controlled intake batches with source manifest hash",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-014",
+      "area": "Historical intake",
+      "capability": "Source custodian and received provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-015",
+      "area": "Historical intake",
+      "capability": "Stored-document hash capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-016",
+      "area": "Historical intake",
+      "capability": "Duplicate detection by SHA-256",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-017",
+      "area": "Historical intake",
+      "capability": "Duplicate-of lineage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-018",
+      "area": "Historical intake",
+      "capability": "External OCR/classification provider provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-019",
+      "area": "Historical intake",
+      "capability": "OCR text integrity hash verification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-020",
+      "area": "Historical intake",
+      "capability": "Model/provider job reference retention",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-021",
+      "area": "Historical intake",
+      "capability": "Confidence capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-022",
+      "area": "Historical intake",
+      "capability": "Human acceptance/rejection review",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-023",
+      "area": "Historical intake",
+      "capability": "Accepted record class and subject identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-024",
+      "area": "Historical intake",
+      "capability": "Record date/document number classification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-025",
+      "area": "Historical intake",
+      "capability": "Page range capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-026",
+      "area": "Historical intake",
+      "capability": "Missing-page continuity detection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-027",
+      "area": "Historical intake",
+      "capability": "Batch completion blocked on pending review",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-028",
+      "area": "Historical intake",
+      "capability": "Document custody event trail",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-029",
+      "area": "Lease & redelivery",
+      "capability": "Aircraft lease-transition projects",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-030",
+      "area": "Lease & redelivery",
+      "capability": "Lessor/lease/effectivity references",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-031",
+      "area": "Lease & redelivery",
+      "capability": "Categorized redelivery requirements",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-032",
+      "area": "Lease & redelivery",
+      "capability": "Evidence required before acceptance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-033",
+      "area": "Lease & redelivery",
+      "capability": "Waiver/rejection disposition capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-034",
+      "area": "Lease & redelivery",
+      "capability": "Controlled project lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-035",
+      "area": "Lease & redelivery",
+      "capability": "Readiness blocks unresolved mandatory requirements",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-036",
+      "area": "Lease & redelivery",
+      "capability": "Back-to-birth component trace entries",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-037",
+      "area": "Lease & redelivery",
+      "capability": "Trace predecessor linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-038",
+      "area": "Lease & redelivery",
+      "capability": "Chronological trace validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-039",
+      "area": "Lease & redelivery",
+      "capability": "Birth/original-release start validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-040",
+      "area": "Lease & redelivery",
+      "capability": "Independent trace verification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-041",
+      "area": "Retention",
+      "capability": "Record-class retention schedules",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-042",
+      "area": "Retention",
+      "capability": "Legal basis recorded per schedule",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-043",
+      "area": "Retention",
+      "capability": "Legal holds on binder/document/subject",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-044",
+      "area": "Retention",
+      "capability": "Independent legal-hold release",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-045",
+      "area": "Retention",
+      "capability": "Disposition eligibility date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-046",
+      "area": "Retention",
+      "capability": "Independent disposition approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-047",
+      "area": "Retention",
+      "capability": "Active legal hold blocks disposition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-048",
+      "area": "Retention",
+      "capability": "Archive-only disposition preserves evidence bytes",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-049",
+      "area": "Delivery",
+      "capability": "Redelivery/authority/archive package generation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-050",
+      "area": "Delivery",
+      "capability": "Package SHA-256 integrity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.service.ts"
+      ]
+    },
+    {
+      "id": "REC-051",
+      "area": "Delivery",
+      "capability": "Delivery recipient/method/reference retention",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-052",
+      "area": "Delivery",
+      "capability": "Independent package acknowledgement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-053",
+      "area": "Delivery",
+      "capability": "Rejected delivery reason capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-054",
+      "area": "Delivery",
+      "capability": "Package status reconciliation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-055",
+      "area": "Operations",
+      "capability": "Portfolio summary for open binders/intake/leases/holds",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-056",
+      "area": "Operations",
+      "capability": "Records global search integration",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records.search.ts"
+      ]
+    },
+    {
+      "id": "REC-057",
+      "area": "Operations",
+      "capability": "Audit-chain evidence for Records actions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/records/records-control.service.ts"
+      ]
+    },
+    {
+      "id": "REC-058",
+      "area": "Operations",
+      "capability": "Document custody history persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ]
+    },
+    {
+      "id": "REC-059",
+      "area": "Operations",
+      "capability": "Operator-specific record classes",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0046_records_completion.sql"
+      ]
+    }
+  ]
+}

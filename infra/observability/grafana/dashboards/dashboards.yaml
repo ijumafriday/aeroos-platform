@@ -1,0 +1,11 @@
+# Dashboards as code: every JSON file in ./json is loaded into the "AeroOS" folder at Grafana start.
+# Edits made in the Grafana UI are not saved back; change the JSON here instead.
+apiVersion: 1
+providers:
+  - name: aeroos
+    folder: AeroOS
+    type: file
+    disableDeletion: true
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/provisioning/dashboards/json

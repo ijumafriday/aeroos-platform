@@ -1,0 +1,533 @@
+{
+  "realm": "aeroos",
+  "displayName": "AeroOS",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "bruteForceProtected": true,
+  "accessTokenLifespan": 900,
+  "ssoSessionIdleTimeout": 28800,
+  "roles": {
+    "realm": [
+      {
+        "name": "camo_engineer",
+        "description": "Continuing airworthiness engineer"
+      },
+      {
+        "name": "camo_manager",
+        "description": "Continuing airworthiness manager (approves extensions)"
+      },
+      {
+        "name": "certifying_staff",
+        "description": "Part-145 certifying staff (B1/B2/C)"
+      },
+      {
+        "name": "occ_controller",
+        "description": "Operations control"
+      },
+      {
+        "name": "flight_crew",
+        "description": "Flight crew (EFB technical log)"
+      },
+      {
+        "name": "auditor",
+        "description": "Quality / compliance auditor"
+      },
+      {
+        "name": "safety_manager",
+        "description": "Safety Manager / SMS office (occurrence risk, investigation and safety action verification)"
+      },
+      {
+        "name": "quality_manager",
+        "description": "Part-145 quality manager (issues, suspends and revokes company authorisations)"
+      },
+      {
+        "name": "storekeeper",
+        "description": "Stores: receives and issues parts, controls tools"
+      },
+      {
+        "name": "finance_controller",
+        "description": "Finance: customers, invoicing, payments, general ledger, period close"
+      },
+      {
+        "name": "service_worker",
+        "description": "Trusted AeroOS background workload"
+      },
+      {
+        "name": "platform_admin",
+        "description": "Tenant platform administrator for integrations and platform configuration"
+      },
+      {
+        "name": "engineering_engineer",
+        "description": "Engineering configuration and technical engineering"
+      },
+      {
+        "name": "engineering_manager",
+        "description": "Engineering manager (independent configuration approval)"
+      },
+      {
+        "name": "maintenance_planner",
+        "description": "Part-145 maintenance planner / work-order controller"
+      },
+      {
+        "name": "maintenance_supervisor",
+        "description": "Part-145 production supervisor / shift controller"
+      },
+      {
+        "name": "mechanic",
+        "description": "Part-145 mechanic: executes and records work but does not certify CRS by role alone"
+      },
+      {
+        "name": "tool_controller",
+        "description": "Part-145 tool crib controller"
+      },
+      {
+        "name": "records_officer",
+        "description": "Technical Records officer"
+      },
+      {
+        "name": "records_manager",
+        "description": "Technical Records manager"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "NKX",
+      "path": "/NKX",
+      "attributes": {
+        "operatorName": [
+          "Nordkapp Air"
+        ]
+      }
+    },
+    {
+      "name": "FJR",
+      "path": "/FJR",
+      "attributes": {
+        "operatorName": [
+          "Fjell Regional"
+        ]
+      }
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "aeroos-web",
+      "name": "AeroOS web workspace",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "http://localhost:8080/*",
+        "http://localhost:5173/*"
+      ],
+      "webOrigins": [
+        "http://localhost:8080",
+        "http://localhost:5173"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:8080/*##http://localhost:5173/*"
+      },
+      "protocolMappers": [
+        {
+          "name": "operators",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-group-membership-mapper",
+          "config": {
+            "claim.name": "operators",
+            "full.path": "false",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "name": "api-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.custom.audience": "aeroos-api",
+            "access.token.claim": "true",
+            "id.token.claim": "false"
+          }
+        },
+        {
+          "name": "auth-time",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "AUTH_TIME",
+            "claim.name": "auth_time",
+            "jsonType.label": "long",
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "userinfo.token.claim": "false",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "clientId": "aeroos-worker",
+      "name": "Aeroos Worker",
+      "enabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "secret": "dev-aeroos-worker-secret-change-me",
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "api-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.custom.audience": "aeroos-api",
+            "access.token.claim": "true",
+            "id.token.claim": "false"
+          }
+        }
+      ]
+    },
+    {
+      "clientId": "aeroos-optimiser",
+      "name": "Aeroos Optimiser",
+      "enabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "secret": "dev-aeroos-optimiser-secret-change-me",
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "api-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.custom.audience": "aeroos-api",
+            "access.token.claim": "true",
+            "id.token.claim": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "camo.engineer",
+      "enabled": true,
+      "email": "camo.engineer@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Marte",
+      "lastName": "Strand",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "camo_engineer",
+        "engineering_engineer",
+        "maintenance_planner",
+        "records_officer"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "camo.manager",
+      "enabled": true,
+      "email": "camo.manager@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Henrik",
+      "lastName": "Dahl",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "camo_engineer",
+        "camo_manager",
+        "auditor",
+        "engineering_engineer",
+        "engineering_manager",
+        "records_manager"
+      ],
+      "groups": [
+        "/NKX",
+        "/FJR"
+      ]
+    },
+    {
+      "username": "k.mwangi",
+      "enabled": true,
+      "email": "k.mwangi@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Kevin",
+      "lastName": "Mwangi",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "certifying_staff",
+        "mechanic",
+        "maintenance_supervisor"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "a.saleh",
+      "enabled": true,
+      "email": "a.saleh@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Ahmed",
+      "lastName": "Saleh",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "certifying_staff",
+        "mechanic"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "occ.controller",
+      "enabled": true,
+      "email": "occ@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Ingrid",
+      "lastName": "Solberg",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "occ_controller"
+      ],
+      "groups": [
+        "/NKX",
+        "/FJR"
+      ]
+    },
+    {
+      "username": "auditor",
+      "enabled": true,
+      "email": "quality@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Leila",
+      "lastName": "Haddad",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "auditor"
+      ],
+      "groups": [
+        "/NKX",
+        "/FJR"
+      ]
+    },
+    {
+      "username": "j.otieno",
+      "enabled": true,
+      "email": "j.otieno@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Joseph",
+      "lastName": "Otieno",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "certifying_staff",
+        "mechanic"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "safety.manager",
+      "enabled": true,
+      "email": "safety.manager@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Amina",
+      "lastName": "Hassan",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "safety_manager"
+      ],
+      "groups": [
+        "/NKX",
+        "/FJR"
+      ]
+    },
+    {
+      "username": "quality.manager",
+      "enabled": true,
+      "email": "quality.manager@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Grace",
+      "lastName": "Wanjiru",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "quality_manager",
+        "auditor"
+      ],
+      "groups": [
+        "/NKX",
+        "/FJR"
+      ]
+    },
+    {
+      "username": "storekeeper",
+      "enabled": true,
+      "email": "storekeeper@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Rune",
+      "lastName": "Iversen",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "storekeeper",
+        "tool_controller"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "ola.hansen",
+      "enabled": true,
+      "email": "ola.hansen@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Ola",
+      "lastName": "Hansen",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "flight_crew"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "finance",
+      "enabled": true,
+      "email": "finance@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Silje",
+      "lastName": "Moe",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "finance_controller"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    },
+    {
+      "username": "service-account-aeroos-worker",
+      "enabled": true,
+      "serviceAccountClientId": "aeroos-worker",
+      "realmRoles": [
+        "service_worker"
+      ]
+    },
+    {
+      "username": "service-account-aeroos-optimiser",
+      "enabled": true,
+      "serviceAccountClientId": "aeroos-optimiser",
+      "realmRoles": [
+        "service_worker"
+      ]
+    },
+    {
+      "username": "platform.admin",
+      "enabled": true,
+      "email": "platform.admin@nordkapp.example",
+      "emailVerified": true,
+      "firstName": "Platform",
+      "lastName": "Administrator",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "aeroos",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "platform_admin",
+        "auditor"
+      ],
+      "groups": [
+        "/NKX"
+      ]
+    }
+  ]
+}

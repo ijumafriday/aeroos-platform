@@ -1,0 +1,9 @@
+[project]
+name = "aeroos-optimiser"
+version = "0.4.0"
+description = "AeroOS disruption-recovery optimiser: OR-Tools CP-SAT model behind a Temporal worker"
+requires-python = ">=3.11"
+dependencies = ["temporalio==1.8.0", "ortools==9.11.4210"]
+
+[tool.ruff]
+line-length = 150

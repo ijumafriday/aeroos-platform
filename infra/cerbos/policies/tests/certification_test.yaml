@@ -1,0 +1,35 @@
+name: CertificationPolicyTests
+description: Quality, auditors and the CAMO manager read the compliance matrix of their operator; others cannot
+principals:
+  quality:
+    id: quality.manager
+    roles: ["quality_manager", "auditor"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  camo:
+    id: camo.manager
+    roles: ["camo_manager"]
+    attr: { operators: ["NKX"], username: "camo.manager" }
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  fjr:
+    id: fjr.quality
+    roles: ["quality_manager"]
+    attr: { operators: ["FJR"], username: "fjr.quality" }
+resources:
+  matrix:
+    kind: compliance_matrix
+    id: "*"
+    attr: { operatorId: "NKX" }
+tests:
+  - name: Compliance matrix
+    input:
+      principals: ["quality", "camo", "occ", "fjr"]
+      resources: ["matrix"]
+      actions: ["read"]
+    expected:
+      - { principal: quality, resource: matrix, actions: { read: EFFECT_ALLOW } }
+      - { principal: camo, resource: matrix, actions: { read: EFFECT_ALLOW } }
+      - { principal: occ, resource: matrix, actions: { read: EFFECT_DENY } }
+      - { principal: fjr, resource: matrix, actions: { read: EFFECT_DENY } }

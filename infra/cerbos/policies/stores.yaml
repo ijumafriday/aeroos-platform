@@ -1,0 +1,19 @@
+# Tools register, parts stock and hangar plan. Only the storekeeper books stock in.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: stores
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "camo_engineer", "camo_manager", "storekeeper", "auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["receive"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

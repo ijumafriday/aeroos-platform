@@ -1,0 +1,47 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: maintenance_control
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["maintenance_planner", "maintenance_supervisor", "mechanic", "certifying_staff", "tool_controller", "camo_engineer", "camo_manager", "quality_manager", "auditor", "storekeeper"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["plan", "line_control", "handover"]
+      effect: EFFECT_ALLOW
+      roles: ["maintenance_planner", "maintenance_supervisor", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["supervise", "shop_control", "aog_control"]
+      effect: EFFECT_ALLOW
+      roles: ["maintenance_supervisor", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["execute"]
+      effect: EFFECT_ALLOW
+      roles: ["mechanic", "maintenance_supervisor", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["inspect"]
+      effect: EFFECT_ALLOW
+      roles: ["maintenance_supervisor", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["tool_control"]
+      effect: EFFECT_ALLOW
+      roles: ["tool_controller", "maintenance_supervisor", "storekeeper"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage_station"]
+      effect: EFFECT_ALLOW
+      roles: ["maintenance_supervisor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

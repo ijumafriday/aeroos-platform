@@ -1,0 +1,61 @@
+# AeroOS Supply Chain depth register
+
+This register defines the software-completion scope for the Supply Chain domain. It does not substitute for operator acceptance or retained runtime assurance evidence.
+
+- **SUP-001 — Approved supplier master and approval validity** (Procurement): IMPLEMENTED
+- **SUP-002 — Material requisitions linked to maintenance demand** (Procurement): IMPLEMENTED
+- **SUP-003 — Multi-vendor quotation capture** (Procurement): IMPLEMENTED
+- **SUP-004 — Second-person purchase-order approval** (Procurement): IMPLEMENTED
+- **SUP-005 — Partial and complete goods receipt** (Procurement): IMPLEMENTED
+- **SUP-006 — Release-certificate capture and bonded/customs receipt** (Procurement): IMPLEMENTED
+- **SUP-007 — Exchange/core-return lifecycle** (Procurement): IMPLEMENTED
+- **SUP-008 — Power-by-the-hour contract support** (Procurement): IMPLEMENTED
+- **SUP-009 — Operator-owned warehouse/bin hierarchy** (Warehouse): IMPLEMENTED
+- **SUP-010 — Serialized and lot/batch stock identity** (Warehouse): IMPLEMENTED
+- **SUP-011 — Shelf-life enforcement** (Warehouse): IMPLEMENTED
+- **SUP-012 — Quarantine/serviceable/unserviceable state control** (Warehouse): IMPLEMENTED
+- **SUP-013 — Controlled bin-to-bin movement** (Warehouse): IMPLEMENTED
+- **SUP-014 — Cycle-count session and snapshot** (Warehouse): IMPLEMENTED
+- **SUP-015 — Physical-inventory session** (Warehouse): IMPLEMENTED
+- **SUP-016 — Line-by-line count recording with discrepancy reason** (Warehouse): IMPLEMENTED
+- **SUP-017 — Stale-count detection before reconciliation** (Warehouse): IMPLEMENTED
+- **SUP-018 — Inventory variance reconciliation to lot and aggregate stock** (Warehouse): IMPLEMENTED
+- **SUP-019 — Consignment-stock agreement governance** (Warehouse): IMPLEMENTED
+- **SUP-020 — Borrowed-in and loaned-out component custody** (Warehouse): IMPLEMENTED
+- **SUP-021 — Maintenance/AOG/customer/transfer fulfillment order** (Fulfillment): IMPLEMENTED
+- **SUP-022 — Lot-level pick reservation** (Fulfillment): IMPLEMENTED
+- **SUP-023 — Double-pick prevention against active reservations** (Fulfillment): IMPLEMENTED
+- **SUP-024 — Pick completeness gate before packing** (Fulfillment): IMPLEMENTED
+- **SUP-025 — Pack/ship custody transition** (Fulfillment): IMPLEMENTED
+- **SUP-026 — Shipment tracking and receipt acknowledgement** (Fulfillment): IMPLEMENTED
+- **SUP-027 — Stock decrement only on shipment** (Fulfillment): IMPLEMENTED
+- **SUP-028 — Part/station min-max replenishment policy** (Planning): IMPLEMENTED
+- **SUP-029 — Reorder-lot and lead-time policy** (Planning): IMPLEMENTED
+- **SUP-030 — Explainable weighted material demand forecast** (Planning): IMPLEMENTED
+- **SUP-031 — Planner forecast override with retained explanation** (Planning): IMPLEMENTED
+- **SUP-032 — Maintenance demand input to forecast** (Planning): IMPLEMENTED
+- **SUP-033 — Historical-consumption demand input** (Planning): IMPLEMENTED
+- **SUP-034 — Reliability demand input** (Planning): IMPLEMENTED
+- **SUP-035 — Fleet demand input** (Planning): IMPLEMENTED
+- **SUP-036 — Safety-stock input** (Planning): IMPLEMENTED
+- **SUP-037 — Replenishment proposal using on-hand/reserved/inbound/forecast** (Planning): IMPLEMENTED
+- **SUP-038 — One-click governed replenishment requisition** (Planning): IMPLEMENTED
+- **SUP-039 — Supplier on-time performance score** (Supplier): IMPLEMENTED
+- **SUP-040 — Supplier receipt-quality score and PPM** (Supplier): IMPLEMENTED
+- **SUP-041 — Supplier lead-time and commercial-variance analytics** (Supplier): IMPLEMENTED
+- **SUP-042 — Supplier grade and source-approval result** (Supplier): IMPLEMENTED
+- **SUP-043 — Source selection linked to requisition/quote/scorecard** (Supplier): IMPLEMENTED
+- **SUP-044 — Blocked source selection for expired/unapproved vendor** (Supplier): IMPLEMENTED
+- **SUP-045 — Blocked source selection when latest scorecard fails threshold** (Supplier): IMPLEMENTED
+- **SUP-046 — Warranty entitlement period and failure coverage** (Warranty): IMPLEMENTED
+- **SUP-047 — Receipt/serial-linked entitlement identity** (Warranty): IMPLEMENTED
+- **SUP-048 — Claim-to-entitlement eligibility check** (Warranty): IMPLEMENTED
+- **SUP-049 — Warranty commercial recovery and credit reconciliation** (Warranty): IMPLEMENTED
+- **SUP-050 — AOG courier/AWB logistics linked to authoritative Maintenance AOG case** (AOG): IMPLEMENTED
+- **SUP-051 — AOG shipment state, ETA and cost tracking** (AOG): IMPLEMENTED
+- **SUP-052 — Forecast signals derived from AeroOS reservations, requisitions, consumption, reliability and fleet utilization** (Planning): IMPLEMENTED
+- **SUP-053 — Receipt-quality events retained for accepted/rejected/NCR/document defects** (Supplier): IMPLEMENTED
+- **SUP-054 — Governed supplier price agreements used during source selection** (Supplier): IMPLEMENTED
+- **SUP-055 — Consignment agreement bound to the physical stock lot and station** (Warehouse): IMPLEMENTED
+- **SUP-056 — Controlled supersession of an earlier source selection** (Supplier): IMPLEMENTED
+- **SUP-057 — Overlapping supplier price agreements are rejected** (Supplier): IMPLEMENTED

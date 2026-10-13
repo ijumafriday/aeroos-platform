@@ -1,0 +1,20 @@
+# Flight Ops. OCC controllers change the schedule; others may look. Whether a change is legal
+# (dispatchability, FTL) is decided in the domain and the rulepack, not here.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: flight
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller", "camo_engineer", "camo_manager", "flight_crew", "auditor", "quality_manager", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

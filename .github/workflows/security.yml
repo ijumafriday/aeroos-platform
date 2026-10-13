@@ -1,0 +1,89 @@
+name: security-gates
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "30 2 * * *"
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  exceptions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/security/verify-exceptions.py --emit-trivyignore .trivyignore --emit-license-json security-license-exceptions.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: security-exception-inputs
+          path: |
+            .trivyignore
+            security-license-exceptions.json
+          retention-days: 30
+  sast:
+    needs: exceptions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with: { languages: javascript-typescript, queries: security-extended }
+      - uses: github/codeql-action/analyze@v3
+  secrets:
+    needs: exceptions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@v2
+  iac:
+    needs: exceptions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: security-exception-inputs, path: . }
+      - uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+          trivyignores: .trivyignore
+  licenses:
+    needs: exceptions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9.15.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - uses: actions/download-artifact@v4
+        with: { name: security-exception-inputs, path: . }
+      - run: ./scripts/dependency-gate.sh
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm licenses list --prod --json > license-report.json
+      - run: python3 scripts/verify-licenses.py license-report.json security-license-exceptions.json
+  container:
+    needs: exceptions
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - { app: api, context: ., file: apps/api/Dockerfile }
+          - { app: worker, context: ., file: apps/worker/Dockerfile }
+          - { app: web, context: ., file: apps/web/Dockerfile }
+          - { app: optimiser, context: services/optimiser, file: services/optimiser/Dockerfile }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: security-exception-inputs, path: . }
+      - run: docker build -f ${{ matrix.file }} -t aeroos-${{ matrix.app }}:security ${{ matrix.context }}
+      - uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: aeroos-${{ matrix.app }}:security
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: '1'
+          trivyignores: .trivyignore

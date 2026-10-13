@@ -1,0 +1,1497 @@
+{
+  "product": "AeroOS",
+  "domain": "Compliance",
+  "registerVersion": "1.0",
+  "platformVersion": "0.47.0",
+  "policy": "Software-depth implementation evidence only; authority certification, approved operator expositions, independent regulatory validation, production authority/customer acceptance and deployment-specific UAT/parallel-run evidence remain governed by D021/D022.",
+  "items": [
+    {
+      "id": "COM-001",
+      "category": "Authority governance",
+      "capability": "Authority governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-002",
+      "category": "Authority governance",
+      "capability": "Authority governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-003",
+      "category": "Authority governance",
+      "capability": "Authority governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-004",
+      "category": "Authority governance",
+      "capability": "Authority governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-005",
+      "category": "Authority governance",
+      "capability": "Authority governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-006",
+      "category": "Authority governance",
+      "capability": "Authority governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-007",
+      "category": "Authority governance",
+      "capability": "Authority governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-008",
+      "category": "Authority governance",
+      "capability": "Authority governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-009",
+      "category": "Authority governance",
+      "capability": "Authority governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-010",
+      "category": "Authority governance",
+      "capability": "Authority governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-011",
+      "category": "Authority governance",
+      "capability": "Authority governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-012",
+      "category": "Authority governance",
+      "capability": "Authority governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-013",
+      "category": "Authority governance",
+      "capability": "Authority governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-014",
+      "category": "Authority governance",
+      "capability": "Authority governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-015",
+      "category": "Authority governance",
+      "capability": "Authority governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-016",
+      "category": "Authority governance",
+      "capability": "Authority governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-017",
+      "category": "Authority governance",
+      "capability": "Authority governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-018",
+      "category": "Authority governance",
+      "capability": "Authority governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-019",
+      "category": "Authority governance",
+      "capability": "Authority governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-020",
+      "category": "Authority governance",
+      "capability": "Authority governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-021",
+      "category": "Authority governance",
+      "capability": "Authority governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-022",
+      "category": "Authority governance",
+      "capability": "Authority governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-023",
+      "category": "Authority governance",
+      "capability": "Authority governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-024",
+      "category": "Authority governance",
+      "capability": "Authority governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-025",
+      "category": "Authority governance",
+      "capability": "Authority governance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-026",
+      "category": "Authority governance",
+      "capability": "Authority governance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-027",
+      "category": "Authority governance",
+      "capability": "Authority governance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-028",
+      "category": "Authority governance",
+      "capability": "Authority governance control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-029",
+      "category": "Authority governance",
+      "capability": "Authority governance control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-030",
+      "category": "Authority governance",
+      "capability": "Authority governance control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-031",
+      "category": "Authority governance",
+      "capability": "Authority governance control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-032",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-033",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-034",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-035",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-036",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-037",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-038",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-039",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-040",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-041",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-042",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-043",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-044",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-045",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-046",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-047",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-048",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-049",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-050",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-051",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-052",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-053",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-054",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-055",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-056",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-057",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-058",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-059",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-060",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-061",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-062",
+      "category": "Requirements & applicability",
+      "capability": "Requirements & applicability control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-063",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-064",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-065",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-066",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-067",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-068",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-069",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-070",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-071",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-072",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-073",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-074",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-075",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-076",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-077",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-078",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-079",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-080",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-081",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-082",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-083",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-084",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-085",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-086",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-087",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-088",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-089",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-090",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-091",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-092",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-093",
+      "category": "Regulatory change",
+      "capability": "Regulatory change control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-094",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-095",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-096",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-097",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-098",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-099",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-100",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-101",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-102",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-103",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-104",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-105",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-106",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-107",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-108",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-109",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-110",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-111",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-112",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-113",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-114",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-115",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-116",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-117",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-118",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-119",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-120",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-121",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-122",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 29",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-123",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 30",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-124",
+      "category": "Compliance assurance",
+      "capability": "Compliance assurance control 31",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0054_compliance_completion.sql",
+        "apps/api/src/modules/compliance/compliance-control.service.ts",
+        "apps/web/src/features/quality/ComplianceControl.tsx",
+        "infra/cerbos/policies/compliance_control.yaml"
+      ]
+    }
+  ]
+}

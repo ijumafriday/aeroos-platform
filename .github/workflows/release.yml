@@ -1,0 +1,143 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  attestations: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9.15.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: ./scripts/release-check.sh
+      - run: ./scripts/reproducible-build.sh
+      - name: Cerbos policies
+        run: docker run --rm -v "$PWD/infra/cerbos/policies:/policies" ghcr.io/cerbos/cerbos:0.39.0 compile /policies
+
+  publish:
+    needs: gate
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - { app: api, context: ., file: apps/api/Dockerfile }
+          - { app: worker, context: ., file: apps/worker/Dockerfile }
+          - { app: web, context: ., file: apps/web/Dockerfile }
+          - { app: optimiser, context: services/optimiser, file: services/optimiser/Dockerfile }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: sigstore/cosign-installer@v3.7.0
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.file }}
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/aeroos-${{ matrix.app }}:${{ github.ref_name }}
+          sbom: true
+          provenance: mode=max
+      - name: Attest published image
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ghcr.io/${{ github.repository_owner }}/aeroos-${{ matrix.app }}
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: true
+      - name: Sign and verify published image digest
+        env:
+          IMAGE: ghcr.io/${{ github.repository_owner }}/aeroos-${{ matrix.app }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+          APP: ${{ matrix.app }}
+        run: |
+          cosign sign --yes "${IMAGE}@${DIGEST}"
+          cosign verify             --certificate-oidc-issuer https://token.actions.githubusercontent.com             --certificate-identity-regexp "https://github.com/${GITHUB_REPOSITORY}/.github/workflows/release.yml@refs/tags/.*"             --output json "${IMAGE}@${DIGEST}" > "image-verify-${APP}.json"
+          python3 - <<'PYMETA'
+          import json,os
+          app=os.environ['APP']; image=os.environ['IMAGE']; digest=os.environ['DIGEST']
+          open(f'image-meta-{app}.json','w').write(json.dumps({
+            'app':app,'ref':image,'digest':digest,'verificationFile':f'image-verify-{app}.json'
+          },indent=2,sort_keys=True)+'\n')
+          PYMETA
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aeroos-image-evidence-${{ matrix.app }}-${{ github.ref_name }}
+          retention-days: 365
+          path: |
+            image-meta-${{ matrix.app }}.json
+            image-verify-${{ matrix.app }}.json
+
+  publish-source:
+    needs: gate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sigstore/cosign-installer@v3.7.0
+      - name: Package deterministic source release
+        run: |
+          python3 scripts/package-release.py aeroos-platform-${{ github.ref_name }}.zip
+          sha256sum aeroos-platform-${{ github.ref_name }}.zip > aeroos-platform-${{ github.ref_name }}.zip.sha256
+      - name: Attest source release provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: aeroos-platform-${{ github.ref_name }}.zip
+      - name: Sign source release
+        run: |
+          cosign sign-blob --yes \
+            --bundle aeroos-platform-${{ github.ref_name }}.zip.sigstore.json \
+            aeroos-platform-${{ github.ref_name }}.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aeroos-source-${{ github.ref_name }}
+          retention-days: 365
+          path: |
+            aeroos-platform-${{ github.ref_name }}.zip
+            aeroos-platform-${{ github.ref_name }}.zip.sha256
+            aeroos-platform-${{ github.ref_name }}.zip.sigstore.json
+
+  aggregate-release-evidence:
+    needs: [publish, publish-source]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sigstore/cosign-installer@v3.7.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: aeroos-image-evidence-*-${{ github.ref_name }}
+          path: release-evidence
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: aeroos-source-${{ github.ref_name }}
+          path: release-evidence
+      - name: Build and verify release evidence index
+        run: |
+          python3 scripts/release/build-evidence-index.py release-evidence --version "${GITHUB_REF_NAME#v}"
+          python3 scripts/release/verify-release-evidence.py release-evidence
+          cosign sign-blob --yes --bundle release-evidence/release-evidence.sigstore.json release-evidence/release-evidence.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aeroos-release-evidence-${{ github.ref_name }}
+          retention-days: 365
+          path: release-evidence/

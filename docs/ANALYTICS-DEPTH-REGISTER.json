@@ -1,0 +1,1449 @@
+{
+  "product": "AeroOS",
+  "domain": "Analytics",
+  "registerVersion": "1.0",
+  "platformVersion": "0.48.0",
+  "method": "software-depth evidence register",
+  "items": [
+    {
+      "id": "ANA-001",
+      "category": "Dataset governance",
+      "capability": "tenant-scoped dataset registry",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-002",
+      "category": "Dataset governance",
+      "capability": "domain ownership",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-003",
+      "category": "Dataset governance",
+      "capability": "source type classification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-004",
+      "category": "Dataset governance",
+      "capability": "source reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-005",
+      "category": "Dataset governance",
+      "capability": "row grain declaration",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-006",
+      "category": "Dataset governance",
+      "capability": "schema definition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-007",
+      "category": "Dataset governance",
+      "capability": "independent dataset approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-008",
+      "category": "Dataset governance",
+      "capability": "dataset suspension lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-009",
+      "category": "Snapshot ingestion",
+      "capability": "approved-dataset gating",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-010",
+      "category": "Snapshot ingestion",
+      "capability": "captured timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-011",
+      "category": "Snapshot ingestion",
+      "capability": "period bounds",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-012",
+      "category": "Snapshot ingestion",
+      "capability": "row-count persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-013",
+      "category": "Snapshot ingestion",
+      "capability": "source payload checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-014",
+      "category": "Snapshot ingestion",
+      "capability": "schema checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-015",
+      "category": "Snapshot ingestion",
+      "capability": "unknown-field rejection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-016",
+      "category": "Snapshot ingestion",
+      "capability": "independent snapshot verification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-017",
+      "category": "Semantic dimensions",
+      "capability": "dimension code",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-018",
+      "category": "Semantic dimensions",
+      "capability": "source-field binding",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-019",
+      "category": "Semantic dimensions",
+      "capability": "human label",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-020",
+      "category": "Semantic dimensions",
+      "capability": "data type declaration",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-021",
+      "category": "Semantic dimensions",
+      "capability": "dataset field validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-022",
+      "category": "Semantic dimensions",
+      "capability": "duplicate-code rejection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-023",
+      "category": "Semantic dimensions",
+      "capability": "dimension allow-list",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-024",
+      "category": "Semantic dimensions",
+      "capability": "model-bound filter use",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-025",
+      "category": "Semantic metrics",
+      "capability": "metric code",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-026",
+      "category": "Semantic metrics",
+      "capability": "field binding",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-027",
+      "category": "Semantic metrics",
+      "capability": "COUNT aggregation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-028",
+      "category": "Semantic metrics",
+      "capability": "SUM aggregation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-029",
+      "category": "Semantic metrics",
+      "capability": "AVG aggregation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-030",
+      "category": "Semantic metrics",
+      "capability": "MIN/MAX aggregation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-031",
+      "category": "Semantic metrics",
+      "capability": "COUNT_DISTINCT aggregation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-032",
+      "category": "Semantic metrics",
+      "capability": "metric allow-list",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-033",
+      "category": "Model governance",
+      "capability": "definition checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-034",
+      "category": "Model governance",
+      "capability": "revision field",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-035",
+      "category": "Model governance",
+      "capability": "draft lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-036",
+      "category": "Model governance",
+      "capability": "review lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-037",
+      "category": "Model governance",
+      "capability": "independent approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-038",
+      "category": "Model governance",
+      "capability": "activation gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-039",
+      "category": "Model governance",
+      "capability": "retirement lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-040",
+      "category": "Model governance",
+      "capability": "audit events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-041",
+      "category": "Report design",
+      "capability": "active-model gating",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-042",
+      "category": "Report design",
+      "capability": "visualization selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-043",
+      "category": "Report design",
+      "capability": "dimension selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-044",
+      "category": "Report design",
+      "capability": "metric selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-045",
+      "category": "Report design",
+      "capability": "filter definition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-046",
+      "category": "Report design",
+      "capability": "sort definition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-047",
+      "category": "Report design",
+      "capability": "row limit",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-048",
+      "category": "Report design",
+      "capability": "drilldown dimensions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-049",
+      "category": "Report validation",
+      "capability": "unknown dimension rejection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-050",
+      "category": "Report validation",
+      "capability": "unknown metric rejection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-051",
+      "category": "Report validation",
+      "capability": "unsafe SQL exclusion",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-052",
+      "category": "Report validation",
+      "capability": "filter allow-list",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-053",
+      "category": "Report validation",
+      "capability": "bounded row limit",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-054",
+      "category": "Report validation",
+      "capability": "controlled version creation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-055",
+      "category": "Report validation",
+      "capability": "definition checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-056",
+      "category": "Report validation",
+      "capability": "change note",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-057",
+      "category": "Report governance",
+      "capability": "draft lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-058",
+      "category": "Report governance",
+      "capability": "review lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-059",
+      "category": "Report governance",
+      "capability": "independent approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-060",
+      "category": "Report governance",
+      "capability": "activation gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-061",
+      "category": "Report governance",
+      "capability": "retirement lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-062",
+      "category": "Report governance",
+      "capability": "creator identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-063",
+      "category": "Report governance",
+      "capability": "submission identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-064",
+      "category": "Report governance",
+      "capability": "approval identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-065",
+      "category": "Execution gating",
+      "capability": "active report required",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-066",
+      "category": "Execution gating",
+      "capability": "active semantic model required",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-067",
+      "category": "Execution gating",
+      "capability": "controlled version required",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-068",
+      "category": "Execution gating",
+      "capability": "verified snapshot required",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-069",
+      "category": "Execution gating",
+      "capability": "operator scope",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-070",
+      "category": "Execution gating",
+      "capability": "latest snapshot selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-071",
+      "category": "Execution gating",
+      "capability": "explicit snapshot selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-072",
+      "category": "Execution gating",
+      "capability": "run authorization",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-073",
+      "category": "Execution engine",
+      "capability": "group-by dimensions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-074",
+      "category": "Execution engine",
+      "capability": "COUNT calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-075",
+      "category": "Execution engine",
+      "capability": "SUM calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-076",
+      "category": "Execution engine",
+      "capability": "AVG calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-077",
+      "category": "Execution engine",
+      "capability": "MIN calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-078",
+      "category": "Execution engine",
+      "capability": "MAX calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-079",
+      "category": "Execution engine",
+      "capability": "COUNT_DISTINCT calculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-080",
+      "category": "Execution engine",
+      "capability": "filter evaluation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-081",
+      "category": "Execution output",
+      "capability": "sort application",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-082",
+      "category": "Execution output",
+      "capability": "row limit enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-083",
+      "category": "Execution output",
+      "capability": "result persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-084",
+      "category": "Execution output",
+      "capability": "result row count",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-085",
+      "category": "Execution output",
+      "capability": "result checksum",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-086",
+      "category": "Execution output",
+      "capability": "snapshot traceability",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-087",
+      "category": "Execution output",
+      "capability": "version traceability",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-088",
+      "category": "Execution output",
+      "capability": "requestor identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-089",
+      "category": "Schedule governance",
+      "capability": "active-report gating",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-090",
+      "category": "Schedule governance",
+      "capability": "daily cadence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-091",
+      "category": "Schedule governance",
+      "capability": "weekly cadence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-092",
+      "category": "Schedule governance",
+      "capability": "monthly cadence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-093",
+      "category": "Schedule governance",
+      "capability": "timezone capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-094",
+      "category": "Schedule governance",
+      "capability": "delivery channel",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-095",
+      "category": "Schedule governance",
+      "capability": "delivery target",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-096",
+      "category": "Schedule governance",
+      "capability": "independent schedule approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-097",
+      "category": "Audit and security",
+      "capability": "forced RLS",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-098",
+      "category": "Audit and security",
+      "capability": "RLS WITH CHECK",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-099",
+      "category": "Audit and security",
+      "capability": "system bypass control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-100",
+      "category": "Audit and security",
+      "capability": "Cerbos read permission",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-101",
+      "category": "Audit and security",
+      "capability": "Cerbos manage permission",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-102",
+      "category": "Audit and security",
+      "capability": "Cerbos approve permission",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-103",
+      "category": "Audit and security",
+      "capability": "Cerbos run permission",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-104",
+      "category": "Audit and security",
+      "capability": "audit logging",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-105",
+      "category": "User workspace",
+      "capability": "semantic-layer tab",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-106",
+      "category": "User workspace",
+      "capability": "dataset-snapshots tab",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-107",
+      "category": "User workspace",
+      "capability": "report-designer tab",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-108",
+      "category": "User workspace",
+      "capability": "runs-schedules tab",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-109",
+      "category": "User workspace",
+      "capability": "role-aware controls",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-110",
+      "category": "User workspace",
+      "capability": "status pills",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-111",
+      "category": "User workspace",
+      "capability": "run result preview",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-112",
+      "category": "User workspace",
+      "capability": "compact BI navigation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-113",
+      "category": "Release assurance",
+      "capability": "migration compatibility declaration",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-114",
+      "category": "Release assurance",
+      "capability": "master deficiency evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-115",
+      "category": "Release assurance",
+      "capability": "depth verification script",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-116",
+      "category": "Release assurance",
+      "capability": "aggregate release gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-117",
+      "category": "Release assurance",
+      "capability": "contract version alignment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-118",
+      "category": "Release assurance",
+      "capability": "Helm version alignment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-119",
+      "category": "Release assurance",
+      "capability": "Compliance RLS correction",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    },
+    {
+      "id": "ANA-120",
+      "category": "Release assurance",
+      "capability": "conservative PARTIAL status",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0055_analytics_completion.sql",
+        "apps/api/src/platform/analytics/analytics.service.ts",
+        "apps/web/src/features/analytics/AnalyticsControl.tsx",
+        "infra/cerbos/policies/analytics_control.yaml"
+      ]
+    }
+  ]
+}

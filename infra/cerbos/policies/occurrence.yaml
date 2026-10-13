@@ -1,0 +1,38 @@
+# Safety reports. Everyone may report (and see their own reports); the Safety Manager / SMS office triages,
+# investigates and closes; auditors and the CAMO manager read all; an assigned investigator reads that report. Confidential reporters are de-identified
+# in the API for everyone but the safety office and the reporter.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: occurrence
+  rules:
+    - actions: ["report"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "safety_manager", "storekeeper", "occ_controller", "flight_crew"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["safety_manager", "auditor", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "safety_manager", "storekeeper", "occ_controller", "flight_crew"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.reporter == request.principal.attr.username || request.resource.attr.investigator == request.principal.attr.username
+
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["safety_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

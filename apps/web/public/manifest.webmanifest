@@ -1,0 +1,9 @@
+{
+  "name": "AeroOS Field",
+  "short_name": "AeroOS",
+  "start_url": "/amo/task-cards",
+  "display": "standalone",
+  "background_color": "#090e14",
+  "theme_color": "#090e14",
+  "icons": [{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

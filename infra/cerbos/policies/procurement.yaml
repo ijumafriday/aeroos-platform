@@ -1,0 +1,63 @@
+# Supply chain (145.A.42). Stores runs purchasing, receiving and customs; engineering may requisition and claim
+# warranty; orders above the threshold are approved by a manager (never the person who raised them — domain
+# rule and database CHECK); the quality manager keeps the approved supplier list.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: procurement
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper", "camo_engineer", "camo_manager", "quality_manager", "auditor", "certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["requisition"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper", "certifying_staff", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["purchase", "receive", "clear_customs"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["approve"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_manager", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["claim", "decide_claim"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage_vendors"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage_rates"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["repair", "transfer"]
+      effect: EFFECT_ALLOW
+      roles: ["storekeeper", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

@@ -1,0 +1,16 @@
+{
+  "name": "@aeroos/kernel",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Shared primitives: canonical JSON, hashing, domain errors, ids, clock",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  }
+}

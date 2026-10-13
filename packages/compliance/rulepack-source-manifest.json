@@ -1,0 +1,19 @@
+{
+  "format": 1,
+  "packs": {
+    "EASA@2026.1": {
+      "authority": "EASA",
+      "version": "2026.1",
+      "status": "approved",
+      "source": "src/rulepacks/easa.ts",
+      "sha256": "082708408e41f6d49b97468b9f88826d75b4e65afff00a8fcd64da21dfc14d2a"
+    },
+    "FAA@2026.1-draft": {
+      "authority": "FAA",
+      "version": "2026.1-draft",
+      "status": "draft",
+      "source": "src/rulepacks/faa.ts",
+      "sha256": "b89e3cc2c7f98e966ba7ff9553de33f27d2ff9108bd513deaa82e5b603ca6544"
+    }
+  }
+}

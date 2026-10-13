@@ -1,0 +1,17 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: platform_migration
+  rules:
+    - actions: ["read", "manage"]
+      effect: EFFECT_ALLOW
+      roles: ["platform_admin"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

@@ -1,0 +1,31 @@
+# Structural damage chart: certifying staff and CAMO record and inspect damage; CAMO engineers record the approved
+# repair data for damage beyond the SRM; certifying staff record repairs. The OCC reads (it explains a grounding).
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: structural_damage
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "quality_manager", "auditor", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["record"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["approve_data"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["repair"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

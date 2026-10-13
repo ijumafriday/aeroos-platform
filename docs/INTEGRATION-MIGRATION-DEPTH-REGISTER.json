@@ -1,0 +1,1368 @@
+{
+  "registerVersion": "0.49.0",
+  "platformVersion": "0.49.0",
+  "domain": "Integration & Migration Platform",
+  "totalCapabilities": 132,
+  "items": [
+    {
+      "id": "INT-001",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-003",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-004",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-005",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-006",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-007",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-008",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-009",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-010",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-011",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-012",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-013",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-014",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-015",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-016",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-017",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-018",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-019",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-020",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-021",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-022",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-023",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-024",
+      "category": "Migration adapter governance",
+      "capability": "Migration adapter governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-025",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-026",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-027",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-028",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-029",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-030",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-031",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-032",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-033",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-034",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-035",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-036",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-037",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-038",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-039",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-040",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-041",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-042",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-043",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-044",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-045",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-046",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-047",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-048",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-049",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-050",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-051",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-052",
+      "category": "Connector catalog and runtime lifecycle",
+      "capability": "Connector catalog and runtime lifecycle control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/web/src/features/platform/IntegrationControl.tsx"
+      ]
+    },
+    {
+      "id": "INT-053",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-054",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-055",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-056",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-057",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-058",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-059",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-060",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-061",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-062",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-063",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-064",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-065",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-066",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-067",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-068",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-069",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-070",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-071",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-072",
+      "category": "API lifecycle and deprecation",
+      "capability": "API lifecycle and deprecation control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/api/src/platform/integrations/api-lifecycle.interceptor.ts"
+      ]
+    },
+    {
+      "id": "INT-073",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-074",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-075",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-076",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-077",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-078",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-079",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-080",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-081",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-082",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-083",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-084",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-085",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-086",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-087",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-088",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-089",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-090",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-091",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-092",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-093",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-094",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-095",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-096",
+      "category": "Event schema registry and compatibility",
+      "capability": "Event schema registry and compatibility control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0056_integration_migration_platform.sql",
+        "apps/api/src/platform/integrations/integration-control.service.ts"
+      ]
+    },
+    {
+      "id": "INT-097",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-098",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-099",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-100",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-101",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-102",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-103",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-104",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-105",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-106",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-107",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-108",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-109",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-110",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-111",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-112",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-113",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-114",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-115",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-116",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-117",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-118",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-119",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-120",
+      "category": "Temporal workflow versioning and migration",
+      "capability": "Temporal workflow versioning and migration control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/platform/integrations/integration-control.service.ts",
+        "apps/worker/src/workflows.ts"
+      ]
+    },
+    {
+      "id": "INT-121",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-122",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-123",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-124",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-125",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-126",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-127",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-128",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-129",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-130",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-131",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    },
+    {
+      "id": "INT-132",
+      "category": "Authorization, audit, release assurance and UX",
+      "capability": "Authorization, audit, release assurance and UX control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/integration.yaml",
+        "apps/web/src/features/platform/PlatformConsole.tsx",
+        "scripts/verify-integration-migration-depth.py"
+      ]
+    }
+  ]
+}

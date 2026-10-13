@@ -1,0 +1,17 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: engineering_control
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["engineering_engineer", "engineering_manager", "camo_engineer", "camo_manager", "quality_manager", "auditor"]
+      condition: { match: { expr: "request.resource.attr.operatorId in request.principal.attr.operators" } }
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["engineering_engineer", "engineering_manager", "camo_engineer", "camo_manager"]
+      condition: { match: { expr: "request.resource.attr.operatorId in request.principal.attr.operators" } }
+    - actions: ["approve"]
+      effect: EFFECT_ALLOW
+      roles: ["engineering_manager", "camo_manager"]
+      condition: { match: { expr: "request.resource.attr.operatorId in request.principal.attr.operators" } }

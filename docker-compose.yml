@@ -1,0 +1,315 @@
+# AeroOS — complete self-hosted profile on one machine (Docker Desktop).
+#
+#   docker compose up --build        → http://localhost:8080   (sign in: k.mwangi / aeroos)
+#
+# Infrastructure: PostgreSQL+PostGIS · Apache Kafka (KRaft) · Temporal · Keycloak · Cerbos ·
+#                 MinIO (S3 object storage) · OpenBao (Transit signing keys)
+# Applications:   api (NestJS) · worker (Temporal, TS) · optimiser (Temporal, Python + OR-Tools) · web (React, nginx)
+# Optional:       docker compose --profile observability up   → OpenTelemetry collector, Tempo, Prometheus, Grafana
+#
+# Passwords and keys here are for local development only.
+name: aeroos
+
+x-app-env: &app-env
+  NODE_ENV: production
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: aeroos
+  KAFKA_BROKERS: kafka:9092
+  TEMPORAL_ADDRESS: temporal:7233
+  TEMPORAL_NAMESPACE: default
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: aeroos
+    ports: ["5432:5432"]
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d aeroos"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  db-roles:
+    # Idempotent: adds module roles introduced after your database volume was created (e.g. ops_svc).
+    image: postgis/postgis:16-3.4
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      PGPASSWORD: postgres
+    volumes:
+      - ./infra/postgres/upgrade:/upgrade:ro
+    command: ["psql", "-h", "postgres", "-U", "postgres", "-d", "aeroos", "-v", "ON_ERROR_STOP=1", "-f", "/upgrade/ensure-roles.sql"]
+    restart: "no"
+
+  kafka:
+    image: apache/kafka:3.8.1
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:29092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+    ports: ["29092:29092"]
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 > /dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+
+  temporal:
+    # auto-setup is for development; production uses the Temporal Helm chart (see deploy/helm).
+    image: temporalio/auto-setup:1.25.2
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      DB: postgres12
+      DB_PORT: "5432"
+      POSTGRES_USER: postgres
+      POSTGRES_PWD: postgres
+      POSTGRES_SEEDS: postgres
+    ports: ["7233:7233"]
+
+  temporal-ui:
+    image: temporalio/ui:2.31.2
+    depends_on: [temporal]
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+    ports: ["8233:8080"]
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.6
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: http://localhost:8081
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
+      KC_HEALTH_ENABLED: "true"
+    volumes:
+      - ./infra/keycloak/aeroos-realm.json:/opt/keycloak/data/import/aeroos-realm.json:ro
+    ports: ["8081:8080"]
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000 && printf 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && grep -q UP <&3"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  cerbos:
+    image: ghcr.io/cerbos/cerbos:0.39.0
+    command: ["server", "--config=/config/config.yaml"]
+    volumes:
+      - ./infra/cerbos/config.yaml:/config/config.yaml:ro
+      - ./infra/cerbos/policies:/policies:ro
+    ports: ["3592:3592"]
+
+  minio:
+    # S3-compatible object storage: documents, CRS PDFs, write-once audit anchors (Object Lock).
+    # MinIO's community images were removed from Docker Hub (2026); Silo is a maintained MinIO fork with the
+    # same S3 API, MINIO_* settings, /minio/* routes and on-disk format, so existing data carries over.
+    # Override with S3_IMAGE (e.g. cgr.dev/chainguard/minio:latest — runs as UID 65532, chown the volume first).
+    image: ${S3_IMAGE:-pgsty/silo:RELEASE.2026-09-16T00-00-00Z}
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: aeroos
+      MINIO_ROOT_PASSWORD: aeroos-dev-secret
+      MINIO_API_CORS_ALLOW_ORIGIN: "http://localhost:8080,http://localhost:5173"
+      MC_HOST_local: http://aeroos:aeroos-dev-secret@localhost:9000   # lets the client inside the image reach this server
+    ports: ["9000:9000", "9001:9001"]
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      # mc (MinIO image) or mcli (Silo); either answers when the server is ready.
+      test: ["CMD-SHELL", "mc ready local >/dev/null 2>&1 || mcli ready local >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  openbao:
+    # Transit engine holds the organisation signing key; the API never sees the private key.
+    # Dev mode keeps everything in memory and unsealed — production uses a sealed, HSM-backed cluster.
+    image: openbao/openbao:2.0.0
+    command: ["server", "-dev", "-dev-listen-address=0.0.0.0:8200", "-dev-root-token-id=aeroos-dev-root"]
+    cap_add: [IPC_LOCK]
+    ports: ["8200:8200"]
+    healthcheck:
+      test: ["CMD-SHELL", "BAO_ADDR=http://127.0.0.1:8200 bao status > /dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  openbao-init:
+    # Idempotent: enables the Transit engine and creates the ed25519 signing key if missing.
+    image: openbao/openbao:2.0.0
+    depends_on:
+      openbao: { condition: service_healthy }
+    environment:
+      BAO_ADDR: http://openbao:8200
+      BAO_TOKEN: aeroos-dev-root
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >
+        (bao secrets list | grep -q '^transit/' || bao secrets enable transit) &&
+        (bao read transit/keys/aeroos-signing > /dev/null 2>&1 || bao write -f transit/keys/aeroos-signing type=ed25519) &&
+        echo "transit key ready"
+    restart: "no"
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    depends_on:
+      postgres: { condition: service_healthy }
+      db-roles: { condition: service_completed_successfully }
+      kafka: { condition: service_healthy }
+      keycloak: { condition: service_healthy }
+      cerbos: { condition: service_started }
+      temporal: { condition: service_started }
+      minio: { condition: service_started }
+      openbao-init: { condition: service_completed_successfully }
+    environment:
+      <<: *app-env
+      PORT: "3000"
+      DB_PASSWORD_AEROOS_OWNER: aeroos_owner
+      DB_PASSWORD_PLATFORM_SVC: platform_svc
+      DB_PASSWORD_COMPLIANCE_SVC: compliance_svc
+      DB_PASSWORD_ORG_SVC: org_svc
+      DB_PASSWORD_CAMO_SVC: camo_svc
+      DB_PASSWORD_ENGINEERING_SVC: engineering_svc
+      DB_PASSWORD_RECORDS_SVC: records_svc
+      DB_PASSWORD_AMO_SVC: amo_svc
+      DB_PASSWORD_OPS_SVC: ops_svc
+      # Type B gateway / ACARS provider key (header X-Api-Key). Real messages take precedence over simulation.
+      MOVEMENT_API_KEYS: NKX=dev-movement-key-nkx-change-me,FJR=dev-movement-key-change-me
+      OPS_PROVIDER_API_KEYS: NKX=dev-ofp-provider-key-change-me,FJR=dev-ofp-provider-key-fjr-change-me
+      FRMS_PROVIDER_API_KEYS: NKX=dev-frms-provider-key-change-me,FJR=dev-frms-provider-key-fjr-change-me
+      MOVEMENT_SIMULATION: "true"
+      DEFAULT_OPERATOR: NKX
+      OIDC_ISSUER: http://localhost:8081/realms/aeroos
+      OIDC_JWKS_URL: http://keycloak:8080/realms/aeroos/protocol/openid-connect/certs
+      OIDC_AUDIENCE: aeroos-api
+      CERBOS_URL: http://cerbos:3592
+      # Signing through OpenBao Transit (the production code path). Set SIGNING_PROVIDER=local to use a key file.
+      SIGNING_PROVIDER: transit
+      TRANSIT_ADDR: http://openbao:8200
+      TRANSIT_TOKEN: aeroos-dev-root
+      TRANSIT_KEY: aeroos-signing
+      SIGNING_KEY_ID: dev-nkx-1
+      SIGNING_KEY_FILE: /data/signing-key.pem
+      STEP_UP_MAX_AGE_SECONDS: "300"
+      S3_ENDPOINT: http://minio:9000
+      S3_PUBLIC_ENDPOINT: http://localhost:9000
+      S3_ACCESS_KEY: aeroos
+      S3_SECRET_KEY: aeroos-dev-secret
+      ANCHOR_RETENTION_DAYS: "1"
+      OTEL_ENABLED: "true"   # exports only when the observability profile is running; otherwise silently dropped
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+      SEED_DEMO: "true"
+    volumes:
+      - api-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/health > /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  worker:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      <<: *app-env
+      API_URL: http://api:3000
+      OIDC_TOKEN_URL: http://keycloak:8080/realms/aeroos/protocol/openid-connect/token
+      SERVICE_CLIENT_ID: aeroos-worker
+      SERVICE_CLIENT_SECRET: dev-aeroos-worker-secret-change-me
+      OTEL_ENABLED: "true"
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+
+  optimiser:
+    # Python + OR-Tools recovery solver; Temporal task queue "optimiser". No database access.
+    build:
+      context: services/optimiser
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+      TEMPORAL_NAMESPACE: default
+      API_URL: http://api:3000
+      OIDC_TOKEN_URL: http://keycloak:8080/realms/aeroos/protocol/openid-connect/token
+      SERVICE_CLIENT_ID: aeroos-optimiser
+      SERVICE_CLIENT_SECRET: dev-aeroos-optimiser-secret-change-me
+      SOLVER_TIME_LIMIT_SECONDS: "20"
+      OTEL_ENABLED: "true"
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    depends_on:
+      api: { condition: service_healthy }
+    environment:
+      OIDC_AUTHORITY: http://localhost:8081/realms/aeroos
+      OIDC_CLIENT_ID: aeroos-web
+    ports: ["8080:8080"]
+
+  # ---------------------------------------------------------------- observability (optional profile)
+  otel-collector:
+    profiles: [observability]
+    image: otel/opentelemetry-collector-contrib:0.114.0
+    command: ["--config=/etc/otel/config.yaml"]
+    volumes:
+      - ./infra/observability/otel-collector.yaml:/etc/otel/config.yaml:ro
+    ports: ["4318:4318"]
+
+  tempo:
+    profiles: [observability]
+    image: grafana/tempo:2.6.1
+    command: ["-config.file=/etc/tempo.yaml"]
+    volumes:
+      - ./infra/observability/tempo.yaml:/etc/tempo.yaml:ro
+
+  prometheus:
+    profiles: [observability]
+    image: prom/prometheus:v2.55.1
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--web.enable-remote-write-receiver"]
+    volumes:
+      - ./infra/observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./infra/observability/prometheus-rules.yml:/etc/prometheus/rules.yml:ro
+
+  grafana:
+    profiles: [observability]
+    image: grafana/grafana:11.3.1
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+    volumes:
+      - ./infra/observability/grafana:/etc/grafana/provisioning:ro
+    ports: ["3001:3000"]
+
+volumes:
+  pg-data:
+  kafka-data:
+  api-data:
+  minio-data:

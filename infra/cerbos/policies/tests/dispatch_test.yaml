@@ -1,0 +1,50 @@
+name: DispatchPolicyTests
+description: Only the OCC prepares and releases flights; quality reads; another operator cannot
+principals:
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  quality:
+    id: quality.manager
+    roles: ["quality_manager"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  crew:
+    id: cpt.hansen
+    roles: ["flight_crew"]
+    attr: { operators: ["NKX"], username: "cpt.hansen" }
+  fjr:
+    id: fjr.occ
+    roles: ["occ_controller"]
+    attr: { operators: ["FJR"], username: "fjr.occ" }
+resources:
+  flight:
+    kind: dispatch
+    id: NK601-2026-10-09
+    attr: { operatorId: "NKX" }
+tests:
+  - name: Dispatch roles
+    input:
+      principals: ["occ", "quality", "mechanic", "crew", "fjr"]
+      resources: ["flight"]
+      actions: ["read", "prepare", "release", "manage_reference"]
+    expected:
+      - principal: occ
+        resource: flight
+        actions: { read: EFFECT_ALLOW, prepare: EFFECT_ALLOW, release: EFFECT_ALLOW, manage_reference: EFFECT_ALLOW }
+      - principal: quality
+        resource: flight
+        actions: { read: EFFECT_ALLOW, prepare: EFFECT_DENY, release: EFFECT_DENY, manage_reference: EFFECT_DENY }
+      - principal: mechanic
+        resource: flight
+        actions: { read: EFFECT_DENY, prepare: EFFECT_DENY, release: EFFECT_DENY, manage_reference: EFFECT_DENY }
+      - principal: crew
+        resource: flight
+        actions: { read: EFFECT_ALLOW, prepare: EFFECT_DENY, release: EFFECT_DENY, manage_reference: EFFECT_DENY }
+      - principal: fjr
+        resource: flight
+        actions: { read: EFFECT_DENY, prepare: EFFECT_DENY, release: EFFECT_DENY, manage_reference: EFFECT_DENY }

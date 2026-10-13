@@ -1,0 +1,1545 @@
+{
+  "product": "AeroOS",
+  "domain": "Continuing Airworthiness",
+  "registerVersion": "1.0",
+  "platformVersion": "0.46.0",
+  "policy": "Software-depth implementation evidence only; operator-approved reliability thresholds, retained fleet history, OEM/authority data, calibrated source feeds and production effectiveness evidence remain governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "CAW-001",
+      "category": "Programme governance",
+      "capability": "Programme governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-002",
+      "category": "Programme governance",
+      "capability": "Programme governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-003",
+      "category": "Programme governance",
+      "capability": "Programme governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-004",
+      "category": "Programme governance",
+      "capability": "Programme governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-005",
+      "category": "Programme governance",
+      "capability": "Programme governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-006",
+      "category": "Programme governance",
+      "capability": "Programme governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-007",
+      "category": "Programme governance",
+      "capability": "Programme governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-008",
+      "category": "Programme governance",
+      "capability": "Programme governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-009",
+      "category": "Programme governance",
+      "capability": "Programme governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-010",
+      "category": "Programme governance",
+      "capability": "Programme governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-011",
+      "category": "Programme governance",
+      "capability": "Programme governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-012",
+      "category": "Programme governance",
+      "capability": "Programme governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-013",
+      "category": "Programme governance",
+      "capability": "Programme governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-014",
+      "category": "Programme governance",
+      "capability": "Programme governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-015",
+      "category": "Programme governance",
+      "capability": "Programme governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-016",
+      "category": "Programme governance",
+      "capability": "Programme governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-017",
+      "category": "Programme governance",
+      "capability": "Programme governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-018",
+      "category": "Programme governance",
+      "capability": "Programme governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-019",
+      "category": "Programme governance",
+      "capability": "Programme governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-020",
+      "category": "Programme governance",
+      "capability": "Programme governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-021",
+      "category": "Programme governance",
+      "capability": "Programme governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-022",
+      "category": "Programme governance",
+      "capability": "Programme governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-023",
+      "category": "Programme governance",
+      "capability": "Programme governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-024",
+      "category": "Programme governance",
+      "capability": "Programme governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-025",
+      "category": "Programme governance",
+      "capability": "Programme governance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-026",
+      "category": "Programme governance",
+      "capability": "Programme governance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-027",
+      "category": "Programme governance",
+      "capability": "Programme governance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-028",
+      "category": "Programme governance",
+      "capability": "Programme governance control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-029",
+      "category": "Metric governance",
+      "capability": "Metric governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-030",
+      "category": "Metric governance",
+      "capability": "Metric governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-031",
+      "category": "Metric governance",
+      "capability": "Metric governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-032",
+      "category": "Metric governance",
+      "capability": "Metric governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-033",
+      "category": "Metric governance",
+      "capability": "Metric governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-034",
+      "category": "Metric governance",
+      "capability": "Metric governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-035",
+      "category": "Metric governance",
+      "capability": "Metric governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-036",
+      "category": "Metric governance",
+      "capability": "Metric governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-037",
+      "category": "Metric governance",
+      "capability": "Metric governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-038",
+      "category": "Metric governance",
+      "capability": "Metric governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-039",
+      "category": "Metric governance",
+      "capability": "Metric governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-040",
+      "category": "Metric governance",
+      "capability": "Metric governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-041",
+      "category": "Metric governance",
+      "capability": "Metric governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-042",
+      "category": "Metric governance",
+      "capability": "Metric governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-043",
+      "category": "Metric governance",
+      "capability": "Metric governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-044",
+      "category": "Metric governance",
+      "capability": "Metric governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-045",
+      "category": "Metric governance",
+      "capability": "Metric governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-046",
+      "category": "Metric governance",
+      "capability": "Metric governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-047",
+      "category": "Metric governance",
+      "capability": "Metric governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-048",
+      "category": "Metric governance",
+      "capability": "Metric governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-049",
+      "category": "Metric governance",
+      "capability": "Metric governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-050",
+      "category": "Metric governance",
+      "capability": "Metric governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-051",
+      "category": "Metric governance",
+      "capability": "Metric governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-052",
+      "category": "Metric governance",
+      "capability": "Metric governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-053",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-054",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-055",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-056",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-057",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-058",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-059",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-060",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-061",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-062",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-063",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-064",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-065",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-066",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-067",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-068",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-069",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-070",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-071",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-072",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-073",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-074",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-075",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-076",
+      "category": "Measurement & alerting",
+      "capability": "Measurement & alerting control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-077",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-078",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-079",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-080",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-081",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-082",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-083",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-084",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-085",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-086",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-087",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-088",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-089",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-090",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-091",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-092",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-093",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-094",
+      "category": "Investigation & corrective action",
+      "capability": "Investigation & corrective action control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-095",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-096",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-097",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-098",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-099",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-100",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-101",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-102",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-103",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-104",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-105",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-106",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-107",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-108",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-109",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-110",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-111",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-112",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-113",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-114",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-115",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-116",
+      "category": "Condition monitoring",
+      "capability": "Condition monitoring control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-117",
+      "category": "Reliability review",
+      "capability": "Reliability review control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-118",
+      "category": "Reliability review",
+      "capability": "Reliability review control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-119",
+      "category": "Reliability review",
+      "capability": "Reliability review control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-120",
+      "category": "Reliability review",
+      "capability": "Reliability review control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-121",
+      "category": "Reliability review",
+      "capability": "Reliability review control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-122",
+      "category": "Reliability review",
+      "capability": "Reliability review control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-123",
+      "category": "Reliability review",
+      "capability": "Reliability review control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-124",
+      "category": "Reliability review",
+      "capability": "Reliability review control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-125",
+      "category": "Reliability review",
+      "capability": "Reliability review control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-126",
+      "category": "Reliability review",
+      "capability": "Reliability review control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-127",
+      "category": "Reliability review",
+      "capability": "Reliability review control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    },
+    {
+      "id": "CAW-128",
+      "category": "Reliability review",
+      "capability": "Reliability review control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0053_continuing_airworthiness_completion.sql",
+        "apps/api/src/modules/camo/reliability-control.service.ts",
+        "apps/web/src/features/programme/ReliabilityControl.tsx",
+        "infra/cerbos/policies/reliability_control.yaml"
+      ]
+    }
+  ]
+}

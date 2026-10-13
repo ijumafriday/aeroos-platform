@@ -1,0 +1,19 @@
+{
+  "name": "@aeroos/signing",
+  "version": "0.50.0",
+  "private": true,
+  "description": "KeyService abstraction for electronic signatures (local Ed25519 for development; KMS/HSM adapters behind the same interface)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/kernel": "workspace:*"
+  }
+}

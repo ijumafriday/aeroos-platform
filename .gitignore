@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.nx/
+.vite/
+coverage/
+*.log
+.env
+.DS_Store
+deploy/helm/aeroos/charts/
+deploy/helm/aeroos/Chart.lock
+backups/
+verify-report.txt
+e2e-results/
+security-report/

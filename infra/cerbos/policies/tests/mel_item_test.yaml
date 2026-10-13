@@ -1,0 +1,74 @@
+name: MelItemPolicyTests
+description: Who may raise, extend and act on MEL deferrals
+
+principals:
+  engineer:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"] }
+  manager:
+    id: camo.manager
+    roles: ["camo_engineer", "camo_manager"]
+    attr: { operators: ["NKX"] }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"] }
+  otherAirlineManager:
+    id: other.manager
+    roles: ["camo_manager"]
+    attr: { operators: ["XYZ"] }
+
+resources:
+  open:
+    kind: mel_item
+    id: DD-1
+    attr: { operatorId: "NKX", status: "OPEN" }
+  closed:
+    kind: mel_item
+    id: DD-2
+    attr: { operatorId: "NKX", status: "CLOSED" }
+
+tests:
+  - name: CAMO engineer raises deferrals and engineering orders but cannot approve extensions
+    input:
+      principals: ["engineer"]
+      resources: ["open"]
+      actions: ["raise", "generate_eo", "approve_extension"]
+    expected:
+      - principal: engineer
+        resource: open
+        actions: { raise: EFFECT_ALLOW, generate_eo: EFFECT_ALLOW, approve_extension: EFFECT_DENY }
+
+  - name: Only a CAMO manager approves extensions, and only on open items
+    input:
+      principals: ["manager"]
+      resources: ["open", "closed"]
+      actions: ["approve_extension"]
+    expected:
+      - principal: manager
+        resource: open
+        actions: { approve_extension: EFFECT_ALLOW }
+      - principal: manager
+        resource: closed
+        actions: { approve_extension: EFFECT_DENY }
+
+  - name: Certifying staff may raise a deferral but not generate engineering orders
+    input:
+      principals: ["mechanic"]
+      resources: ["open"]
+      actions: ["raise", "generate_eo"]
+    expected:
+      - principal: mechanic
+        resource: open
+        actions: { raise: EFFECT_ALLOW, generate_eo: EFFECT_DENY }
+
+  - name: Another operator's staff are denied everything
+    input:
+      principals: ["otherAirlineManager"]
+      resources: ["open"]
+      actions: ["read", "approve_extension"]
+    expected:
+      - principal: otherAirlineManager
+        resource: open
+        actions: { read: EFFECT_DENY, approve_extension: EFFECT_DENY }

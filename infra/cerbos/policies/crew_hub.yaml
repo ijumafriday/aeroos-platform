@@ -1,0 +1,15 @@
+# The crew hub: a flight crew member's own roster, changes to acknowledge and briefing status.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: crew_hub
+  rules:
+    - actions: ["read", "acknowledge"]
+      effect: EFFECT_ALLOW
+      roles: ["flight_crew"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.id == request.principal.attr.username

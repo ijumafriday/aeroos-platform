@@ -1,0 +1,37 @@
+# Organization Core. Who may see personnel files and who may manage company authorisations and
+# training records. Whether an authorisation's scope is allowed is NOT decided here — the
+# compliance engine checks it against the holder's Part-66 licence (ADR-0002).
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: personnel
+  rules:
+    - actions: ["list", "read"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    # Everyone may read their own file (licences, authorisation, currency).
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["*"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.username == request.principal.attr.username
+
+    # Issue / suspend / reinstate / revoke authorisations, record training (145.A.30(c)/A.35).
+    # Nobody manages their own file — not even the quality manager.
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.username != request.principal.attr.username

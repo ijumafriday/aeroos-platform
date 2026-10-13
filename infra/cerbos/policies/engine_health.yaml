@@ -1,0 +1,25 @@
+# Engine condition trend monitoring and oil consumption: CAMO engineers record trend data and close alerts with
+# the action taken; line maintenance (certifying staff) and CAMO record oil uplifts; quality and auditors read.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: engine_health
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "quality_manager", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["record_trend", "manage_alerts"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["record_oil"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

@@ -1,0 +1,6 @@
+# Everything that runs inside Linux containers or in bash must keep LF line endings, also on Windows checkouts.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary

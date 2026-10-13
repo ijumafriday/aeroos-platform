@@ -1,0 +1,568 @@
+{
+  "domain": "Maintenance",
+  "platformVersion": "0.37.0",
+  "definition": "Software-scope completion register for AeroOS Maintenance. IMPLEMENTED means the capability is represented by production code, persistence, authorization/audit controls and a usable UI/API path. Runtime acceptance evidence is tracked separately by the master assurance register.",
+  "navigationPrinciple": "Maintenance remains one business domain. Line, base, shops, tooling, AOG and handover are contextual workspaces inside Maintenance Control; workflow states are not top-level navigation entries.",
+  "items": [
+    {
+      "id": "MNT-001",
+      "area": "Control",
+      "capability": "Unified maintenance control board",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx",
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-002",
+      "area": "Work Orders",
+      "capability": "First-class line/base/AOG/component/engine/modification/unscheduled work orders",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-003",
+      "area": "Work Orders",
+      "capability": "Controlled work-order lifecycle and hold/cancel rules",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "packages/mro-domain/src/maintenance-control.ts",
+        "packages/mro-domain/src/maintenance-control.test.ts"
+      ]
+    },
+    {
+      "id": "MNT-004",
+      "area": "Workforce",
+      "capability": "Individual mechanic/supervisor/inspector/specialist assignment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-005",
+      "area": "Workforce",
+      "capability": "Planned and actual labour booking by assigned person",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-006",
+      "area": "Station Capability",
+      "capability": "Aircraft type and maintenance-level capability approvals",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-007",
+      "area": "Station Capability",
+      "capability": "Effective-date and authority/MOE controlled capability",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-008",
+      "area": "Station Capability",
+      "capability": "Minimum currently-authorised personnel enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/api/src/modules/org/org.repository.ts"
+      ]
+    },
+    {
+      "id": "MNT-009",
+      "area": "Station Capability",
+      "capability": "Required serviceable/calibrated tooling enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-010",
+      "area": "Station Capability",
+      "capability": "Controlled facility and scope declarations",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-011",
+      "area": "Line",
+      "capability": "Station line-maintenance visit board",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-012",
+      "area": "Line",
+      "capability": "Inbound/outbound turnaround planning",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-013",
+      "area": "Line",
+      "capability": "Open/deferred defect release control with traceable references",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-014",
+      "area": "Line",
+      "capability": "Linked work-order completion gate before line release",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-015",
+      "area": "Handover",
+      "capability": "Controlled line/base/shop/AOG/tool-crib shift handover",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-016",
+      "area": "Handover",
+      "capability": "Structured outstanding-item register and resolution",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-017",
+      "area": "Handover",
+      "capability": "Independent incoming-shift acceptance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-018",
+      "area": "Base Maintenance",
+      "capability": "Hangar/bay planning and collision controls",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts",
+        "apps/api/db/migrations/0039_p1_closure.sql"
+      ]
+    },
+    {
+      "id": "MNT-019",
+      "area": "Base Maintenance",
+      "capability": "Trade/shift capacity allocation without double booking",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-020",
+      "area": "Base Maintenance",
+      "capability": "Task dependency graph and cycle control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-021",
+      "area": "Base Maintenance",
+      "capability": "Persisted critical path",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts",
+        "apps/api/db/migrations/0039_p1_closure.sql"
+      ]
+    },
+    {
+      "id": "MNT-022",
+      "area": "Base Maintenance",
+      "capability": "Scope freeze/reopen with reason and audit",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-023",
+      "area": "Base Maintenance",
+      "capability": "Zone planning and actual labour tracking",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/programme/WorkPackages.tsx"
+      ]
+    },
+    {
+      "id": "MNT-024",
+      "area": "Base Maintenance",
+      "capability": "Access-panel open/temp-close/close control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/programme/WorkPackages.tsx"
+      ]
+    },
+    {
+      "id": "MNT-025",
+      "area": "Base Maintenance",
+      "capability": "Zone closure blocked by open access panels",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-026",
+      "area": "Production",
+      "capability": "Material/tool/dependency readiness before execution",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-027",
+      "area": "Production",
+      "capability": "Milestones, production holds and non-routines",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/production.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-028",
+      "area": "Production",
+      "capability": "Outsourced-work lifecycle with release/trace acceptance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-029",
+      "area": "Production",
+      "capability": "Work-order completion blocked by outstanding outsourced work",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-030",
+      "area": "Production",
+      "capability": "Customer progress/TAT forecast and risk reports",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-031",
+      "area": "Task Execution",
+      "capability": "Structured measurements with explicit limits and PASS/FAIL",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "packages/mro-domain/src/maintenance-control.ts",
+        "apps/web/src/features/taskcards/TaskCardDrawer.tsx"
+      ]
+    },
+    {
+      "id": "MNT-032",
+      "area": "Task Execution",
+      "capability": "Interrupt/resume, part change, consumable, ground test and rework evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/taskcards/TaskCardDrawer.tsx"
+      ]
+    },
+    {
+      "id": "MNT-033",
+      "area": "Task Execution",
+      "capability": "Independent inspection by different person",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-034",
+      "area": "Certification",
+      "capability": "CRS/signature blocked by failed/rejected or unresolved rework evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/amo.module.ts"
+      ]
+    },
+    {
+      "id": "MNT-035",
+      "area": "Certification",
+      "capability": "Server-bound passkey certification remains separate from ordinary execution records",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/amo.module.ts"
+      ]
+    },
+    {
+      "id": "MNT-036",
+      "area": "Tool Crib",
+      "capability": "Serialized tool register, crib/location and kit code",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-037",
+      "area": "Tool Crib",
+      "capability": "Calibration due/certificate enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-038",
+      "area": "Tool Crib",
+      "capability": "Reservation collision control and maintenance-demand linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-039",
+      "area": "Tool Crib",
+      "capability": "Issue/return custody and reservation fulfilment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-040",
+      "area": "Tool Crib",
+      "capability": "Calibration, quarantine, lost, damaged and retirement states",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-041",
+      "area": "Shop",
+      "capability": "Engine/APU/component/specialist shop induction and routing",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-042",
+      "area": "Shop",
+      "capability": "Teardown/inspection/repair/assembly/test/release lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "packages/mro-domain/src/maintenance-control.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-043",
+      "area": "Shop",
+      "capability": "Findings, dispositions and repair references",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-044",
+      "area": "Shop",
+      "capability": "Piece-part serial/lot/trace and repair-scheme control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-045",
+      "area": "Shop",
+      "capability": "Release blocked by unresolved findings/piece-parts and missing test/release evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "packages/mro-domain/src/maintenance-control.test.ts"
+      ]
+    },
+    {
+      "id": "MNT-046",
+      "area": "AOG",
+      "capability": "Cross-domain AOG case linked to defect/work order",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-047",
+      "area": "AOG",
+      "capability": "Technical/engineering/material/logistics/crew/ops/recovery updates",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-048",
+      "area": "AOG",
+      "capability": "Recovery ETA, part/courier reference, operational impact and cost",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-049",
+      "area": "AOG",
+      "capability": "Closure blocked until RTS state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-050",
+      "area": "Commercial",
+      "capability": "Customer maintenance contract scope and effective dates",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    },
+    {
+      "id": "MNT-051",
+      "area": "Commercial",
+      "capability": "Response/TAT SLA attached to work order",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-052",
+      "area": "Commercial",
+      "capability": "Customer approval reference on third-party work",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-053",
+      "area": "Security",
+      "capability": "Dedicated planner/supervisor/mechanic/tool-controller roles",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/keycloak/aeroos-realm.json",
+        "infra/cerbos/policies/maintenance_control.yaml"
+      ]
+    },
+    {
+      "id": "MNT-054",
+      "area": "Security",
+      "capability": "Certification authority remains separate from ordinary mechanic role",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/maintenance_control.yaml",
+        "apps/api/src/modules/amo/amo.module.ts"
+      ]
+    },
+    {
+      "id": "MNT-055",
+      "area": "Audit",
+      "capability": "MNT lifecycle mutations emit module audit evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/maintenance-control.service.ts"
+      ]
+    },
+    {
+      "id": "MNT-056",
+      "area": "Isolation",
+      "capability": "All MNT completion tables are tenant RLS/force-RLS protected",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql"
+      ]
+    },
+    {
+      "id": "MNT-057",
+      "area": "Offline",
+      "capability": "Field observations/evidence remain available through offline field sync",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/amo/field-work.service.ts",
+        "apps/web/src/lib/offline.ts"
+      ]
+    },
+    {
+      "id": "MNT-058",
+      "area": "Navigation",
+      "capability": "Maintenance depth remains grouped under three durable Maintenance entries",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/web/src/app/Shell.tsx"
+      ]
+    },
+    {
+      "id": "MNT-059",
+      "area": "Production",
+      "capability": "Material kitting with required quantities, stock/certificate trace, pick readiness, issue and close lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0044_mnt_completion.sql",
+        "apps/api/src/modules/amo/maintenance-control.service.ts",
+        "apps/web/src/features/maintenance/MaintenanceControl.tsx"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-worker
+  labels: {{- include "aeroos.labels" . | nindent 4 }}
+    app.kubernetes.io/name: aeroos-worker
+spec:
+  replicas: {{ .Values.worker.replicas }}
+  selector:
+    matchLabels: { app.kubernetes.io/name: aeroos-worker, app.kubernetes.io/instance: {{ .Release.Name }} }
+  template:
+    metadata:
+      labels: {{- include "aeroos.labels" . | nindent 8 }}
+        app.kubernetes.io/name: aeroos-worker
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, seccompProfile: { type: RuntimeDefault } }
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector: { matchLabels: { app.kubernetes.io/name: aeroos-worker } }
+      containers:
+        - name: worker
+          image: {{ include "aeroos.image" (dict "root" . "name" "worker") }}
+          env:
+            {{- include "aeroos.commonEnv" . | nindent 12 }}
+            - name: API_URL
+              value: http://{{ .Release.Name }}-api:3000
+            - name: OIDC_TOKEN_URL
+              value: {{ required "serviceIdentity.tokenUrl is required" .Values.serviceIdentity.tokenUrl | quote }}
+            - name: SERVICE_CLIENT_ID
+              value: {{ .Values.serviceIdentity.workerClientId | quote }}
+            - name: SERVICE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef: { name: {{ .Values.serviceIdentity.secretName }}, key: WORKER_CLIENT_SECRET }
+          resources: {{- toYaml .Values.worker.resources | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          volumeMounts: [{ name: tmp, mountPath: /tmp }]
+      volumes: [{ name: tmp, emptyDir: {} }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-web
+  labels: {{- include "aeroos.labels" . | nindent 4 }}
+    app.kubernetes.io/name: aeroos-web
+spec:
+  replicas: {{ .Values.web.replicas }}
+  selector:
+    matchLabels: { app.kubernetes.io/name: aeroos-web, app.kubernetes.io/instance: {{ .Release.Name }} }
+  template:
+    metadata:
+      labels: {{- include "aeroos.labels" . | nindent 8 }}
+        app.kubernetes.io/name: aeroos-web
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      securityContext: { runAsNonRoot: true, seccompProfile: { type: RuntimeDefault } }
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector: { matchLabels: { app.kubernetes.io/name: aeroos-web } }
+      containers:
+        - name: web
+          image: {{ include "aeroos.image" (dict "root" . "name" "web") }}
+          ports: [{ name: http, containerPort: 8080 }]
+          env:
+            - name: OIDC_AUTHORITY
+              value: {{ .Values.oidc.issuer | quote }}
+            - name: OIDC_CLIENT_ID
+              value: {{ .Values.oidc.clientId | quote }}
+          resources: {{- toYaml .Values.web.resources | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          volumeMounts:
+            - { name: cache, mountPath: /var/cache/nginx }
+            - { name: run, mountPath: /var/run }
+            - { name: tmp, mountPath: /tmp }
+      volumes:
+        - { name: cache, emptyDir: {} }
+        - { name: run, emptyDir: {} }
+        - { name: tmp, emptyDir: {} }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-web
+spec:
+  selector: { app.kubernetes.io/name: aeroos-web, app.kubernetes.io/instance: {{ .Release.Name }} }
+  ports: [{ name: http, port: 80, targetPort: http }]
+---
+# Only the worker may call the API's internal endpoints; browsers reach the API through the ingress.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}-api-ingress
+spec:
+  podSelector:
+    matchLabels: { app.kubernetes.io/name: aeroos-api }
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector: { matchLabels: { app.kubernetes.io/name: aeroos-worker, app.kubernetes.io/instance: {{ .Release.Name }} } }
+        - podSelector: { matchLabels: { app.kubernetes.io/name: aeroos-optimiser, app.kubernetes.io/instance: {{ .Release.Name }} } }
+        - podSelector: { matchLabels: { app.kubernetes.io/name: aeroos-web, app.kubernetes.io/instance: {{ .Release.Name }} } }
+        - namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: ingress-nginx } }
+      ports: [{ port: 3000 }]
+{{- if .Values.ingress.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    # The internal API surface is never exposed outside the cluster.
+    nginx.ingress.kubernetes.io/server-snippet: |
+      location ~ ^/api/internal/ { return 404; }
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  tls:
+    - hosts: [{{ trimPrefix "https://" .Values.publicUrl | quote }}]
+      secretName: {{ .Values.ingress.tls.secretName }}
+  rules:
+    - host: {{ trimPrefix "https://" .Values.publicUrl | quote }}
+      http:
+        paths:
+          - { path: /api, pathType: Prefix, backend: { service: { name: {{ .Release.Name }}-api, port: { number: 3000 } } } }
+          - { path: /ws, pathType: Prefix, backend: { service: { name: {{ .Release.Name }}-api, port: { number: 3000 } } } }
+          - { path: /, pathType: Prefix, backend: { service: { name: {{ .Release.Name }}-web, port: { number: 80 } } } }
+{{- end }}

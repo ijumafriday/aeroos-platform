@@ -1,0 +1,113 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 2 * * *" # nightly: self-hosted profile on a throwaway cluster
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9.15.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: ./scripts/dependency-gate.sh
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm check   # static integration checks: routes, authorisation, events, ORM vs SQL
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test
+
+  optimiser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r services/optimiser/requirements.txt
+      - run: python -m unittest discover -s tests -t . -v
+        working-directory: services/optimiser
+
+  policies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and test Cerbos policies
+        run: docker run --rm -v "$PWD/infra/cerbos/policies:/policies" ghcr.io/cerbos/cerbos:0.39.0 compile /policies
+
+  helm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - run: helm dependency update deploy/helm/aeroos
+      - run: helm lint deploy/helm/aeroos -f deploy/helm/aeroos/values-cloud.yaml
+      - run: helm lint deploy/helm/aeroos -f deploy/helm/aeroos/values-selfhosted.yaml
+      - run: helm template t deploy/helm/aeroos -f deploy/helm/aeroos/values-selfhosted.yaml > /dev/null
+
+  images:
+    runs-on: ubuntu-latest
+    needs: [build-test]
+    strategy:
+      matrix:
+        include:
+          - { app: api, context: ., file: apps/api/Dockerfile }
+          - { app: worker, context: ., file: apps/worker/Dockerfile }
+          - { app: web, context: ., file: apps/web/Dockerfile }
+          - { app: optimiser, context: services/optimiser, file: services/optimiser/Dockerfile }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.file }}
+          push: false
+          tags: aeroos-${{ matrix.app }}:ci
+          sbom: true
+          provenance: mode=max
+
+  e2e:
+    # Full stack in Docker, then the reference journeys in a real browser (Playwright).
+    runs-on: ubuntu-latest
+    needs: [build-test]
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9.15.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: ./scripts/dependency-gate.sh
+      - run: docker compose up -d --build --wait --wait-timeout 900 web worker optimiser
+      - run: docker compose exec -T api wget -qO- http://127.0.0.1:3000/api/health
+      - run: pnpm install --frozen-lockfile --filter @aeroos/e2e...
+      - run: pnpm --filter @aeroos/e2e exec playwright install --with-deps chromium
+      - run: pnpm e2e
+        env: { CI: "true" }
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with: { name: playwright-report, path: e2e/playwright-report, retention-days: 14 }
+      - if: failure()
+        run: docker compose logs --no-color > compose.log; tail -300 compose.log
+
+  assurance-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m py_compile scripts/assurance/qualify-dataset.py
+      - run: bash -n scripts/assurance/*.sh scripts/dr/*.sh
+      - run: scripts/release-check.sh
+  upgrade-assurance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/verify-schema-compatibility.py
+      - run: scripts/upgrade-assurance.sh
+

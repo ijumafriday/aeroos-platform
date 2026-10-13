@@ -1,0 +1,921 @@
+{
+  "version": "0.40.0",
+  "domain": "Operations",
+  "definition": "Software-complete Operations control-depth baseline. Production provider, EFB, DCS, AIRAC and aircraft/offline acceptance remains governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "OPS-001",
+      "area": "Governance",
+      "capability": "Dedicated Operations depth register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "docs/OPS-DEPTH-REGISTER.json"
+      ]
+    },
+    {
+      "id": "OPS-002",
+      "area": "Governance",
+      "capability": "Tenant RLS across new Operations control tables",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql"
+      ]
+    },
+    {
+      "id": "OPS-003",
+      "area": "Governance",
+      "capability": "Operations control authorization policy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "infra/cerbos/policies/ops_control.yaml"
+      ]
+    },
+    {
+      "id": "OPS-004",
+      "area": "Governance",
+      "capability": "Compact single-workspace Operations control UI",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-005",
+      "area": "Governance",
+      "capability": "Audit-chain recording for governed changes",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/src/modules/ops/operations-control.service.ts"
+      ]
+    },
+    {
+      "id": "OPS-006",
+      "area": "Provider & failover",
+      "capability": "Provider registry by operational capability",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-007",
+      "area": "Provider & failover",
+      "capability": "Credential-vault reference retention",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-008",
+      "area": "Provider & failover",
+      "capability": "Provider priority for failover ordering",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-009",
+      "area": "Provider & failover",
+      "capability": "Provider SLA threshold capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-010",
+      "area": "Provider & failover",
+      "capability": "Provider success/failure health history",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-011",
+      "area": "Provider & failover",
+      "capability": "Consecutive-failure tracking",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-012",
+      "area": "Provider & failover",
+      "capability": "Automatic degraded/failed state after repeated failures",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-013",
+      "area": "Provider & failover",
+      "capability": "Weather provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-014",
+      "area": "Provider & failover",
+      "capability": "NOTAM provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-015",
+      "area": "Provider & failover",
+      "capability": "Navigation-data provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-016",
+      "area": "Provider & failover",
+      "capability": "Flight-plan provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-017",
+      "area": "Provider & failover",
+      "capability": "DCS provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-018",
+      "area": "Provider & failover",
+      "capability": "EFB provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-019",
+      "area": "Provider & failover",
+      "capability": "ACARS/AFTN provider lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-020",
+      "area": "AIRAC / nav data",
+      "capability": "AIRAC cycle staging",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-021",
+      "area": "AIRAC / nav data",
+      "capability": "Provider-version provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-022",
+      "area": "AIRAC / nav data",
+      "capability": "Source SHA-256 provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-023",
+      "area": "AIRAC / nav data",
+      "capability": "Effective-from/effective-until control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-024",
+      "area": "AIRAC / nav data",
+      "capability": "Structured validation report",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-025",
+      "area": "AIRAC / nav data",
+      "capability": "Named validator evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-026",
+      "area": "AIRAC / nav data",
+      "capability": "Independent AIRAC approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-027",
+      "area": "AIRAC / nav data",
+      "capability": "Approved-to-active transition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-028",
+      "area": "AIRAC / nav data",
+      "capability": "Automatic supersession of prior active cycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-029",
+      "area": "AIRAC / nav data",
+      "capability": "Active-cycle portfolio visibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-030",
+      "area": "EFB distribution",
+      "capability": "EFB package revision control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-031",
+      "area": "EFB distribution",
+      "capability": "Package content SHA-256",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-032",
+      "area": "EFB distribution",
+      "capability": "AIRAC binding for nav packages",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-033",
+      "area": "EFB distribution",
+      "capability": "Effective-dated EFB content",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-034",
+      "area": "EFB distribution",
+      "capability": "Independent EFB release",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-035",
+      "area": "EFB distribution",
+      "capability": "Targeted device/crew/aircraft/fleet distribution",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-036",
+      "area": "EFB distribution",
+      "capability": "Distribution delivery reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-037",
+      "area": "EFB distribution",
+      "capability": "Acknowledgement evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-038",
+      "area": "EFB distribution",
+      "capability": "Offline synchronization timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-039",
+      "area": "EFB distribution",
+      "capability": "Package recall",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-040",
+      "area": "EFB distribution",
+      "capability": "Recall propagation to distributions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-041",
+      "area": "Load control / DCS",
+      "capability": "DCS/load message ingestion",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-042",
+      "area": "Load control / DCS",
+      "capability": "Baggage/cargo/ULD/special-load message types",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-043",
+      "area": "Load control / DCS",
+      "capability": "Trim-sheet and loadsheet message types",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-044",
+      "area": "Load control / DCS",
+      "capability": "Provider message idempotency key",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-045",
+      "area": "Load control / DCS",
+      "capability": "Payload SHA-256 provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-046",
+      "area": "Load control / DCS",
+      "capability": "Validation findings",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-047",
+      "area": "Load control / DCS",
+      "capability": "Validated-before-acknowledgement control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-048",
+      "area": "Load control / DCS",
+      "capability": "Controlled acknowledgement reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-049",
+      "area": "Load control / DCS",
+      "capability": "Flight association",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-050",
+      "area": "Airport / runway data",
+      "capability": "Runway operational-state history",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-051",
+      "area": "Airport / runway data",
+      "capability": "Open/closed/restricted states",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-052",
+      "area": "Airport / runway data",
+      "capability": "Contamination and braking-action capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-053",
+      "area": "Airport / runway data",
+      "capability": "Declared-distance overrides",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-054",
+      "area": "Airport / runway data",
+      "capability": "NOTAM/airport/authority source type",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-055",
+      "area": "Airport / runway data",
+      "capability": "Source reference and SHA-256",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-056",
+      "area": "Airport / runway data",
+      "capability": "Effective window",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-057",
+      "area": "Airport / runway data",
+      "capability": "Named approval evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-058",
+      "area": "ACMI / wet lease",
+      "capability": "ACMI contract register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-059",
+      "area": "ACMI / wet lease",
+      "capability": "Lessor/lessee AOC identities",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-060",
+      "area": "ACMI / wet lease",
+      "capability": "Aircraft scope",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-061",
+      "area": "ACMI / wet lease",
+      "capability": "Effective dates",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-062",
+      "area": "ACMI / wet lease",
+      "capability": "Operational-control responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-063",
+      "area": "ACMI / wet lease",
+      "capability": "Crew responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-064",
+      "area": "ACMI / wet lease",
+      "capability": "Maintenance responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-065",
+      "area": "ACMI / wet lease",
+      "capability": "Continuing-airworthiness responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-066",
+      "area": "ACMI / wet lease",
+      "capability": "Records responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-067",
+      "area": "ACMI / wet lease",
+      "capability": "Occurrence-reporting responsibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-068",
+      "area": "ACMI / wet lease",
+      "capability": "Authority approval reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-069",
+      "area": "ACMI / wet lease",
+      "capability": "Independent activation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-070",
+      "area": "Electronic tech / journey log",
+      "capability": "Electronic technical-log header",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-071",
+      "area": "Electronic tech / journey log",
+      "capability": "Tail/date continuity uniqueness",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-072",
+      "area": "Electronic tech / journey log",
+      "capability": "Continuity token",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-073",
+      "area": "Electronic tech / journey log",
+      "capability": "Offline revision control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-074",
+      "area": "Electronic tech / journey log",
+      "capability": "Sector events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-075",
+      "area": "Electronic tech / journey log",
+      "capability": "Defect events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-076",
+      "area": "Electronic tech / journey log",
+      "capability": "Fluid uplift/consumption events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-077",
+      "area": "Electronic tech / journey log",
+      "capability": "Maintenance-action events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-078",
+      "area": "Electronic tech / journey log",
+      "capability": "Authenticated signature events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-079",
+      "area": "Electronic tech / journey log",
+      "capability": "Shift/aircraft handover events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-080",
+      "area": "Electronic tech / journey log",
+      "capability": "Offline sync events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-081",
+      "area": "Electronic tech / journey log",
+      "capability": "Append-only event chronology",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-082",
+      "area": "Electronic tech / journey log",
+      "capability": "Signature-required closure",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-083",
+      "area": "Electronic tech / journey log",
+      "capability": "Closing station/hours/cycles capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    },
+    {
+      "id": "OPS-084",
+      "area": "Electronic tech / journey log",
+      "capability": "Audit evidence for log events and closure",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0047_operations_completion.sql",
+        "apps/api/src/modules/ops/operations-control.service.ts",
+        "apps/web/src/features/ops/OperationsControl.tsx"
+      ]
+    }
+  ]
+}

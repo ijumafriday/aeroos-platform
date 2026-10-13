@@ -1,0 +1,9 @@
+{
+  "policy": "AeroOS supports in-place upgrades from every listed release to the current release. Older releases must first upgrade to the oldest listed release.",
+  "releases": [
+    {"version":"0.27.1","migrationCutoff":38},
+    {"version":"0.28.0","migrationCutoff":39},
+    {"version":"0.29.0","migrationCutoff":40},
+    {"version":"0.30.0","migrationCutoff":40}
+  ]
+}

@@ -1,0 +1,43 @@
+# Cloud profile (AWS / Azure / GCP): managed PostgreSQL, managed Kafka, Temporal Cloud, S3, Vault/OpenBao.
+# Only open protocols are used, so moving between providers is a change to this file.
+profile: cloud
+
+postgres:
+  host: aeroos.cluster-xxxx.eu-north-1.rds.amazonaws.com   # PostgreSQL 16 with PostGIS
+
+kafka:
+  brokers: b-1.aeroos.kafka.eu-north-1.amazonaws.com:9094,b-2.aeroos.kafka.eu-north-1.amazonaws.com:9094
+  replication: 3
+
+temporal:
+  enabled: false
+  address: aeroos.a1b2c.tmprl.cloud:7233
+  namespace: aeroos.a1b2c
+
+cerbos:
+  enabled: true
+
+oidc:
+  issuer: https://id.aeroos.example.com/realms/aeroos
+  jwksUrl: https://id.aeroos.example.com/realms/aeroos/protocol/openid-connect/certs
+
+signing:
+  provider: transit
+  transit:
+    # Managed or self-run OpenBao/Vault; auto-unseal with the cloud's KMS is a property of that
+    # cluster, not of AeroOS — the application only speaks the Transit protocol.
+    address: https://vault.security.aeroos.example.com:8200
+
+objectStorage:
+  endpoint: https://s3.eu-north-1.amazonaws.com
+  publicEndpoint: https://s3.eu-north-1.amazonaws.com
+  region: eu-north-1
+  forcePathStyle: false
+
+api:
+  webauthn:                       # passkeys (CRS confirmation): the web app's domain and exact origin
+    rpId: aeroos.example.com
+    origins: https://aeroos.example.com
+
+serviceIdentity:
+  tokenUrl: https://id.aeroos.example.com/realms/aeroos/protocol/openid-connect/token

@@ -1,0 +1,88 @@
+name: BusinessPolicyTests
+description: Finance invoices and posts; managers quote; hangar books work; auditors read; another operator cannot
+principals:
+  finance:
+    id: finance
+    roles: ["finance_controller"]
+    attr: { operators: ["NKX"], username: "finance" }
+  manager:
+    id: camo.manager
+    roles: ["camo_engineer", "camo_manager", "auditor"]
+    attr: { operators: ["NKX", "FJR"], username: "camo.manager" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  auditor:
+    id: auditor
+    roles: ["auditor"]
+    attr: { operators: ["NKX", "FJR"], username: "auditor" }
+  fjr:
+    id: fjr.finance
+    roles: ["finance_controller"]
+    attr: { operators: ["FJR"], username: "fjr.finance" }
+resources:
+  billing:
+    kind: billing
+    id: "*"
+    attr: { operatorId: "NKX" }
+  ledger:
+    kind: ledger
+    id: NKT
+    attr: { operatorId: "NKX" }
+  dash:
+    kind: executive_dashboard
+    id: "*"
+    attr: { operatorId: "NKX" }
+tests:
+  - name: Billing
+    input:
+      principals: ["finance", "manager", "mechanic", "auditor", "fjr"]
+      resources: ["billing"]
+      actions: ["read", "manage_customers", "quote", "book", "invoice"]
+    expected:
+      - principal: finance
+        resource: billing
+        actions: { read: EFFECT_ALLOW, manage_customers: EFFECT_ALLOW, quote: EFFECT_ALLOW, book: EFFECT_DENY, invoice: EFFECT_ALLOW }
+      - principal: manager
+        resource: billing
+        actions: { read: EFFECT_ALLOW, manage_customers: EFFECT_DENY, quote: EFFECT_ALLOW, book: EFFECT_ALLOW, invoice: EFFECT_DENY }
+      - principal: mechanic
+        resource: billing
+        actions: { read: EFFECT_ALLOW, manage_customers: EFFECT_DENY, quote: EFFECT_DENY, book: EFFECT_ALLOW, invoice: EFFECT_DENY }
+      - principal: auditor
+        resource: billing
+        actions: { read: EFFECT_ALLOW, manage_customers: EFFECT_DENY, quote: EFFECT_DENY, book: EFFECT_DENY, invoice: EFFECT_DENY }
+      - principal: fjr
+        resource: billing
+        actions: { read: EFFECT_DENY, manage_customers: EFFECT_DENY, quote: EFFECT_DENY, book: EFFECT_DENY, invoice: EFFECT_DENY }
+  - name: Ledger and dashboard
+    input:
+      principals: ["finance", "manager", "mechanic", "auditor"]
+      resources: ["ledger", "dash"]
+      actions: ["read", "post", "close", "integrate"]
+    expected:
+      - principal: finance
+        resource: ledger
+        actions: { read: EFFECT_ALLOW, post: EFFECT_ALLOW, close: EFFECT_ALLOW, integrate: EFFECT_ALLOW }
+      - principal: manager
+        resource: ledger
+        actions: { read: EFFECT_ALLOW, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: mechanic
+        resource: ledger
+        actions: { read: EFFECT_DENY, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: auditor
+        resource: ledger
+        actions: { read: EFFECT_ALLOW, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: finance
+        resource: dash
+        actions: { read: EFFECT_ALLOW, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: manager
+        resource: dash
+        actions: { read: EFFECT_ALLOW, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: mechanic
+        resource: dash
+        actions: { read: EFFECT_DENY, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }
+      - principal: auditor
+        resource: dash
+        actions: { read: EFFECT_ALLOW, post: EFFECT_DENY, close: EFFECT_DENY, integrate: EFFECT_DENY }

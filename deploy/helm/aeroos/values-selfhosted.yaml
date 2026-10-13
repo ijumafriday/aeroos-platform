@@ -1,0 +1,55 @@
+# Self-hosted / sovereign profile: everything runs inside the customer's Kubernetes cluster.
+# Prerequisite operators (installed once per cluster): CloudNativePG, Strimzi, Keycloak, MinIO (or Ceph RGW), OpenBao.
+profile: self-hosted
+
+selfHosted:
+  postgres:
+    instances: 3
+    storage: 200Gi
+    storageClass: ""            # customer's block storage class
+  kafka:
+    replicas: 3
+    storage: 100Gi
+  keycloak:
+    instances: 2
+    hostname: id.aeroos.customer.local
+
+postgres:
+  host: aeroos-pg-rw            # CloudNativePG read-write service
+
+kafka:
+  brokers: aeroos-kafka-kafka-bootstrap:9092
+  replication: 3
+
+temporal:
+  enabled: true
+  address: aeroos-temporal-frontend:7233
+
+cerbos:
+  enabled: true
+
+oidc:
+  issuer: https://id.aeroos.customer.local/realms/aeroos
+  jwksUrl: http://aeroos-keycloak-service:8080/realms/aeroos/protocol/openid-connect/certs
+
+signing:
+  provider: transit
+  transit:
+    # OpenBao cluster in the customer's estate, sealed by their HSM (PKCS#11 seal).
+    address: https://openbao.security.svc:8200
+
+objectStorage:
+  endpoint: http://aeroos-minio.aeroos.svc:9000          # MinIO operator tenant or Ceph RGW
+  publicEndpoint: https://files.aeroos.customer.local
+  forcePathStyle: true
+
+observability:
+  otlpEndpoint: http://otel-collector.observability.svc:4318
+
+api:
+  webauthn:                       # passkeys (CRS confirmation): the web app's domain and exact origin
+    rpId: aeroos.customer.local
+    origins: https://aeroos.customer.local
+
+serviceIdentity:
+  tokenUrl: http://aeroos-keycloak-service:8080/realms/aeroos/protocol/openid-connect/token

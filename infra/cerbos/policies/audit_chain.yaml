@@ -1,0 +1,26 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: audit_chain
+  rules:
+    - actions: ["read", "verify"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "camo_manager", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["anchor"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    # Authority evidence pack (signed export of the operator's trail).
+    - actions: ["export"]
+      effect: EFFECT_ALLOW
+      roles: ["auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

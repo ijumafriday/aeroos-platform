@@ -1,0 +1,97 @@
+{{- if eq .Values.profile "self-hosted" }}
+# PostgreSQL 16 + PostGIS via the CloudNativePG operator (3 instances, synchronous replica).
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Release.Name }}-pg
+spec:
+  instances: {{ .Values.selfHosted.postgres.instances }}
+  imageName: ghcr.io/cloudnative-pg/postgis:16-3.4
+  minSyncReplicas: 1
+  maxSyncReplicas: 1
+  storage:
+    size: {{ .Values.selfHosted.postgres.storage }}
+    {{- with .Values.selfHosted.postgres.storageClass }}
+    storageClass: {{ . }}
+    {{- end }}
+  bootstrap:
+    initdb:
+      database: aeroos
+      owner: aeroos_owner
+      postInitApplicationSQLRefs:
+        configMapRefs:
+          - name: {{ .Release.Name }}-pg-init
+            key: init.sql
+  managed:
+    roles:
+      {{- range list "platform_svc" "compliance_svc" "org_svc" "camo_svc" "engineering_svc" "records_svc" "amo_svc" "ops_svc" }}
+      - name: {{ . }}
+        login: true
+        passwordSecret: { name: {{ $.Release.Name }}-{{ . | replace "_" "-" }} }
+      {{- end }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-pg-init
+data:
+  init.sql: |
+    CREATE EXTENSION IF NOT EXISTS postgis;
+    REVOKE ALL ON SCHEMA public FROM PUBLIC;
+    CREATE SCHEMA platform AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA compliance AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA org AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA camo AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA engineering AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA records AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA amo AUTHORIZATION aeroos_owner;
+    CREATE SCHEMA ops AUTHORIZATION aeroos_owner;
+---
+# Apache Kafka (KRaft) via the Strimzi operator.
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: brokers
+  labels: { strimzi.io/cluster: {{ .Release.Name }}-kafka }
+spec:
+  replicas: {{ .Values.selfHosted.kafka.replicas }}
+  roles: [controller, broker]
+  storage:
+    type: persistent-claim
+    size: {{ .Values.selfHosted.kafka.storage }}
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: {{ .Release.Name }}-kafka
+  annotations:
+    strimzi.io/node-pools: enabled
+    strimzi.io/kraft: enabled
+spec:
+  kafka:
+    listeners:
+      - { name: plain, port: 9092, type: internal, tls: false }
+    config:
+      auto.create.topics.enable: false
+      default.replication.factor: 3
+      min.insync.replicas: 2
+  entityOperator:
+    topicOperator: {}
+---
+# Keycloak via the Keycloak operator, backed by the same PostgreSQL cluster.
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: {{ .Release.Name }}-keycloak
+spec:
+  instances: {{ .Values.selfHosted.keycloak.instances }}
+  hostname:
+    hostname: {{ .Values.selfHosted.keycloak.hostname }}
+  db:
+    vendor: postgres
+    host: {{ .Release.Name }}-pg-rw
+    usernameSecret: { name: {{ .Release.Name }}-keycloak-db, key: username }
+    passwordSecret: { name: {{ .Release.Name }}-keycloak-db, key: password }
+  http:
+    tlsSecret: {{ .Values.ingress.tls.secretName }}
+{{- end }}

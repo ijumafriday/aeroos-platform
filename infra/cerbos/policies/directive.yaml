@@ -1,0 +1,20 @@
+# AD / SB intake. CAMO receives and evaluates; incorporation into the programme is a second, separate approval
+# (the four-eyes rule itself is enforced in the domain: incorporator ≠ evaluator).
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: directive
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["receive", "evaluate", "incorporate"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

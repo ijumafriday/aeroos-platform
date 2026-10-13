@@ -1,0 +1,1582 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "AeroOS Domain Events",
+    "version": "0.50.0",
+    "description": "Versioned Kafka event contract. Event envelopes are tenant-scoped and immutable."
+  },
+  "servers": {
+    "kafka": {
+      "host": "${KAFKA_BROKERS}",
+      "protocol": "kafka"
+    }
+  },
+  "channels": {
+    "aeroos_camo_v1": {
+      "address": "aeroos.camo.v1",
+      "messages": {
+        "camo_mel_deferred": {
+          "name": "camo.mel.deferred",
+          "title": "camo.mel.deferred",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.mel.deferred"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_mel_extended": {
+          "name": "camo.mel.extended",
+          "title": "camo.mel.extended",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.mel.extended"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_mel_closed": {
+          "name": "camo.mel.closed",
+          "title": "camo.mel.closed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.mel.closed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_mel_expired": {
+          "name": "camo.mel.expired",
+          "title": "camo.mel.expired",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.mel.expired"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_eo_released": {
+          "name": "camo.eo.released",
+          "title": "camo.eo.released",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.eo.released"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_wp_planned": {
+          "name": "camo.wp.planned",
+          "title": "camo.wp.planned",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.wp.planned"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_wp_released": {
+          "name": "camo.wp.released",
+          "title": "camo.wp.released",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.wp.released"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_wp_completed": {
+          "name": "camo.wp.completed",
+          "title": "camo.wp.completed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.wp.completed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_requirement_complied": {
+          "name": "camo.requirement.complied",
+          "title": "camo.requirement.complied",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.requirement.complied"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "camo_airworthiness_changed": {
+          "name": "camo.airworthiness.changed",
+          "title": "camo.airworthiness.changed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "camo.airworthiness.changed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aeroos_amo_v1": {
+      "address": "aeroos.amo.v1",
+      "messages": {
+        "amo_taskcard_created": {
+          "name": "amo.taskcard.created",
+          "title": "amo.taskcard.created",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.taskcard.created"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_taskcard_step_signed": {
+          "name": "amo.taskcard.step_signed",
+          "title": "amo.taskcard.step_signed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.taskcard.step_signed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_crs_issued": {
+          "name": "amo.crs.issued",
+          "title": "amo.crs.issued",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.crs.issued"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_part_scrapped": {
+          "name": "amo.part.scrapped",
+          "title": "amo.part.scrapped",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.part.scrapped"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_invoice_issued": {
+          "name": "amo.invoice.issued",
+          "title": "amo.invoice.issued",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.invoice.issued"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_payment_received": {
+          "name": "amo.payment.received",
+          "title": "amo.payment.received",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.payment.received"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "amo_goods_received": {
+          "name": "amo.goods.received",
+          "title": "amo.goods.received",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "amo.goods.received"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aeroos_org_v1": {
+      "address": "aeroos.org.v1",
+      "messages": {
+        "org_authorisation_issued": {
+          "name": "org.authorisation.issued",
+          "title": "org.authorisation.issued",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.authorisation.issued"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_authorisation_suspended": {
+          "name": "org.authorisation.suspended",
+          "title": "org.authorisation.suspended",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.authorisation.suspended"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_authorisation_reinstated": {
+          "name": "org.authorisation.reinstated",
+          "title": "org.authorisation.reinstated",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.authorisation.reinstated"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_authorisation_revoked": {
+          "name": "org.authorisation.revoked",
+          "title": "org.authorisation.revoked",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.authorisation.revoked"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_authorisation_expired": {
+          "name": "org.authorisation.expired",
+          "title": "org.authorisation.expired",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.authorisation.expired"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_training_recorded": {
+          "name": "org.training.recorded",
+          "title": "org.training.recorded",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.training.recorded"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "org_expiry_warning": {
+          "name": "org.expiry.warning",
+          "title": "org.expiry.warning",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "org.expiry.warning"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aeroos_ops_v1": {
+      "address": "aeroos.ops.v1",
+      "messages": {
+        "ops_flight_departed": {
+          "name": "ops.flight.departed",
+          "title": "ops.flight.departed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.departed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_flight_arrived": {
+          "name": "ops.flight.arrived",
+          "title": "ops.flight.arrived",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.arrived"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_flight_diverted": {
+          "name": "ops.flight.diverted",
+          "title": "ops.flight.diverted",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.diverted"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_flight_delayed": {
+          "name": "ops.flight.delayed",
+          "title": "ops.flight.delayed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.delayed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_flight_cancelled": {
+          "name": "ops.flight.cancelled",
+          "title": "ops.flight.cancelled",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.cancelled"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_flight_tail_changed": {
+          "name": "ops.flight.tail_changed",
+          "title": "ops.flight.tail_changed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.flight.tail_changed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_dispatch_changed": {
+          "name": "ops.dispatch.changed",
+          "title": "ops.dispatch.changed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.dispatch.changed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_recovery_proposed": {
+          "name": "ops.recovery.proposed",
+          "title": "ops.recovery.proposed",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.recovery.proposed"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_recovery_applied": {
+          "name": "ops.recovery.applied",
+          "title": "ops.recovery.applied",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.recovery.applied"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "ops_crew_reassigned": {
+          "name": "ops.crew.reassigned",
+          "title": "ops.crew.reassigned",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "ops.crew.reassigned"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aeroos_platform_v1": {
+      "address": "aeroos.platform.v1",
+      "messages": {
+        "platform_notification_raised": {
+          "name": "platform.notification.raised",
+          "title": "platform.notification.raised",
+          "payload": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "data",
+              "occurredAt",
+              "operatorId",
+              "actor",
+              "correlationId"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "type": {
+                "const": "platform.notification.raised"
+              },
+              "data": {
+                "type": "object"
+              },
+              "occurredAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "operatorId": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              },
+              "correlationId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "operations": {}
+}

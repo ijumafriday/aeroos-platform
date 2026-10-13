@@ -1,0 +1,64 @@
+name: TechnicalRecordsPolicyTests
+description: Dedicated Technical Records custody roles with independent completion authority
+
+principals:
+  officer:
+    id: records.officer
+    roles: ["records_officer"]
+    attr: { operators: ["NKX"], username: "records.officer" }
+  manager:
+    id: records.manager
+    roles: ["records_manager"]
+    attr: { operators: ["NKX"], username: "records.manager" }
+  auditor:
+    id: auditor
+    roles: ["auditor"]
+    attr: { operators: ["NKX"], username: "auditor" }
+  foreign:
+    id: foreign.records
+    roles: ["records_manager"]
+    attr: { operators: ["ABC"], username: "foreign.records" }
+
+resources:
+  binder:
+    kind: technical_record
+    id: REC-1001
+    attr: { operatorId: "NKX" }
+
+tests:
+  - name: Records officer manages custody but cannot accept complete record sets
+    input:
+      principals: ["officer"]
+      resources: ["binder"]
+      actions: ["read", "manage", "complete", "export"]
+    expected:
+      - principal: officer
+        resource: binder
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW, complete: EFFECT_DENY, export: EFFECT_DENY }
+  - name: Records manager can manage, complete and export
+    input:
+      principals: ["manager"]
+      resources: ["binder"]
+      actions: ["read", "manage", "complete", "export"]
+    expected:
+      - principal: manager
+        resource: binder
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_ALLOW, complete: EFFECT_ALLOW, export: EFFECT_ALLOW }
+  - name: Auditor reads but cannot alter record custody
+    input:
+      principals: ["auditor"]
+      resources: ["binder"]
+      actions: ["read", "manage", "complete"]
+    expected:
+      - principal: auditor
+        resource: binder
+        actions: { read: EFFECT_ALLOW, manage: EFFECT_DENY, complete: EFFECT_DENY }
+  - name: Cross-operator access is denied
+    input:
+      principals: ["foreign"]
+      resources: ["binder"]
+      actions: ["read", "manage", "complete", "export"]
+    expected:
+      - principal: foreign
+        resource: binder
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY, complete: EFFECT_DENY, export: EFFECT_DENY }

@@ -1,0 +1,4 @@
+{
+  "oidcAuthority": "http://localhost:8081/realms/aeroos",
+  "oidcClientId": "aeroos-web"
+}

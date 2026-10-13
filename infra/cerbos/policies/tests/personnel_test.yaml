@@ -1,0 +1,80 @@
+name: PersonnelPolicyTests
+description: Quality manager manages others' authorisations; everyone reads only their own file
+
+principals:
+  qm:
+    id: quality.manager
+    roles: ["quality_manager", "auditor"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  foreignQm:
+    id: other.qm
+    roles: ["quality_manager"]
+    attr: { operators: ["XYZ"], username: "other.qm" }
+
+resources:
+  mwangi:
+    kind: personnel
+    id: P-4471
+    attr: { operatorId: "NKX", username: "k.mwangi" }
+  qmSelf:
+    kind: personnel
+    id: P-0401
+    attr: { operatorId: "NKX", username: "quality.manager" }
+  everyone:
+    kind: personnel
+    id: "*"
+    attr: { operatorId: "NKX", username: "" }
+
+tests:
+  - name: The quality manager lists, reads and manages other people's files
+    input:
+      principals: ["qm"]
+      resources: ["mwangi", "everyone"]
+      actions: ["list", "read", "manage"]
+    expected:
+      - principal: qm
+        resource: mwangi
+        actions: { list: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+      - principal: qm
+        resource: everyone
+        actions: { list: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_ALLOW }
+
+  - name: Nobody manages their own authorisation
+    input:
+      principals: ["qm"]
+      resources: ["qmSelf"]
+      actions: ["manage"]
+    expected:
+      - principal: qm
+        resource: qmSelf
+        actions: { manage: EFFECT_DENY }
+
+  - name: Engineers read their own file only
+    input:
+      principals: ["mechanic"]
+      resources: ["mwangi", "qmSelf", "everyone"]
+      actions: ["list", "read", "manage"]
+    expected:
+      - principal: mechanic
+        resource: mwangi
+        actions: { list: EFFECT_DENY, read: EFFECT_ALLOW, manage: EFFECT_DENY }
+      - principal: mechanic
+        resource: qmSelf
+        actions: { list: EFFECT_DENY, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: mechanic
+        resource: everyone
+        actions: { list: EFFECT_DENY, read: EFFECT_DENY, manage: EFFECT_DENY }
+
+  - name: Another operator's quality manager sees nothing
+    input:
+      principals: ["foreignQm"]
+      resources: ["mwangi"]
+      actions: ["read", "manage"]
+    expected:
+      - principal: foreignQm
+        resource: mwangi
+        actions: { read: EFFECT_DENY, manage: EFFECT_DENY }

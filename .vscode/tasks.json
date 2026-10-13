@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "AeroOS: full stack in Docker", "type": "shell", "command": "docker compose up --build", "problemMatcher": [] },
+    { "label": "AeroOS: stop stack", "type": "shell", "command": "docker compose down", "problemMatcher": [] },
+    { "label": "AeroOS: reset all data", "type": "shell", "command": "docker compose down -v", "problemMatcher": [] },
+    { "label": "AeroOS: infrastructure only (for local dev)", "type": "shell", "command": "docker compose up -d postgres kafka temporal temporal-ui keycloak cerbos minio openbao openbao-init", "problemMatcher": [] },
+    { "label": "AeroOS: install, build, test", "type": "shell", "command": "pnpm install --frozen-lockfile && pnpm build && pnpm typecheck && pnpm test", "problemMatcher": ["$tsc"] },
+    { "label": "AeroOS: end-to-end tests (stack must be running)", "type": "shell", "command": "pnpm e2e", "problemMatcher": [] },
+    { "label": "AeroOS: stack with observability (Grafana :3001)", "type": "shell", "command": "docker compose --profile observability up --build", "problemMatcher": [] },
+    { "label": "AeroOS: test Cerbos policies", "type": "shell", "command": "pnpm policies:test", "problemMatcher": [] }
+  ]
+}

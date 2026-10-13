@@ -1,0 +1,19 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: crew_roster
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller", "auditor", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    # Crew recovery: propose and apply re-crewing (standby call-out, reserve call-out).
+    # Crew planning: build and accept rosters, publish them, record leave / days off / sickness / training.
+    - actions: ["recover", "build", "publish", "manage_unavailability"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

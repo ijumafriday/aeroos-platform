@@ -1,0 +1,19 @@
+{
+  "name": "@aeroos/audit",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Tamper-evident, hash-chained audit records with an independent verifier",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/kernel": "workspace:*"
+  }
+}

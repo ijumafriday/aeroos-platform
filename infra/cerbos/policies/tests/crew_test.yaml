@@ -1,0 +1,88 @@
+name: CrewPolicyTests
+description: The OCC plans rosters; crew report fatigue and see only their own reports and hub; the safety office reviews
+principals:
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  quality:
+    id: quality.manager
+    roles: ["quality_manager", "auditor"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  crew:
+    id: ola.hansen
+    roles: ["flight_crew"]
+    attr: { operators: ["NKX"], username: "ola.hansen" }
+  other_crew:
+    id: kari.berg
+    roles: ["flight_crew"]
+    attr: { operators: ["NKX"], username: "kari.berg" }
+  fjr:
+    id: fjr.occ
+    roles: ["occ_controller"]
+    attr: { operators: ["FJR"], username: "fjr.occ" }
+resources:
+  roster:
+    kind: crew_roster
+    id: "*"
+    attr: { operatorId: "NKX" }
+  report:
+    kind: fatigue_report
+    id: FR-1
+    attr: { operatorId: "NKX", reporter: "ola.hansen" }
+  hub:
+    kind: crew_hub
+    id: ola.hansen
+    attr: { operatorId: "NKX" }
+tests:
+  - name: Roster planning
+    input:
+      principals: ["occ", "quality", "crew", "fjr"]
+      resources: ["roster"]
+      actions: ["read", "build", "publish", "manage_unavailability"]
+    expected:
+      - principal: occ
+        resource: roster
+        actions: { read: EFFECT_ALLOW, build: EFFECT_ALLOW, publish: EFFECT_ALLOW, manage_unavailability: EFFECT_ALLOW }
+      - principal: quality
+        resource: roster
+        actions: { read: EFFECT_ALLOW, build: EFFECT_DENY, publish: EFFECT_DENY, manage_unavailability: EFFECT_DENY }
+      - principal: crew
+        resource: roster
+        actions: { read: EFFECT_DENY, build: EFFECT_DENY, publish: EFFECT_DENY, manage_unavailability: EFFECT_DENY }
+      - principal: fjr
+        resource: roster
+        actions: { read: EFFECT_DENY, build: EFFECT_DENY, publish: EFFECT_DENY, manage_unavailability: EFFECT_DENY }
+  - name: Fatigue reports
+    input:
+      principals: ["occ", "quality", "crew", "other_crew"]
+      resources: ["report"]
+      actions: ["report", "read", "review"]
+    expected:
+      - principal: occ
+        resource: report
+        actions: { report: EFFECT_DENY, read: EFFECT_DENY, review: EFFECT_DENY }
+      - principal: quality
+        resource: report
+        actions: { report: EFFECT_DENY, read: EFFECT_ALLOW, review: EFFECT_ALLOW }
+      - principal: crew
+        resource: report
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, review: EFFECT_DENY }
+      - principal: other_crew
+        resource: report
+        actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, review: EFFECT_DENY }
+  - name: Crew hub
+    input:
+      principals: ["occ", "crew", "other_crew"]
+      resources: ["hub"]
+      actions: ["read", "acknowledge"]
+    expected:
+      - principal: occ
+        resource: hub
+        actions: { read: EFFECT_DENY, acknowledge: EFFECT_DENY }
+      - principal: crew
+        resource: hub
+        actions: { read: EFFECT_ALLOW, acknowledge: EFFECT_ALLOW }
+      - principal: other_crew
+        resource: hub
+        actions: { read: EFFECT_DENY, acknowledge: EFFECT_DENY }

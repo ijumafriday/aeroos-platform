@@ -1,0 +1,688 @@
+{
+  "product": "AeroOS Supply Chain",
+  "platformVersion": "0.38.0",
+  "policy": "Supply owns procurement, material custody, fulfillment, sourcing and logistics. Maintenance owns technical work/AOG technical state; Quality owns supplier approval surveillance; Commercial owns statutory/commercial accounting. Supply references those authoritative objects rather than duplicating them.",
+  "items": [
+    {
+      "id": "SUP-001",
+      "category": "Procurement",
+      "title": "Approved supplier master and approval validity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-002",
+      "category": "Procurement",
+      "title": "Material requisitions linked to maintenance demand",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-003",
+      "category": "Procurement",
+      "title": "Multi-vendor quotation capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-004",
+      "category": "Procurement",
+      "title": "Second-person purchase-order approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-005",
+      "category": "Procurement",
+      "title": "Partial and complete goods receipt",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-006",
+      "category": "Procurement",
+      "title": "Release-certificate capture and bonded/customs receipt",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-007",
+      "category": "Procurement",
+      "title": "Exchange/core-return lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-008",
+      "category": "Procurement",
+      "title": "Power-by-the-hour contract support",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-009",
+      "category": "Warehouse",
+      "title": "Operator-owned warehouse/bin hierarchy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-010",
+      "category": "Warehouse",
+      "title": "Serialized and lot/batch stock identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-011",
+      "category": "Warehouse",
+      "title": "Shelf-life enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-012",
+      "category": "Warehouse",
+      "title": "Quarantine/serviceable/unserviceable state control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-013",
+      "category": "Warehouse",
+      "title": "Controlled bin-to-bin movement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-014",
+      "category": "Warehouse",
+      "title": "Cycle-count session and snapshot",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-015",
+      "category": "Warehouse",
+      "title": "Physical-inventory session",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-016",
+      "category": "Warehouse",
+      "title": "Line-by-line count recording with discrepancy reason",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-017",
+      "category": "Warehouse",
+      "title": "Stale-count detection before reconciliation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-018",
+      "category": "Warehouse",
+      "title": "Inventory variance reconciliation to lot and aggregate stock",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-019",
+      "category": "Warehouse",
+      "title": "Consignment-stock agreement governance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-020",
+      "category": "Warehouse",
+      "title": "Borrowed-in and loaned-out component custody",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-021",
+      "category": "Fulfillment",
+      "title": "Maintenance/AOG/customer/transfer fulfillment order",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-022",
+      "category": "Fulfillment",
+      "title": "Lot-level pick reservation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-023",
+      "category": "Fulfillment",
+      "title": "Double-pick prevention against active reservations",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-024",
+      "category": "Fulfillment",
+      "title": "Pick completeness gate before packing",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-025",
+      "category": "Fulfillment",
+      "title": "Pack/ship custody transition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-026",
+      "category": "Fulfillment",
+      "title": "Shipment tracking and receipt acknowledgement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-027",
+      "category": "Fulfillment",
+      "title": "Stock decrement only on shipment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-028",
+      "category": "Planning",
+      "title": "Part/station min-max replenishment policy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-029",
+      "category": "Planning",
+      "title": "Reorder-lot and lead-time policy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-030",
+      "category": "Planning",
+      "title": "Explainable weighted material demand forecast",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-031",
+      "category": "Planning",
+      "title": "Planner forecast override with retained explanation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-032",
+      "category": "Planning",
+      "title": "Maintenance demand input to forecast",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-033",
+      "category": "Planning",
+      "title": "Historical-consumption demand input",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-034",
+      "category": "Planning",
+      "title": "Reliability demand input",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-035",
+      "category": "Planning",
+      "title": "Fleet demand input",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-036",
+      "category": "Planning",
+      "title": "Safety-stock input",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-037",
+      "category": "Planning",
+      "title": "Replenishment proposal using on-hand/reserved/inbound/forecast",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-038",
+      "category": "Planning",
+      "title": "One-click governed replenishment requisition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-039",
+      "category": "Supplier",
+      "title": "Supplier on-time performance score",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-040",
+      "category": "Supplier",
+      "title": "Supplier receipt-quality score and PPM",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-041",
+      "category": "Supplier",
+      "title": "Supplier lead-time and commercial-variance analytics",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-042",
+      "category": "Supplier",
+      "title": "Supplier grade and source-approval result",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-043",
+      "category": "Supplier",
+      "title": "Source selection linked to requisition/quote/scorecard",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-044",
+      "category": "Supplier",
+      "title": "Blocked source selection for expired/unapproved vendor",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-045",
+      "category": "Supplier",
+      "title": "Blocked source selection when latest scorecard fails threshold",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-046",
+      "category": "Warranty",
+      "title": "Warranty entitlement period and failure coverage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-047",
+      "category": "Warranty",
+      "title": "Receipt/serial-linked entitlement identity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-048",
+      "category": "Warranty",
+      "title": "Claim-to-entitlement eligibility check",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-049",
+      "category": "Warranty",
+      "title": "Warranty commercial recovery and credit reconciliation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-050",
+      "category": "AOG",
+      "title": "AOG courier/AWB logistics linked to authoritative Maintenance AOG case",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-051",
+      "category": "AOG",
+      "title": "AOG shipment state, ETA and cost tracking",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx",
+        "apps/web/src/features/stores/Supply.tsx"
+      ]
+    },
+    {
+      "id": "SUP-052",
+      "category": "Planning",
+      "title": "Forecast signals derived from AeroOS reservations, requisitions, consumption, reliability and fleet utilization",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx"
+      ]
+    },
+    {
+      "id": "SUP-053",
+      "category": "Supplier",
+      "title": "Receipt-quality events retained for accepted/rejected/NCR/document defects",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx"
+      ]
+    },
+    {
+      "id": "SUP-054",
+      "category": "Supplier",
+      "title": "Governed supplier price agreements used during source selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/web/src/features/stores/SupplyControl.tsx"
+      ]
+    },
+    {
+      "id": "SUP-055",
+      "category": "Warehouse",
+      "title": "Consignment agreement bound to the physical stock lot and station",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/src/modules/amo/warehouse-control.service.ts",
+        "apps/web/src/features/stores/Warehouse.tsx"
+      ]
+    },
+    {
+      "id": "SUP-056",
+      "category": "Supplier",
+      "title": "Controlled supersession of an earlier source selection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/src/modules/amo/warehouse-control.service.ts",
+        "apps/web/src/features/stores/Warehouse.tsx"
+      ]
+    },
+    {
+      "id": "SUP-057",
+      "category": "Supplier",
+      "title": "Overlapping supplier price agreements are rejected",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0045_supply_completion.sql",
+        "apps/api/src/modules/amo/supply-control.service.ts",
+        "apps/api/src/modules/amo/warehouse-control.service.ts",
+        "apps/web/src/features/stores/Warehouse.tsx"
+      ]
+    }
+  ]
+}

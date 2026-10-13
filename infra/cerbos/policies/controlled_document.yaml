@@ -1,0 +1,20 @@
+# Document & manual control. Everyone reads (and acknowledges) the documents distributed to their role;
+# the quality manager and the CAMO manager (nominated persons) create, revise and approve them.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: controlled_document
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor", "quality_manager", "safety_manager", "storekeeper", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["manage", "approve"]
+      effect: EFFECT_ALLOW
+      roles: ["quality_manager", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

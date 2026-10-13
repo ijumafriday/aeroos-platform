@@ -1,0 +1,20 @@
+# Flight dispatch: the OCC prepares load sheets, fuel and flight plans and releases flights; the reference data
+# (overflight permits, fuel prices) is kept by the OCC; quality, auditors and flight crew (briefing package) read.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: dispatch
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller", "quality_manager", "auditor", "camo_manager", "flight_crew"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["prepare", "release", "manage_reference"]
+      effect: EFFECT_ALLOW
+      roles: ["occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

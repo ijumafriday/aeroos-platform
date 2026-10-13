@@ -1,0 +1,65 @@
+name: EngineeringHealthPolicyTests
+description: CAMO records trends and repair data, line maintenance records oil and repairs, the OCC only reads damage
+principals:
+  engineer:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"], username: "camo.engineer" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  fjr:
+    id: fjr.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["FJR"], username: "fjr.engineer" }
+resources:
+  engine:
+    kind: engine_health
+    id: "896230"
+    attr: { operatorId: "NKX" }
+  damage:
+    kind: structural_damage
+    id: SD-0001
+    attr: { operatorId: "NKX" }
+tests:
+  - name: Engine health
+    input:
+      principals: ["engineer", "mechanic", "occ", "fjr"]
+      resources: ["engine"]
+      actions: ["read", "record_trend", "record_oil", "manage_alerts"]
+    expected:
+      - principal: engineer
+        resource: engine
+        actions: { read: EFFECT_ALLOW, record_trend: EFFECT_ALLOW, record_oil: EFFECT_ALLOW, manage_alerts: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: engine
+        actions: { read: EFFECT_ALLOW, record_trend: EFFECT_DENY, record_oil: EFFECT_ALLOW, manage_alerts: EFFECT_DENY }
+      - principal: occ
+        resource: engine
+        actions: { read: EFFECT_DENY, record_trend: EFFECT_DENY, record_oil: EFFECT_DENY, manage_alerts: EFFECT_DENY }
+      - principal: fjr
+        resource: engine
+        actions: { read: EFFECT_DENY, record_trend: EFFECT_DENY, record_oil: EFFECT_DENY, manage_alerts: EFFECT_DENY }
+  - name: Structural damage
+    input:
+      principals: ["engineer", "mechanic", "occ", "fjr"]
+      resources: ["damage"]
+      actions: ["read", "record", "approve_data", "repair"]
+    expected:
+      - principal: engineer
+        resource: damage
+        actions: { read: EFFECT_ALLOW, record: EFFECT_ALLOW, approve_data: EFFECT_ALLOW, repair: EFFECT_DENY }
+      - principal: mechanic
+        resource: damage
+        actions: { read: EFFECT_ALLOW, record: EFFECT_ALLOW, approve_data: EFFECT_DENY, repair: EFFECT_ALLOW }
+      - principal: occ
+        resource: damage
+        actions: { read: EFFECT_ALLOW, record: EFFECT_DENY, approve_data: EFFECT_DENY, repair: EFFECT_DENY }
+      - principal: fjr
+        resource: damage
+        actions: { read: EFFECT_DENY, record: EFFECT_DENY, approve_data: EFFECT_DENY, repair: EFFECT_DENY }

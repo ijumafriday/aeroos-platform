@@ -1,0 +1,60 @@
+name: ProcurementPolicyTests
+description: Supply chain duties are separated (round 11)
+
+principals:
+  store:
+    id: storekeeper
+    roles: ["storekeeper"]
+    attr: { operators: ["NKX"], username: "storekeeper" }
+  manager:
+    id: camo.manager
+    roles: ["camo_manager"]
+    attr: { operators: ["NKX"], username: "camo.manager" }
+  quality:
+    id: quality.manager
+    roles: ["quality_manager"]
+    attr: { operators: ["NKX"], username: "quality.manager" }
+  mechanic:
+    id: k.mwangi
+    roles: ["certifying_staff"]
+    attr: { operators: ["NKX"], username: "k.mwangi" }
+  occ:
+    id: occ.controller
+    roles: ["occ_controller"]
+    attr: { operators: ["NKX"], username: "occ.controller" }
+  otherStore:
+    id: fjr.store
+    roles: ["storekeeper"]
+    attr: { operators: ["FJR"], username: "fjr.store" }
+
+resources:
+  nkx:
+    kind: procurement
+    id: "*"
+    attr: { operatorId: "NKX" }
+
+tests:
+  - name: Separation of duties in purchasing
+    input:
+      principals: ["store", "manager", "quality", "mechanic", "occ", "otherStore"]
+      resources: ["nkx"]
+      actions: ["read", "requisition", "purchase", "approve", "receive", "clear_customs", "claim", "manage_vendors"]
+    expected:
+      - principal: store
+        resource: nkx
+        actions: { read: EFFECT_ALLOW, requisition: EFFECT_ALLOW, purchase: EFFECT_ALLOW, approve: EFFECT_DENY, receive: EFFECT_ALLOW, clear_customs: EFFECT_ALLOW, claim: EFFECT_ALLOW, manage_vendors: EFFECT_DENY }
+      - principal: manager
+        resource: nkx
+        actions: { read: EFFECT_ALLOW, requisition: EFFECT_ALLOW, purchase: EFFECT_DENY, approve: EFFECT_ALLOW, receive: EFFECT_DENY, clear_customs: EFFECT_DENY, claim: EFFECT_ALLOW, manage_vendors: EFFECT_DENY }
+      - principal: quality
+        resource: nkx
+        actions: { read: EFFECT_ALLOW, requisition: EFFECT_DENY, purchase: EFFECT_DENY, approve: EFFECT_ALLOW, receive: EFFECT_DENY, clear_customs: EFFECT_DENY, claim: EFFECT_DENY, manage_vendors: EFFECT_ALLOW }
+      - principal: mechanic
+        resource: nkx
+        actions: { read: EFFECT_ALLOW, requisition: EFFECT_ALLOW, purchase: EFFECT_DENY, approve: EFFECT_DENY, receive: EFFECT_DENY, clear_customs: EFFECT_DENY, claim: EFFECT_DENY, manage_vendors: EFFECT_DENY }
+      - principal: occ
+        resource: nkx
+        actions: { read: EFFECT_DENY, requisition: EFFECT_DENY, purchase: EFFECT_DENY, approve: EFFECT_DENY, receive: EFFECT_DENY, clear_customs: EFFECT_DENY, claim: EFFECT_DENY, manage_vendors: EFFECT_DENY }
+      - principal: otherStore
+        resource: nkx
+        actions: { read: EFFECT_DENY, requisition: EFFECT_DENY, purchase: EFFECT_DENY, approve: EFFECT_DENY, receive: EFFECT_DENY, clear_customs: EFFECT_DENY, claim: EFFECT_DENY, manage_vendors: EFFECT_DENY }

@@ -1,0 +1,1399 @@
+{
+  "version": "0.42.0",
+  "domain": "Crew",
+  "definition": "Software-complete Crew planning/control-depth baseline. Operator contract rules, real transport providers, approved training curricula/simulator inventory, payroll-provider certification and validated fatigue science remain governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "CREW-001",
+      "area": "Governance",
+      "capability": "Dedicated Crew depth register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-002",
+      "area": "Governance",
+      "capability": "Tenant RLS across Crew completion tables",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-003",
+      "area": "Governance",
+      "capability": "Crew control authorization policy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-004",
+      "area": "Governance",
+      "capability": "Compact single-workspace Crew planning UI",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-005",
+      "area": "Governance",
+      "capability": "Audit-chain recording for governed Crew changes",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-006",
+      "area": "Governance",
+      "capability": "Independent approvals for bid, training and payroll decisions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-007",
+      "area": "Governance",
+      "capability": "Crew master-record validation before governed transactions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-008",
+      "area": "Governance",
+      "capability": "Operator isolation on every Crew control query",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-009",
+      "area": "Positioning & surface transport",
+      "capability": "Surface positioning leg persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-010",
+      "area": "Positioning & surface transport",
+      "capability": "Taxi positioning mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-011",
+      "area": "Positioning & surface transport",
+      "capability": "Bus positioning mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-012",
+      "area": "Positioning & surface transport",
+      "capability": "Rail positioning mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-013",
+      "area": "Positioning & surface transport",
+      "capability": "Ferry positioning mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-014",
+      "area": "Positioning & surface transport",
+      "capability": "Hotel-transfer positioning mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-015",
+      "area": "Positioning & surface transport",
+      "capability": "Other ground-transport mode",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-016",
+      "area": "Positioning & surface transport",
+      "capability": "Provider and booking reference capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-017",
+      "area": "Positioning & surface transport",
+      "capability": "Origin/destination capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-018",
+      "area": "Positioning & surface transport",
+      "capability": "Scheduled departure/arrival validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-019",
+      "area": "Positioning & surface transport",
+      "capability": "Actual departure/arrival capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-020",
+      "area": "Positioning & surface transport",
+      "capability": "Connection-flight linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-021",
+      "area": "Positioning & surface transport",
+      "capability": "Minimum connection-time control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-022",
+      "area": "Positioning & surface transport",
+      "capability": "Duty-impact minute capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-023",
+      "area": "Positioning & surface transport",
+      "capability": "Unavailability conflict detection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-024",
+      "area": "Positioning & surface transport",
+      "capability": "Connection-flight existence validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-025",
+      "area": "Positioning & surface transport",
+      "capability": "Connection-gap legality evaluation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-026",
+      "area": "Positioning & surface transport",
+      "capability": "At-risk connection state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-027",
+      "area": "Positioning & surface transport",
+      "capability": "Illegal connection state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-028",
+      "area": "Positioning & surface transport",
+      "capability": "Delay-minute capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-029",
+      "area": "Positioning & surface transport",
+      "capability": "Delay-driven legality recalculation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-030",
+      "area": "Positioning & surface transport",
+      "capability": "Disruption reason capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-031",
+      "area": "Positioning & surface transport",
+      "capability": "Positioning lifecycle status",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-032",
+      "area": "Positioning & surface transport",
+      "capability": "Crew-specific positioning timeline",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-033",
+      "area": "Bid & award",
+      "capability": "Formal bid-period persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-034",
+      "area": "Bid & award",
+      "capability": "Roster-period bounds",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-035",
+      "area": "Bid & award",
+      "capability": "Bid opening/closing window",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-036",
+      "area": "Bid & award",
+      "capability": "Frozen contract-rule snapshot",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-037",
+      "area": "Bid & award",
+      "capability": "Frozen seniority snapshot",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-038",
+      "area": "Bid & award",
+      "capability": "Configurable award scoring method",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-039",
+      "area": "Bid & award",
+      "capability": "Independent bid-period opening",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-040",
+      "area": "Bid & award",
+      "capability": "Open-window enforcement for submissions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-041",
+      "area": "Bid & award",
+      "capability": "Crew identity validation for bids",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-042",
+      "area": "Bid & award",
+      "capability": "Pairing preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-043",
+      "area": "Bid & award",
+      "capability": "Day-off preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-044",
+      "area": "Bid & award",
+      "capability": "Base preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-045",
+      "area": "Bid & award",
+      "capability": "Route preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-046",
+      "area": "Bid & award",
+      "capability": "Reserve preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-047",
+      "area": "Bid & award",
+      "capability": "Training preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-048",
+      "area": "Bid & award",
+      "capability": "Avoid-pairing preferences",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-049",
+      "area": "Bid & award",
+      "capability": "Weighted bid priority",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-050",
+      "area": "Bid & award",
+      "capability": "Rank-order capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-051",
+      "area": "Bid & award",
+      "capability": "Bid audit attribution",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-052",
+      "area": "Bid & award",
+      "capability": "Award generation from active bids",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-053",
+      "area": "Bid & award",
+      "capability": "Seniority-aware scoring",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-054",
+      "area": "Bid & award",
+      "capability": "Rule-trace persistence per award",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-055",
+      "area": "Bid & award",
+      "capability": "Source-bid traceability",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-056",
+      "area": "Bid & award",
+      "capability": "Proposed award lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-057",
+      "area": "Bid & award",
+      "capability": "Independent award approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-058",
+      "area": "Bid & award",
+      "capability": "Award decision note",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-059",
+      "area": "Bid & award",
+      "capability": "Approved award lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-060",
+      "area": "Bid & award",
+      "capability": "Roster publication reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-061",
+      "area": "Bid & award",
+      "capability": "Published award lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-062",
+      "area": "Bid & award",
+      "capability": "Publication actor/time evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-063",
+      "area": "Training resources",
+      "capability": "Training-resource master persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-064",
+      "area": "Training resources",
+      "capability": "Instructor resources",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-065",
+      "area": "Training resources",
+      "capability": "Simulator resources",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-066",
+      "area": "Training resources",
+      "capability": "Classroom resources",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-067",
+      "area": "Training resources",
+      "capability": "Aircraft resources",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-068",
+      "area": "Training resources",
+      "capability": "Training-device resources",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-069",
+      "area": "Training resources",
+      "capability": "Resource qualification tags",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-070",
+      "area": "Training resources",
+      "capability": "Resource capacity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-071",
+      "area": "Training resources",
+      "capability": "Resource base/location",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-072",
+      "area": "Training resources",
+      "capability": "Out-of-service/retired lifecycle support",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-073",
+      "area": "Training resources",
+      "capability": "Training-session persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-074",
+      "area": "Training resources",
+      "capability": "Course code/name",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-075",
+      "area": "Training resources",
+      "capability": "Qualification linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-076",
+      "area": "Training resources",
+      "capability": "Recurrent interval capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-077",
+      "area": "Training resources",
+      "capability": "Session time-window validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-078",
+      "area": "Training resources",
+      "capability": "Session location/capacity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-079",
+      "area": "Training resources",
+      "capability": "Required-resource linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-080",
+      "area": "Training resources",
+      "capability": "Resource existence/active validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-081",
+      "area": "Training resources",
+      "capability": "Resource booking conflict detection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-082",
+      "area": "Training resources",
+      "capability": "Independent session approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-083",
+      "area": "Training resources",
+      "capability": "Crew enrollment persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-084",
+      "area": "Training resources",
+      "capability": "Qualification-expiry demand date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-085",
+      "area": "Training resources",
+      "capability": "Expiry/initial/upgrade/recurrent/remedial/voluntary demand reasons",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-086",
+      "area": "Training resources",
+      "capability": "Session capacity enforcement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-087",
+      "area": "Training resources",
+      "capability": "Crew flight-roster conflict detection",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-088",
+      "area": "Training resources",
+      "capability": "Training attendance/result lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-089",
+      "area": "Training resources",
+      "capability": "Training result evidence note",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-090",
+      "area": "Pay interface",
+      "capability": "Crew pay-event persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-091",
+      "area": "Pay interface",
+      "capability": "Roster-actual pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-092",
+      "area": "Pay interface",
+      "capability": "Flight-actual pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-093",
+      "area": "Pay interface",
+      "capability": "Positioning pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-094",
+      "area": "Pay interface",
+      "capability": "Training pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-095",
+      "area": "Pay interface",
+      "capability": "Allowance pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-096",
+      "area": "Pay interface",
+      "capability": "Adjustment pay source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-097",
+      "area": "Pay interface",
+      "capability": "Pay code and units",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-098",
+      "area": "Pay interface",
+      "capability": "Hours/sectors/days/count/currency unit types",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-099",
+      "area": "Pay interface",
+      "capability": "Optional monetary amount/currency validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-100",
+      "area": "Pay interface",
+      "capability": "Evidence reference required",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-101",
+      "area": "Pay interface",
+      "capability": "Duplicate source/pay-code prevention",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-102",
+      "area": "Pay interface",
+      "capability": "Independent pay-event approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-103",
+      "area": "Pay interface",
+      "capability": "Payroll batch period",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-104",
+      "area": "Pay interface",
+      "capability": "Approved-event-only batching",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-105",
+      "area": "Pay interface",
+      "capability": "Single-currency batch control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-106",
+      "area": "Pay interface",
+      "capability": "Batch event count and totals",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-107",
+      "area": "Pay interface",
+      "capability": "Payroll provider reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-108",
+      "area": "Pay interface",
+      "capability": "Independent payroll export approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-109",
+      "area": "Pay interface",
+      "capability": "Deterministic export payload",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-110",
+      "area": "Pay interface",
+      "capability": "SHA-256 export digest",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-111",
+      "area": "Pay interface",
+      "capability": "Event-to-batch linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-112",
+      "area": "Pay interface",
+      "capability": "Exported event lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-113",
+      "area": "Pay interface",
+      "capability": "External payroll acknowledgement reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-114",
+      "area": "Pay interface",
+      "capability": "Reconciliation note",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-115",
+      "area": "Pay interface",
+      "capability": "Batch reconciliation actor/time",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    },
+    {
+      "id": "CREW-116",
+      "area": "Pay interface",
+      "capability": "Reconciled event lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0049_crew_completion.sql",
+        "apps/api/src/modules/ops/crew-control.service.ts",
+        "apps/web/src/features/crew/CrewControl.tsx",
+        "infra/cerbos/policies/crew_control.yaml"
+      ]
+    }
+  ]
+}

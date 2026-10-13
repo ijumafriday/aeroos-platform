@@ -1,0 +1,21 @@
+{
+  "name": "@aeroos/org-domain",
+  "version": "0.50.0",
+  "private": true,
+  "description": "Pure domain model for Organization Core: company authorisations, currency facts, expiry planning (no I/O)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aeroos/kernel": "workspace:*",
+    "@aeroos/compliance": "workspace:*",
+    "@aeroos/contracts": "workspace:*"
+  }
+}

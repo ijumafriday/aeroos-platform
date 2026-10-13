@@ -1,0 +1,39 @@
+name: AuditChainPolicyTests
+description: Audit trails are read per operator; the API passes only the selected operator as principal.attr.operators
+
+principals:
+  auditorNkx:
+    id: auditor
+    roles: ["auditor"]
+    attr: { operators: ["NKX"], username: "auditor" }
+  camo:
+    id: camo.engineer
+    roles: ["camo_engineer"]
+    attr: { operators: ["NKX"], username: "camo.engineer" }
+
+resources:
+  nkxOps:
+    kind: audit_chain
+    id: ops
+    attr: { operatorId: "NKX" }
+  fjrOps:
+    kind: audit_chain
+    id: ops
+    attr: { operatorId: "FJR" }
+
+tests:
+  - name: Auditors read, verify and anchor their own operator's chains only
+    input:
+      principals: ["auditorNkx", "camo"]
+      resources: ["nkxOps", "fjrOps"]
+      actions: ["read", "verify", "anchor", "export"]
+    expected:
+      - principal: auditorNkx
+        resource: nkxOps
+        actions: { read: EFFECT_ALLOW, verify: EFFECT_ALLOW, anchor: EFFECT_ALLOW, export: EFFECT_ALLOW }
+      - principal: auditorNkx
+        resource: fjrOps
+        actions: { read: EFFECT_DENY, verify: EFFECT_DENY, anchor: EFFECT_DENY, export: EFFECT_DENY }
+      - principal: camo
+        resource: nkxOps
+        actions: { read: EFFECT_DENY, verify: EFFECT_DENY, anchor: EFFECT_DENY, export: EFFECT_DENY }

@@ -1,0 +1,19 @@
+# Enterprise structure (legal entities, approvals, cost centres): readable by managers and auditors; finance and
+# quality maintain cost centres.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: enterprise
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller", "camo_manager", "quality_manager", "auditor", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

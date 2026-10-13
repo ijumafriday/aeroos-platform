@@ -1,0 +1,1449 @@
+{
+  "product": "AeroOS",
+  "domain": "Quality",
+  "registerVersion": "1.1",
+  "platformVersion": "0.50.0",
+  "policy": "Software-depth implementation evidence only; operator surveillance history, authority/customer acceptance, auditor records and retained production assurance evidence remain governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "QUA-001",
+      "category": "Programme governance",
+      "capability": "Programme governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-002",
+      "category": "Programme governance",
+      "capability": "Programme governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-003",
+      "category": "Programme governance",
+      "capability": "Programme governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-004",
+      "category": "Programme governance",
+      "capability": "Programme governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-005",
+      "category": "Programme governance",
+      "capability": "Programme governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-006",
+      "category": "Programme governance",
+      "capability": "Programme governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-007",
+      "category": "Programme governance",
+      "capability": "Programme governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-008",
+      "category": "Programme governance",
+      "capability": "Programme governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-009",
+      "category": "Programme governance",
+      "capability": "Programme governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-010",
+      "category": "Programme governance",
+      "capability": "Programme governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-011",
+      "category": "Programme governance",
+      "capability": "Programme governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-012",
+      "category": "Programme governance",
+      "capability": "Programme governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-013",
+      "category": "Programme governance",
+      "capability": "Programme governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-014",
+      "category": "Programme governance",
+      "capability": "Programme governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-015",
+      "category": "Programme governance",
+      "capability": "Programme governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-016",
+      "category": "Programme governance",
+      "capability": "Programme governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-017",
+      "category": "Programme governance",
+      "capability": "Programme governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-018",
+      "category": "Programme governance",
+      "capability": "Programme governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-019",
+      "category": "Programme governance",
+      "capability": "Programme governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-020",
+      "category": "Programme governance",
+      "capability": "Programme governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-021",
+      "category": "Programme governance",
+      "capability": "Programme governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-022",
+      "category": "Programme governance",
+      "capability": "Programme governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-023",
+      "category": "Programme governance",
+      "capability": "Programme governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-024",
+      "category": "Programme governance",
+      "capability": "Programme governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-025",
+      "category": "Programme governance",
+      "capability": "Programme governance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-026",
+      "category": "Programme governance",
+      "capability": "Programme governance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-027",
+      "category": "Programme governance",
+      "capability": "Programme governance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-028",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-029",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-030",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-031",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-032",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-033",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-034",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-035",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-036",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-037",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-038",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-039",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-040",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-041",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-042",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-043",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-044",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-045",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-046",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-047",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-048",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-049",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-050",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-051",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-052",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-053",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-054",
+      "category": "Surveillance execution",
+      "capability": "Surveillance execution control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-055",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-056",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-057",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-058",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-059",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-060",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-061",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-062",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-063",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-064",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-065",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-066",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-067",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-068",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-069",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-070",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-071",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-072",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-073",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-074",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-075",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-076",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-077",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-078",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-079",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-080",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-081",
+      "category": "Auditor competence and independence",
+      "capability": "Auditor competence and independence control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-082",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-083",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-084",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-085",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-086",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-087",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-088",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-089",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-090",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-091",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-092",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-093",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-094",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-095",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-096",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-097",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-098",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-099",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-100",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-101",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-102",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-103",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-104",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-105",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-106",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-107",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-108",
+      "category": "Assurance trend and review",
+      "capability": "Assurance trend and review control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0052_quality_completion.sql",
+        "apps/api/src/modules/org/quality-control.service.ts",
+        "apps/web/src/features/quality/QualityControl.tsx",
+        "infra/cerbos/policies/quality_control.yaml"
+      ]
+    },
+    {
+      "id": "QUA-109",
+      "category": "Risk engine",
+      "capability": "Server-side 5x5 likelihood \u00d7 compliance/quality impact assessment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-110",
+      "category": "Risk engine",
+      "capability": "LOW/MEDIUM/HIGH/CRITICAL classification is deterministic from score",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-111",
+      "category": "Risk engine",
+      "capability": "Invalid likelihood/impact values fail closed",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-112",
+      "category": "Risk engine",
+      "capability": "Risk-based response windows tighten finding due dates",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-113",
+      "category": "Risk engine",
+      "capability": "HIGH/CRITICAL findings require documented containment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-114",
+      "category": "Risk engine",
+      "capability": "Risk reclassification is audit-recorded",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-115",
+      "category": "Finding tracker",
+      "capability": "Cross-audit Finding & Non-Compliance Tracker uses authoritative finding records",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-116",
+      "category": "Finding tracker",
+      "capability": "Tracker exposes risk class, score, likelihood and impact",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-117",
+      "category": "Finding tracker",
+      "capability": "Tracker exposes overdue state and due date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-118",
+      "category": "Finding tracker",
+      "capability": "Tracker exposes CAPA count and verified-action state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-119",
+      "category": "Finding tracker",
+      "capability": "Tracker filters by status and risk class",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    },
+    {
+      "id": "QUA-120",
+      "category": "Finding tracker",
+      "capability": "Legacy open findings can be classified in place without duplicate NCR records",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0057_quality_risk_finding_engine.sql",
+        "packages/org-domain/src/quality.ts",
+        "apps/api/src/modules/org/safety-quality.service.ts",
+        "apps/web/src/features/quality/Audits.tsx"
+      ]
+    }
+  ]
+}

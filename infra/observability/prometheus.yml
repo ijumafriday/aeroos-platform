@@ -1,0 +1,6 @@
+# Metrics arrive by remote write from the OpenTelemetry collector; nothing to scrape.
+global:
+  scrape_interval: 30s
+
+rule_files:
+  - /etc/prometheus/rules.yml

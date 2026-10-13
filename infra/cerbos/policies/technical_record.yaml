@@ -1,0 +1,23 @@
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: technical_record
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["records_officer", "records_manager", "camo_engineer", "camo_manager", "certifying_staff", "quality_manager", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["manage"]
+      effect: EFFECT_ALLOW
+      roles: ["records_officer", "records_manager", "camo_engineer", "camo_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["complete", "export"]
+      effect: EFFECT_ALLOW
+      roles: ["records_manager", "camo_manager", "quality_manager"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

@@ -1,0 +1,12 @@
+# Executive dashboard: the accountable manager's view — finance, the nominated persons (CAMO, quality, OCC) and auditors.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: executive_dashboard
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller", "camo_manager", "quality_manager", "auditor", "occ_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

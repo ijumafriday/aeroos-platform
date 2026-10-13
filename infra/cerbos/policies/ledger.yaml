@@ -1,0 +1,18 @@
+# General ledger: finance posts manual journals and closes periods; auditors read.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: ledger
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+    - actions: ["post", "close", "integrate"]
+      effect: EFFECT_ALLOW
+      roles: ["finance_controller"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators

@@ -1,0 +1,1061 @@
+{
+  "version": "0.41.0",
+  "domain": "Safety",
+  "definition": "Software-complete Safety/SMS control-depth baseline. Operator ERP exercises, real-world SPI data quality and authority/operator acceptance remain governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "SAF-001",
+      "area": "Governance",
+      "capability": "Dedicated Safety depth register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "docs/SAFETY-DEPTH-REGISTER.json"
+      ]
+    },
+    {
+      "id": "SAF-002",
+      "area": "Governance",
+      "capability": "Tenant RLS across Safety control tables",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-003",
+      "area": "Governance",
+      "capability": "Safety control authorization policy",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-004",
+      "area": "Governance",
+      "capability": "Compact single-workspace Safety assurance UI",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-005",
+      "area": "Governance",
+      "capability": "Audit-chain recording for governed Safety changes",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-006",
+      "area": "Governance",
+      "capability": "Independent approval controls for regulated Safety decisions",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-007",
+      "area": "Hazard & bow-tie",
+      "capability": "Hazard register with owner/category/source",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-008",
+      "area": "Hazard & bow-tie",
+      "capability": "Initial probability/severity capture",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-009",
+      "area": "Hazard & bow-tie",
+      "capability": "Hazard review-date control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-010",
+      "area": "Hazard & bow-tie",
+      "capability": "Bow-tie preventive control persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-011",
+      "area": "Hazard & bow-tie",
+      "capability": "Bow-tie recovery control persistence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-012",
+      "area": "Hazard & bow-tie",
+      "capability": "Control type classification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-013",
+      "area": "Hazard & bow-tie",
+      "capability": "Control owner assignment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-014",
+      "area": "Hazard & bow-tie",
+      "capability": "Control assurance method",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-015",
+      "area": "Hazard & bow-tie",
+      "capability": "Control effectiveness lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-016",
+      "area": "Hazard & bow-tie",
+      "capability": "Control degraded-state handling",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-017",
+      "area": "Hazard & bow-tie",
+      "capability": "Control assurance evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-018",
+      "area": "Hazard & bow-tie",
+      "capability": "Independent control assurance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-019",
+      "area": "Hazard & bow-tie",
+      "capability": "Residual risk probability/severity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-020",
+      "area": "Hazard & bow-tie",
+      "capability": "Residual risk acceptance basis",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-021",
+      "area": "Hazard & bow-tie",
+      "capability": "Bow-tie completeness gate before acceptance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-022",
+      "area": "Hazard & bow-tie",
+      "capability": "Control-assurance gate before acceptance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-023",
+      "area": "Hazard & bow-tie",
+      "capability": "Hazard acceptance identity/timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-024",
+      "area": "Hazard & bow-tie",
+      "capability": "Hazard versioning",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-025",
+      "area": "Hazard & bow-tie",
+      "capability": "Occurrence/source reference linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-026",
+      "area": "SPI / SPT",
+      "capability": "SPI definition and ownership",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-027",
+      "area": "SPI / SPT",
+      "capability": "SPT definition and ownership",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-028",
+      "area": "SPI / SPT",
+      "capability": "Directionality lower-is-better",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-029",
+      "area": "SPI / SPT",
+      "capability": "Directionality higher-is-better",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-030",
+      "area": "SPI / SPT",
+      "capability": "Target threshold",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-031",
+      "area": "SPI / SPT",
+      "capability": "Warning threshold",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-032",
+      "area": "SPI / SPT",
+      "capability": "Breach threshold",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-033",
+      "area": "SPI / SPT",
+      "capability": "Threshold ordering validation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-034",
+      "area": "SPI / SPT",
+      "capability": "Measurement unit",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-035",
+      "area": "SPI / SPT",
+      "capability": "Measurement frequency",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-036",
+      "area": "SPI / SPT",
+      "capability": "Hazard linkage",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-037",
+      "area": "SPI / SPT",
+      "capability": "Period-bounded measurements",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-038",
+      "area": "SPI / SPT",
+      "capability": "Measurement provenance reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-039",
+      "area": "SPI / SPT",
+      "capability": "Measurement SHA-256 provenance",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-040",
+      "area": "SPI / SPT",
+      "capability": "Automatic NORMAL state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-041",
+      "area": "SPI / SPT",
+      "capability": "Automatic WARNING state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-042",
+      "area": "SPI / SPT",
+      "capability": "Automatic BREACH state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-043",
+      "area": "SPI / SPT",
+      "capability": "Measurement recorder/timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-044",
+      "area": "SPI / SPT",
+      "capability": "Indicator status lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-045",
+      "area": "SPI / SPT",
+      "capability": "Latest performance visibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-046",
+      "area": "Management of Change",
+      "capability": "Formal MoC object",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-047",
+      "area": "Management of Change",
+      "capability": "Change reason and scope",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-048",
+      "area": "Management of Change",
+      "capability": "Affected-domain register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-049",
+      "area": "Management of Change",
+      "capability": "MoC owner",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-050",
+      "area": "Management of Change",
+      "capability": "Planned effectivity",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-051",
+      "area": "Management of Change",
+      "capability": "Post-change monitoring due date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-052",
+      "area": "Management of Change",
+      "capability": "Structured risk assessment",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-053",
+      "area": "Management of Change",
+      "capability": "Assessment lifecycle state",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-054",
+      "area": "Management of Change",
+      "capability": "Pre-implementation action register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-055",
+      "area": "Management of Change",
+      "capability": "Implementation action register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-056",
+      "area": "Management of Change",
+      "capability": "Monitoring action register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-057",
+      "area": "Management of Change",
+      "capability": "Action owner/due date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-058",
+      "area": "Management of Change",
+      "capability": "Action evidence completion",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-059",
+      "area": "Management of Change",
+      "capability": "Independent action verification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-060",
+      "area": "Management of Change",
+      "capability": "Creator/approver separation",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-061",
+      "area": "Management of Change",
+      "capability": "Risk-assessment gate before approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-062",
+      "area": "Management of Change",
+      "capability": "Pre-implementation action requirement",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-063",
+      "area": "Management of Change",
+      "capability": "Pre-implementation verification gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-064",
+      "area": "Management of Change",
+      "capability": "Implementation start event",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-065",
+      "area": "Management of Change",
+      "capability": "Effective timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-066",
+      "area": "Management of Change",
+      "capability": "Monitoring lifecycle",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-067",
+      "area": "Management of Change",
+      "capability": "All-action verification closure gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-068",
+      "area": "Management of Change",
+      "capability": "Closure effectiveness evidence",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-069",
+      "area": "Management of Change",
+      "capability": "MoC closure identity/timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-070",
+      "area": "Emergency Response",
+      "capability": "ERP scenario register",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-071",
+      "area": "Emergency Response",
+      "capability": "Emergency scenario type classification",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-072",
+      "area": "Emergency Response",
+      "capability": "Activation criteria",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-073",
+      "area": "Emergency Response",
+      "capability": "Commander role definition",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-074",
+      "area": "Emergency Response",
+      "capability": "Communications plan",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-075",
+      "area": "Emergency Response",
+      "capability": "Authority contact set",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-076",
+      "area": "Emergency Response",
+      "capability": "Stakeholder contact set",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-077",
+      "area": "Emergency Response",
+      "capability": "Scenario versioning",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-078",
+      "area": "Emergency Response",
+      "capability": "Exercise due date",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-079",
+      "area": "Emergency Response",
+      "capability": "Independent ERP approval",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-080",
+      "area": "Emergency Response",
+      "capability": "Approved-scenario activation gate",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-081",
+      "area": "Emergency Response",
+      "capability": "Activation commander",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-082",
+      "area": "Emergency Response",
+      "capability": "Activation summary/location/reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-083",
+      "area": "Emergency Response",
+      "capability": "Automatic activation log event",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-084",
+      "area": "Emergency Response",
+      "capability": "Chronological ERP event log",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-085",
+      "area": "Emergency Response",
+      "capability": "ERP action event support",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-086",
+      "area": "Emergency Response",
+      "capability": "Authority-notification event support",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-087",
+      "area": "Emergency Response",
+      "capability": "Stakeholder-notification event support",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-088",
+      "area": "Emergency Response",
+      "capability": "Decision/resource/status events",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-089",
+      "area": "Emergency Response",
+      "capability": "Event owner/due/external reference",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-090",
+      "area": "Emergency Response",
+      "capability": "Stand-down control",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-091",
+      "area": "Emergency Response",
+      "capability": "Stand-down identity/timestamp",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-092",
+      "area": "Emergency Response",
+      "capability": "Debrief required for closure",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-093",
+      "area": "Emergency Response",
+      "capability": "Lessons-learned required for closure",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-094",
+      "area": "Emergency Response",
+      "capability": "Scenario exercise-history update",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-095",
+      "area": "Emergency Response",
+      "capability": "Active-emergency visibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    },
+    {
+      "id": "SAF-096",
+      "area": "Emergency Response",
+      "capability": "Exercise-overdue visibility",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0048_safety_completion.sql",
+        "apps/api/src/modules/org/safety-control.service.ts",
+        "apps/web/src/features/safety/SafetyControl.tsx"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Python recovery optimiser (OR-Tools CP-SAT) — Temporal worker on task queue "optimiser". No database access.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-optimiser
+  labels: {{- include "aeroos.labels" . | nindent 4 }}
+    app.kubernetes.io/name: aeroos-optimiser
+spec:
+  replicas: {{ .Values.optimiser.replicas }}
+  selector:
+    matchLabels: { app.kubernetes.io/name: aeroos-optimiser, app.kubernetes.io/instance: {{ .Release.Name }} }
+  template:
+    metadata:
+      labels: {{- include "aeroos.labels" . | nindent 8 }}
+        app.kubernetes.io/name: aeroos-optimiser
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      securityContext: { runAsNonRoot: true, runAsUser: 10001, seccompProfile: { type: RuntimeDefault } }
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector: { matchLabels: { app.kubernetes.io/name: aeroos-optimiser } }
+      containers:
+        - name: optimiser
+          image: {{ include "aeroos.image" (dict "root" . "name" "optimiser") }}
+          env:
+            - name: TEMPORAL_ADDRESS
+              value: {{ required "temporal.address is required" .Values.temporal.address | quote }}
+            - name: TEMPORAL_NAMESPACE
+              value: {{ .Values.temporal.namespace | quote }}
+            - name: API_URL
+              value: http://{{ .Release.Name }}-api:3000
+            - name: OIDC_TOKEN_URL
+              value: {{ required "serviceIdentity.tokenUrl is required" .Values.serviceIdentity.tokenUrl | quote }}
+            - name: SERVICE_CLIENT_ID
+              value: {{ .Values.serviceIdentity.optimiserClientId | quote }}
+            - name: SERVICE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef: { name: {{ .Values.serviceIdentity.secretName }}, key: OPTIMISER_CLIENT_SECRET }
+            - name: SOLVER_TIME_LIMIT_SECONDS
+              value: {{ .Values.optimiser.timeLimitSeconds | quote }}
+            - name: SOLVER_CONCURRENCY
+              value: {{ .Values.optimiser.concurrency | quote }}
+          resources: {{- toYaml .Values.optimiser.resources | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: { drop: ["ALL"] } }
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+      volumes:
+        - { name: tmp, emptyDir: {} }

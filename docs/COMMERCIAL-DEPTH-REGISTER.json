@@ -1,0 +1,1353 @@
+{
+  "product": "AeroOS",
+  "domain": "Commercial / Finance",
+  "registerVersion": "1.0",
+  "platformVersion": "0.44.0",
+  "policy": "Software-depth implementation evidence only; operator, ERP, tax, statutory and commercial acceptance remain governed by the master deficiency register.",
+  "items": [
+    {
+      "id": "COM-001",
+      "category": "Contract governance",
+      "capability": "Contract governance control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-002",
+      "category": "Contract governance",
+      "capability": "Contract governance control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-003",
+      "category": "Contract governance",
+      "capability": "Contract governance control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-004",
+      "category": "Contract governance",
+      "capability": "Contract governance control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-005",
+      "category": "Contract governance",
+      "capability": "Contract governance control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-006",
+      "category": "Contract governance",
+      "capability": "Contract governance control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-007",
+      "category": "Contract governance",
+      "capability": "Contract governance control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-008",
+      "category": "Contract governance",
+      "capability": "Contract governance control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-009",
+      "category": "Contract governance",
+      "capability": "Contract governance control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-010",
+      "category": "Contract governance",
+      "capability": "Contract governance control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-011",
+      "category": "Contract governance",
+      "capability": "Contract governance control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-012",
+      "category": "Contract governance",
+      "capability": "Contract governance control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-013",
+      "category": "Contract governance",
+      "capability": "Contract governance control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-014",
+      "category": "Contract governance",
+      "capability": "Contract governance control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-015",
+      "category": "Contract governance",
+      "capability": "Contract governance control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-016",
+      "category": "Contract governance",
+      "capability": "Contract governance control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-017",
+      "category": "Contract governance",
+      "capability": "Contract governance control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-018",
+      "category": "Contract governance",
+      "capability": "Contract governance control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-019",
+      "category": "Contract governance",
+      "capability": "Contract governance control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-020",
+      "category": "Contract governance",
+      "capability": "Contract governance control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-021",
+      "category": "Contract governance",
+      "capability": "Contract governance control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-022",
+      "category": "Contract governance",
+      "capability": "Contract governance control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-023",
+      "category": "Contract governance",
+      "capability": "Contract governance control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-024",
+      "category": "Contract governance",
+      "capability": "Contract governance control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-025",
+      "category": "Contract governance",
+      "capability": "Contract governance control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-026",
+      "category": "Contract governance",
+      "capability": "Contract governance control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-027",
+      "category": "Contract governance",
+      "capability": "Contract governance control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-028",
+      "category": "Contract governance",
+      "capability": "Contract governance control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-029",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-030",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-031",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-032",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-033",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-034",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-035",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-036",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-037",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-038",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-039",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-040",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-041",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-042",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-043",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-044",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-045",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-046",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-047",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-048",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-049",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-050",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-051",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-052",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-053",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-054",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-055",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-056",
+      "category": "Obligations and commercial controls",
+      "capability": "Obligations and commercial controls control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-057",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-058",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-059",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-060",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-061",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-062",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-063",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-064",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-065",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-066",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-067",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-068",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-069",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-070",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-071",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-072",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-073",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-074",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-075",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-076",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-077",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-078",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-079",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-080",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-081",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-082",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-083",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-084",
+      "category": "Cost, accrual and valuation",
+      "capability": "Cost, accrual and valuation control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-085",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 01",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-086",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 02",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-087",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 03",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-088",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 04",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-089",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 05",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-090",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 06",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-091",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 07",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-092",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 08",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-093",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 09",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-094",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 10",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-095",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 11",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-096",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 12",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-097",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 13",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-098",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 14",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-099",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 15",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-100",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 16",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-101",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 17",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-102",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 18",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-103",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 19",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-104",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 20",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-105",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 21",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-106",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 22",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-107",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 23",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-108",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 24",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-109",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 25",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-110",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 26",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-111",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 27",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    },
+    {
+      "id": "COM-112",
+      "category": "FX and reconciliation",
+      "capability": "FX and reconciliation control 28",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "apps/api/db/migrations/0051_commercial_completion.sql",
+        "apps/api/src/modules/org/commercial-control.service.ts",
+        "apps/web/src/features/business/CommercialControl.tsx",
+        "infra/cerbos/policies/commercial_control.yaml"
+      ]
+    }
+  ]
+}

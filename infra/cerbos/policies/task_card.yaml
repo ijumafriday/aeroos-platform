@@ -1,0 +1,46 @@
+# Certification actions. `licenceCovered` is computed by the compliance engine (rulepack in force,
+# Part-66 / FAA privileges, type rating, company authorisation) and passed in as an attribute.
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: default
+  resource: task_card
+  rules:
+    - actions: ["read"]
+      effect: EFFECT_ALLOW
+      roles: ["camo_engineer", "camo_manager", "certifying_staff", "auditor"]
+      condition:
+        match:
+          expr: request.resource.attr.operatorId in request.principal.attr.operators
+
+    - actions: ["field_note"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.status != "CERTIFIED"
+
+    - actions: ["sign_step"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.status != "CERTIFIED"
+              - expr: request.resource.attr.licenceCovered == true
+
+    - actions: ["issue_crs"]
+      effect: EFFECT_ALLOW
+      roles: ["certifying_staff"]
+      condition:
+        match:
+          all:
+            of:
+              - expr: request.resource.attr.operatorId in request.principal.attr.operators
+              - expr: request.resource.attr.status != "CERTIFIED"
+              - expr: request.resource.attr.allStepsStamped == true
+              - expr: request.resource.attr.licenceCovered == true
