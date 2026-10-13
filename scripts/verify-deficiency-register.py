@@ -2,7 +2,7 @@
 from pathlib import Path
 import json
 root=Path(__file__).resolve().parents[1]
-data=json.loads((root/'docs/MASTER-DEFICIENCY-REGISTER.json').read_text())
+data=json.loads((root/'docs/MASTER-DEFICIENCY-REGISTER.json').read_text(encoding='utf-8'))
 allowed={'MISSING','PARTIAL','COMPLETE','EXTERNAL'}
 items=data.get('items',[])
 if len(items)<90: raise SystemExit(f'FAIL  deficiency register unexpectedly shrank to {len(items)} items')
@@ -20,7 +20,7 @@ for x in items:
         if not x['evidence']: raise SystemExit(f"FAIL  {x['id']} COMPLETE without evidence")
         missing=[rel for rel in x['evidence'] if not (root/rel).exists()]
         if missing: raise SystemExit(f"FAIL  {x['id']} COMPLETE evidence missing: {', '.join(missing)}")
-md=(root/'docs/MASTER-DEFICIENCY-REGISTER.md').read_text()
+md=(root/'docs/MASTER-DEFICIENCY-REGISTER.md').read_text(encoding='utf-8')
 for x in items:
     if x['id'] not in md or x['title'] not in md: raise SystemExit(f"FAIL  markdown register missing {x['id']}")
 print(f"PASS  master deficiency register: {len(items)} items; " + ', '.join(f"{s}={sum(1 for x in items if x['status']==s)}" for s in ['MISSING','PARTIAL','COMPLETE','EXTERNAL']))

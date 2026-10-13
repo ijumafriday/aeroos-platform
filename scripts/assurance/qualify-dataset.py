@@ -8,7 +8,7 @@ from __future__ import annotations
 import json, os, subprocess, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-targets=json.loads((ROOT/'tests/assurance/scale-targets.json').read_text())
+targets=json.loads((ROOT/'tests/assurance/scale-targets.json').read_text(encoding='utf-8'))
 url=os.environ.get('DATABASE_URL')
 if not url:
     raise SystemExit('DATABASE_URL is required')

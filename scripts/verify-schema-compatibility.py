@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,re,sys
 root=Path(__file__).resolve().parents[1]
-policy=json.loads((root/'docs/release/SCHEMA-COMPATIBILITY.json').read_text())
+policy=json.loads((root/'docs/release/SCHEMA-COMPATIBILITY.json').read_text(encoding='utf-8'))
 entries=policy['migrations']
 files=sorted((root/'apps/api/db/migrations').glob('*.sql'))
 tracked=[p.name for p in files if int(p.name[:4])>=38]

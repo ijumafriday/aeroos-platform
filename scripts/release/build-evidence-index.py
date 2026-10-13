@@ -12,7 +12,7 @@ s=srcs[0]; bundle=Path(str(s)+'.sigstore.json')
 if not bundle.exists(): raise SystemExit('source sigstore bundle missing')
 imgs=[]
 for p in sorted(root.glob('image-meta-*.json')):
- x=json.loads(p.read_text()); vf=root/x['verificationFile']
+ x=json.loads(p.read_text(encoding='utf-8')); vf=root/x['verificationFile']
  if not vf.exists(): raise SystemExit(f'missing {vf.name}')
  imgs.append(x)
 idx={'schemaVersion':1,'version':a.version,'source':{'file':s.name,'sha256':sha(s),'sigstoreBundle':bundle.name},'images':imgs}

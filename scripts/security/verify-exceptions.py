@@ -10,7 +10,7 @@ NON_WAIVABLE={'codeql','gitleaks'}
 ID=re.compile(r'^[A-Z0-9][A-Z0-9._:-]{2,127}$')
 
 def load(path:Path):
-    d=json.loads(path.read_text())
+    d=json.loads(path.read_text(encoding='utf-8'))
     if d.get('schemaVersion')!=1 or not isinstance(d.get('exceptions'),list):
         raise SystemExit('FAIL  security exception document must use schemaVersion=1 and exceptions[]')
     return d['exceptions']

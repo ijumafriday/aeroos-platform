@@ -9,7 +9,7 @@ import hashlib, json, os, stat, sys, zipfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION=json.loads((ROOT/'package.json').read_text())['version']
+VERSION=json.loads((ROOT/'package.json').read_text(encoding='utf-8'))['version']
 OUT=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else ROOT.parent/f'aeroos-platform-{VERSION}-complete.zip'
 EXCLUDED={'.git','node_modules','dist','coverage','security-report','.nx','__pycache__'}
 MANIFEST=ROOT/'RELEASE-MANIFEST.json'

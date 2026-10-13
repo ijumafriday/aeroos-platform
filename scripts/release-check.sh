@@ -16,13 +16,13 @@ python - <<'PY' || fail=1
 from pathlib import Path
 import json,sys
 root=Path('.')
-v=json.loads((root/'package.json').read_text())['version']
+v=json.loads((root/'package.json').read_text(encoding='utf-8'))['version']
 paths=[root/'apps/api/package.json',root/'apps/web/package.json',root/'apps/worker/package.json',root/'e2e/package.json']+list((root/'packages').glob('*/package.json'))
 bad=[]
 for p in paths:
-    if p.exists() and json.loads(p.read_text()).get('version') != v: bad.append(str(p))
-chart=(root/'deploy/helm/aeroos/Chart.yaml').read_text()
-values=(root/'deploy/helm/aeroos/values.yaml').read_text()
+    if p.exists() and json.loads(p.read_text(encoding='utf-8')).get('version') != v: bad.append(str(p))
+chart=(root/'deploy/helm/aeroos/Chart.yaml').read_text(encoding='utf-8')
+values=(root/'deploy/helm/aeroos/values.yaml').read_text(encoding='utf-8')
 if f'appVersion: "{v}"' not in chart: bad.append('Chart.yaml appVersion')
 if f'tag: "{v}"' not in values: bad.append('values.yaml image.tag')
 if bad:
@@ -34,9 +34,9 @@ python - <<'PY' || fail=1
 from pathlib import Path
 import yaml,sys
 for p in Path('infra/cerbos/policies').rglob('*.yaml'):
-    yaml.safe_load(p.read_text())
+    yaml.safe_load(p.read_text(encoding='utf-8'))
 for p in [Path('deploy/helm/aeroos/values.yaml'),Path('deploy/helm/aeroos/values-cloud.yaml'),Path('deploy/helm/aeroos/values-selfhosted.yaml')]:
-    yaml.safe_load(p.read_text())
+    yaml.safe_load(p.read_text(encoding='utf-8'))
 print('PASS  YAML parses')
 PY
 
@@ -52,7 +52,7 @@ for root in roots:
     if not root.exists(): continue
     for p in root.rglob('*'):
         if not p.is_file() or p.name=='release-check.sh': continue
-        try: text=p.read_text()
+        try: text=p.read_text(encoding='utf-8')
         except UnicodeDecodeError: continue
         for pat in patterns:
             if re.search(pat,text): bad.append(f'{p}: {pat}')
@@ -64,12 +64,12 @@ PYLOCK
 
 python - <<'PYMASTER' || fail=1
 from pathlib import Path
-m=Path('apps/api/db/migrations/0038_regulated_master_data.sql').read_text()
-svc=Path('apps/api/src/modules/compliance/master-data.service.ts').read_text()
+m=Path('apps/api/db/migrations/0038_regulated_master_data.sql').read_text(encoding='utf-8')
+svc=Path('apps/api/src/modules/compliance/master-data.service.ts').read_text(encoding='utf-8')
 required=['DRAFT','VALIDATED','APPROVED','EFFECTIVE','SUPERSEDED','WITHDRAWN']
 if not all(x in m and x in svc for x in required): raise SystemExit('FAIL  master-data lifecycle incomplete')
 for gate in ['ops.aircraft_types','camo.mel','camo.maintenance_programme','camo.srm_limits','camo.engine_limits','compliance.ftl']:
-    if gate not in ''.join(p.read_text() for p in [Path('apps/api/src/modules/ops/dispatch.service.ts'),Path('apps/api/src/modules/camo/mel.service.ts'),Path('apps/api/src/modules/camo/programme.service.ts'),Path('apps/api/src/modules/camo/health.service.ts'),Path('apps/api/src/modules/ops/rostering.service.ts')]):
+    if gate not in ''.join(p.read_text(encoding='utf-8') for p in [Path('apps/api/src/modules/ops/dispatch.service.ts'),Path('apps/api/src/modules/camo/mel.service.ts'),Path('apps/api/src/modules/camo/programme.service.ts'),Path('apps/api/src/modules/camo/health.service.ts'),Path('apps/api/src/modules/ops/rostering.service.ts')]):
         raise SystemExit('FAIL  missing regulated-data gate '+gate)
 print('PASS  governed master-data lifecycle and fail-closed operational gates')
 PYMASTER
@@ -78,7 +78,7 @@ PYMASTER
 python - <<'PYASSURE' || fail=1
 from pathlib import Path
 import json,sys
-cfg=json.loads(Path('tests/assurance/scale-targets.json').read_text())
+cfg=json.loads(Path('tests/assurance/scale-targets.json').read_text(encoding='utf-8'))
 required={'operators','aircraft','personnel','flights','audit_entries','documents','components','work_packages'}
 if set(cfg.get('minimums',{})) != required:
     print('FAIL  assurance scale profile is incomplete'); sys.exit(1)
@@ -110,17 +110,17 @@ required=[
 ]
 missing=[x for x in required if not Path(x).is_file()]
 if missing: print('FAIL  P1 closure files missing:',','.join(missing)); sys.exit(1)
-sql=Path('apps/api/db/migrations/0039_p1_closure.sql').read_text()
+sql=Path('apps/api/db/migrations/0039_p1_closure.sql').read_text(encoding='utf-8')
 for table in ['work_package_shift_allocations','non_routines','labour_entries','stock_lots','part_loans','ofp_packages','cabin_requirements','frms_assessments']:
     if table not in sql: print('FAIL  P1 migration missing',table); sys.exit(1)
-ops=Path('apps/api/src/modules/ops/operational-planning.service.ts').read_text()
+ops=Path('apps/api/src/modules/ops/operational-planning.service.ts').read_text(encoding='utf-8')
 for gate in ['ops.ofp_provider.','crew.frms_model.','cabinDutyKey']:
     if gate not in ops: print('FAIL  P1 operational governance missing',gate); sys.exit(1)
-mig=Path('apps/api/src/modules/ops/ops.migration.ts').read_text()+Path('apps/api/src/modules/amo/amo.migration.ts').read_text()
+mig=Path('apps/api/src/modules/ops/ops.migration.ts').read_text(encoding='utf-8')+Path('apps/api/src/modules/amo/amo.migration.ts').read_text(encoding='utf-8')
 for target in ["target='ops.crew'","target='ops.flight_schedule'","target='amo.stock_lot'"]:
     if target not in mig: print('FAIL  P1 migration adapter missing',target); sys.exit(1)
-sdk=json.loads(Path('packages/sdk/package.json').read_text())
-if sdk.get('private') is True or sdk.get('version')!=json.loads(Path('package.json').read_text())['version']:
+sdk=json.loads(Path('packages/sdk/package.json').read_text(encoding='utf-8'))
+if sdk.get('private') is True or sdk.get('version')!=json.loads(Path('package.json').read_text(encoding='utf-8'))['version']:
     print('FAIL  SDK is not publishable/version aligned'); sys.exit(1)
 print('PASS  remaining P1 closure controls are present')
 PYP1
@@ -135,17 +135,17 @@ required=[
 ]
 missing=[x for x in required if not Path(x).is_file()]
 if missing: print('FAIL  P2 closure files missing:',','.join(missing)); sys.exit(1)
-sql=Path('apps/api/db/migrations/0040_p2_closure.sql').read_text()
+sql=Path('apps/api/db/migrations/0040_p2_closure.sql').read_text(encoding='utf-8')
 for table in ['platform.user_views','org.erp_profiles','org.erp_export_batches']:
     if table not in sql: print('FAIL  P2 migration missing',table); sys.exit(1)
 if sql.count('ENABLE ROW LEVEL SECURITY') < 3: print('FAIL  P2 tenant isolation incomplete'); sys.exit(1)
-finance=Path('apps/api/src/modules/org/finance.service.ts').read_text()
+finance=Path('apps/api/src/modules/org/finance.service.ts').read_text(encoding='utf-8')
 for invariant in ['ERP_PERIOD_OPEN','ERP_UNBALANCED','contentSha256','erp.export.acknowledged','erp.export.rejected']:
     if invariant not in finance: print('FAIL  ERP integration invariant missing',invariant); sys.exit(1)
-home=Path('apps/web/src/features/business/Home.tsx').read_text()
-views=Path('apps/web/src/components/WorkspaceViews.tsx').read_text()
+home=Path('apps/web/src/features/business/Home.tsx').read_text(encoding='utf-8')
+views=Path('apps/web/src/components/WorkspaceViews.tsx').read_text(encoding='utf-8')
 if 'Role-aware landing page' not in home or '/preferences/views' not in views: print('FAIL  enterprise UX closure incomplete'); sys.exit(1)
-shell=Path('apps/web/src/app/Shell.tsx').read_text()
+shell=Path('apps/web/src/app/Shell.tsx').read_text(encoding='utf-8')
 for prohibited in ["label: 'Workflow'","label: 'Workspace'","label: 'ERP'"]:
     if prohibited in shell: print('FAIL  P2 introduced workflow/platform navigation clutter',prohibited); sys.exit(1)
 print('PASS  remaining P2 closure controls are present')
@@ -157,10 +157,10 @@ import sys
 required=['scripts/assurance/evidence.py','scripts/assurance/verify-evidence.py','scripts/security/secret-rotation-drill.sh','.github/workflows/assurance-evidence.yml','docs/ASSURANCE-EVIDENCE.md']
 missing=[x for x in required if not Path(x).is_file()]
 if missing: print('FAIL  P0 evidence controls missing:', ','.join(missing)); sys.exit(1)
-wf=Path('.github/workflows/assurance-evidence.yml').read_text()
+wf=Path('.github/workflows/assurance-evidence.yml').read_text(encoding='utf-8')
 for token in ['cosign sign-blob','actions/upload-artifact@v4','retention-days','scripts/dependency-gate.sh','D089','D090','D091','D092']:
     if token not in wf: print('FAIL  assurance evidence workflow missing',token); sys.exit(1)
-rot=Path('scripts/security/secret-rotation-drill.sh').read_text()
+rot=Path('scripts/security/secret-rotation-drill.sh').read_text(encoding='utf-8')
 for token in ['resourceVersion','podsReplaced=true','rollout status']:
     if token not in rot: print('FAIL  secret rotation proof missing',token); sys.exit(1)
 print('PASS  retained assurance-evidence and secret-rotation controls are present')
@@ -174,10 +174,10 @@ import sys
 required=['scripts/release/build-evidence-index.py','scripts/release/verify-release-evidence.py','docs/RELEASE-EVIDENCE.md','.github/security/exceptions.json','docs/SECURITY-EXCEPTIONS.md']
 missing=[x for x in required if not Path(x).is_file()]
 if missing: print('FAIL  P0 supply-chain/security governance artifacts missing:',','.join(missing)); sys.exit(1)
-rel=Path('.github/workflows/release.yml').read_text()
+rel=Path('.github/workflows/release.yml').read_text(encoding='utf-8')
 for token in ['aggregate-release-evidence','image-verify-${APP}.json','release-evidence.json','retention-days: 365']:
     if token not in rel: print('FAIL  release evidence workflow missing',token); sys.exit(1)
-sec=Path('.github/workflows/security.yml').read_text()
+sec=Path('.github/workflows/security.yml').read_text(encoding='utf-8')
 for token in ['security-exception-inputs','scripts/security/verify-exceptions.py','trivyignores: .trivyignore']:
     if token not in sec: print('FAIL  governed security exception integration missing',token); sys.exit(1)
 print('PASS  P0 release-evidence and security-exception governance controls are present')
@@ -190,9 +190,9 @@ python3 scripts/verify-p0-regulatory.py || fail=1
 python - <<'PYD003' || fail=1
 from pathlib import Path
 import sys
-m=Path('apps/api/db/migrations/0043_ops_reference_tenant_scope.sql').read_text()
-svc=Path('apps/api/src/modules/ops/dispatch.service.ts').read_text()
-test=Path('tests/integration/tenant-rls.sql').read_text()
+m=Path('apps/api/db/migrations/0043_ops_reference_tenant_scope.sql').read_text(encoding='utf-8')
+svc=Path('apps/api/src/modules/ops/dispatch.service.ts').read_text(encoding='utf-8')
+test=Path('tests/integration/tenant-rls.sql').read_text(encoding='utf-8')
 for table in ['aircraft_types','runway_limits','routes','permit_rules']:
     if f'ON ops.{table}' not in m and 'ON ops.%I' not in m:
         print('FAIL D003 missing tenant policy for',table); sys.exit(1)

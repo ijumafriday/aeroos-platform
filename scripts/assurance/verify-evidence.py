@@ -3,7 +3,7 @@ import argparse, json, pathlib, sys
 ap=argparse.ArgumentParser(); ap.add_argument('files', nargs='+'); a=ap.parse_args()
 required={'schema','control','target','environment','recordedAtEpoch','platformVersion','runner','result','outcome'}
 for fn in a.files:
-    p=pathlib.Path(fn); d=json.loads(p.read_text())
+    p=pathlib.Path(fn); d=json.loads(p.read_text(encoding='utf-8'))
     miss=required-set(d)
     if miss: raise SystemExit(f'{fn}: missing {sorted(miss)}')
     if d['schema']!='aeroos.assurance.evidence/v1': raise SystemExit(f'{fn}: bad schema')

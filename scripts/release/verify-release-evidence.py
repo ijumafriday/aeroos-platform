@@ -18,7 +18,7 @@ def main():
     a=ap.parse_args(); root=a.evidence
     idx=root/'release-evidence.json'
     if not idx.is_file(): raise SystemExit('FAIL  release-evidence.json missing')
-    d=json.loads(idx.read_text())
+    d=json.loads(idx.read_text(encoding='utf-8'))
     for k in ['version','source','images']:
         if k not in d: raise SystemExit(f'FAIL  evidence index missing {k}')
     src=d['source']; z=root/src['file']
@@ -33,7 +33,7 @@ def main():
             if not x.get(k): raise SystemExit(f'FAIL  image evidence missing {k}')
         if not DIGEST.match(x['digest']): raise SystemExit(f'FAIL  invalid digest for {x["app"]}')
         vf=root/x['verificationFile']
-        if not vf.is_file() or not vf.read_text().strip(): raise SystemExit(f'FAIL  signature verification missing for {x["app"]}')
+        if not vf.is_file() or not vf.read_text(encoding='utf-8').strip(): raise SystemExit(f'FAIL  signature verification missing for {x["app"]}')
         apps.add(x['app'])
     if apps!={'api','worker','web','optimiser'}: raise SystemExit(f'FAIL  incomplete image set {sorted(apps)}')
     if a.cosign:
