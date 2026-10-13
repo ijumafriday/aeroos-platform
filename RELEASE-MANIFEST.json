@@ -2408,16 +2408,6 @@
       "sha256": "f8a698126f0d61ecf1928693765e93003844b9595fa728ace877d8ff9bd1b0ef"
     },
     {
-      "bytes": 21800,
-      "path": "fix-aeroos-0.50.0-assurance-checks.py",
-      "sha256": "ab2550b6ceae8a7638a126cfa1d5a7250c8d7fa19a6cfb92943a75fef3027b3c"
-    },
-    {
-      "bytes": 4115,
-      "path": "fix-aeroos-0.50.0-final-checks.py",
-      "sha256": "70a43028abe91e5da6cfa65421ee51723c399f71d8b62cbfbca5536826728677"
-    },
-    {
       "bytes": 6592,
       "path": "fix-aeroos-0.50.0-lint-baseline-v2.ps1",
       "sha256": "c485e51e9ab5a735955868f74e02fd56bc207b342b64581d383dba589802d7b1"
@@ -2431,11 +2421,6 @@
       "bytes": 6590,
       "path": "fix-aeroos-0.50.0-lint-baseline.ps1",
       "sha256": "c4fc71ca2251c3aa430e9b4f2d27e0dc260c618fbc62267ef7cdf04441431bba"
-    },
-    {
-      "bytes": 1961,
-      "path": "fix-aeroos-0.50.0-repro-python-launcher.py",
-      "sha256": "c5acdd037f9bbd563ce8c4e06e2cc5294818d3f332cbc0a9b6b165bd78a682b9"
     },
     {
       "bytes": 3397,
@@ -3413,11 +3398,6 @@
       "sha256": "b6c45e4471a6482a9e1bf001245022cc97e3433d42f278e4ab8d1122da7d44e3"
     },
     {
-      "bytes": 119502,
-      "path": "reproducible-build.log",
-      "sha256": "215f736144e705401ab3f69d94f1de38e3e319d05d949d29fc74af411b7183f8"
-    },
-    {
       "bytes": 1473,
       "path": "scripts/add-crew-user.sh",
       "sha256": "493384deaa47b2f47820cad936257b565be91fe1c16a7bd79b0fcdbd11404dfb"
@@ -3503,9 +3483,9 @@
       "sha256": "50e1cfb12f4a0f1a7481c0d12825e069f986fc6a78b32d1fcdcb05959fe68105"
     },
     {
-      "bytes": 12609,
+      "bytes": 12606,
       "path": "scripts/release-check.sh",
-      "sha256": "224165c711d30d96f03fdb577687ab9d9275439c7e0b551ab0cbc5a8f21ad37e"
+      "sha256": "6e9f69e58a515616f737a5d1593fdc3c25fdf48fb5cdded869d55a0f757926f9"
     },
     {
       "bytes": 1379,

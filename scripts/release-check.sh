@@ -166,7 +166,7 @@ for token in ['resourceVersion','podsReplaced=true','rollout status']:
 print('PASS  retained assurance-evidence and secret-rotation controls are present')
 PYEVIDENCE
 
-python3 scripts/security/verify-exceptions.py || fail=1
+python scripts/security/verify-exceptions.py || fail=1
 
 python - <<'PYSUPPLY' || fail=1
 from pathlib import Path
@@ -183,8 +183,8 @@ for token in ['security-exception-inputs','scripts/security/verify-exceptions.py
 print('PASS  P0 release-evidence and security-exception governance controls are present')
 PYSUPPLY
 
-python3 scripts/verify-rulepack-manifest.py || fail=1
-python3 scripts/verify-p0-regulatory.py || fail=1
+python scripts/verify-rulepack-manifest.py || fail=1
+python scripts/verify-p0-regulatory.py || fail=1
 
 
 python - <<'PYD003' || fail=1
