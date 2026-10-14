@@ -71,6 +71,9 @@ tests:
         resource: othersReport
         actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, manage: EFFECT_DENY }
       - principal: occ
+        resource: ownReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: occ
         resource: othersReport
         actions: { report: EFFECT_ALLOW, read: EFFECT_DENY, manage: EFFECT_DENY }
       - principal: safety
@@ -85,6 +88,9 @@ tests:
       - principal: quality
         resource: othersReport
         actions: { report: EFFECT_DENY, read: EFFECT_DENY, manage: EFFECT_DENY }
+      - principal: auditor
+        resource: ownReport
+        actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_DENY }
       - principal: auditor
         resource: othersReport
         actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, manage: EFFECT_DENY }

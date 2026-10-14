@@ -64,7 +64,7 @@ tests:
         actions: { report: EFFECT_DENY, read: EFFECT_DENY, review: EFFECT_DENY }
       - principal: quality
         resource: report
-        actions: { report: EFFECT_DENY, read: EFFECT_ALLOW, review: EFFECT_ALLOW }
+        actions: { report: EFFECT_DENY, read: EFFECT_ALLOW, review: EFFECT_DENY }
       - principal: crew
         resource: report
         actions: { report: EFFECT_ALLOW, read: EFFECT_ALLOW, review: EFFECT_DENY }
